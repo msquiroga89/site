@@ -29,9 +29,9 @@ feature:
   icon_pack: fas
   name: statistics
 - description: 70%
-  icon: book-open
-  icon_pack: fas
-  name: storytelling
+  icon: CLAN
+  icon_pack: custom
+  name: CLAN
 - description: 100%
   icon: chalkboard-teacher
   icon_pack: fas
