@@ -16,7 +16,7 @@ highlight_name: false
 interests:
 - Vocabulary Acquisition
 - Sociocultural Differences
-- Cuantitative metholodogies
+- Quantitative metholodogies
 organizations:
 - name: CIIPME-CONICET
   url: http://www.ciipme-conicet.gov.ar/wordpress/
