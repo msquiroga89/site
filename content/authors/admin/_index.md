@@ -1,6 +1,6 @@
 ---
 bio: Investigo la adquisición del lenguaje. Busco profundizar mis conocimientos sobre estadística y ciencia de datos con R/Rstudio.
-education:
+educación:
   courses:
   - course: Doctorado en Ciencias de la Educación
     institution: Universidad de Buenos Aires (Argentina)
@@ -13,7 +13,7 @@ education:
     year: 2017
 email: ""
 highlight_name: false
-interests:
+intereses:
 - Adquisición del vocabulario
 - Diferencias socioculturales
 - Metodologías cuantitativas
