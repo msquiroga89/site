@@ -25,7 +25,7 @@ tags:
 - Metacognición
 - Comprensión de textos
 - Funciones ejecutivas
-title: La metacognición como función ejecutiva: su rol en la comprensión de textos
+title: La metacognición como función ejecutiva; su rol en la comprensión de textos
 url_code: ""
 url_dataset: ""
 url_pdf: http://revistas.filo.uba.ar/index.php/exlibris/article/view/3043
