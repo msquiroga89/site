@@ -1,0 +1,19 @@
+---
+title: Hola Mundo!
+author: 'Macarena Quiroga'
+date: '2021-05-16'
+slug: my-first-post
+categories: []
+tags: [spanish]
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-05-16T20:01:53-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+Esta es la primera publicación de mi sitio. Esperemos que haya tantas que esta quede en el olvido.
