@@ -1,26 +1,26 @@
 ---
-bio: Psicolingüista egresada de la Universidad de Buenos Aires (Argentina). Actualmente estoy escribiendo mi tesis de maestría en Psicología Cognitiva y Aprendizaje (FLACSO) y el doctorado en Educación (UBA). Tengo como objetivo profundizar mi formación en estadística y en ciencia de datos con R/Rstudio.
+bio: Investigo la adquisición del lenguaje. Busco profundizar mis conocimientos sobre estadística y ciencia de datos con R/Rstudio.
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: Doctorado en Ciencias de la Educación
+    institution: Universidad de Buenos Aires (Argentina)
+    year: en curso
+  - course: Maestría en Psicología Cognitiva y Aprendizaje
+    institution: Facultad Latinoamericana de Ciencias Sociales (Argentina)
+    year: en curso
+  - course: Licenciatura y Profesorado en Letras, orientación Psico y Neurolingüística
+    institution: Universidad de Buenos Aires (Argentina)
+    year: 2017
 email: ""
 highlight_name: false
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Adquisición del vocabulario
+- Diferencias socioculturales
+- Metodologías cuantitativas
 organizations:
-- name: Stanford University
-  url: https://www.stanford.edu/
-role: Professor of Artificial Intelligence
+- name: CIIPME-CONICET
+  url: http://www.ciipme-conicet.gov.ar/wordpress/
+role: Becaria doctoral
 social:
 - icon: envelope
   icon_pack: fas
@@ -30,22 +30,20 @@ social:
   icon: twitter
   icon_pack: fab
   label: Follow me on Twitter
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/_msquiroga
 - icon: graduation-cap
   icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.com/citations?user=ndhOd0gAAAAJ&hl=es&authuser=1
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
-- icon: linkedin
-  icon_pack: fab
-  link: https://www.linkedin.com/
+  link: https://github.com/msquiroga89
+
 superuser: true
-title: Nelson Bighetti
+title: Macarena Quiroga
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Soy psicolingüista egresada de la Universidad de Buenos Aires (Argentina). Actualmente soy becaria doctoral en el Consejo Nacional de Investigaciones Científicas y Tecnológicas (CONICET) de Argentina y docente en la Universidad Nacional de Hurlingham. Estoy escribiendo mi tesis sobre Psicología Cognitiva y Aprendizaje (FLACSO) y comencé en 2020 el doctorado en Ciencias de la Educación (UBA).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Tengo como objetivo profundizar mis conocimientos estadísticos y de ciencia de datos con el software R/Rstudio.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
