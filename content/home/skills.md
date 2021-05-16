@@ -27,11 +27,19 @@ feature:
 - description: 50%
   icon: chart-line
   icon_pack: fas
-  name: Statistics
+  name: statistics
 - description: 70%
   icon: book-open
   icon_pack: fas
   name: storytelling
+- description: 100%
+  icon: chalkboard-teacher
+  icon_pack: fas
+  name: teaching
+- description: 200%
+  icon: question
+  icon_pack: fas
+  name: curiosity
 
 # Uncomment to use emoji icons.
 #- icon = ":smile:"
