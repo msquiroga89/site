@@ -17,7 +17,7 @@ subtitle:
 # - For available icons, see: https://wowchemy.com/docs/page-builder/#icons
 feature:
 - description: 100%
-  icon: fa-language
+  icon: language
   icon_pack: fas
   name: linguistics
 - description: 30%
@@ -31,7 +31,7 @@ feature:
 - description: 70%
   icon: book-open
   icon_pack: fas
-  name: fa-storytelling
+  name: storytelling
 
 # Uncomment to use emoji icons.
 #- icon = ":smile:"
