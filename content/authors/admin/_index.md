@@ -1,26 +1,26 @@
 ---
-bio: Investigo la adquisición del lenguaje. Busco profundizar mis conocimientos sobre estadística y ciencia de datos con R/Rstudio.
-educación:
+bio: I research language acquisition. I'm looking to deepen my knowledge of statistic and data science with R/Rstudio.
+education:
   courses:
-  - course: Doctorado en Ciencias de la Educación
-    institution: Universidad de Buenos Aires (Argentina)
-    year: en curso
-  - course: Maestría en Psicología Cognitiva y Aprendizaje
+  - course: PhD in Education
+    institution: University of Buenos Aires (Argentina)
+    year: in progress
+  - course: Master in Cognitive Psychology and Learning
     institution: Facultad Latinoamericana de Ciencias Sociales (Argentina)
-    year: en curso
-  - course: Licenciatura y Profesorado en Letras, orientación Psico y Neurolingüística
-    institution: Universidad de Buenos Aires (Argentina)
+    year: in progress
+  - course: BA in Linguistics
+    institution: University of Buenos Aires (Argentina)
     year: 2017
 email: ""
 highlight_name: false
-intereses:
-- Adquisición del vocabulario
-- Diferencias socioculturales
-- Metodologías cuantitativas
+interests:
+- Vocabulary Acquisition
+- Sociocultural Differences
+- Cuantitative metholodogies
 organizations:
 - name: CIIPME-CONICET
   url: http://www.ciipme-conicet.gov.ar/wordpress/
-role: Becaria doctoral
+role: PhD student
 social:
 - icon: envelope
   icon_pack: fas
@@ -42,8 +42,7 @@ superuser: true
 title: Macarena Quiroga
 ---
 
-Soy psicolingüista egresada de la Universidad de Buenos Aires (Argentina). Actualmente soy becaria doctoral en el Consejo Nacional de Investigaciones Científicas y Tecnológicas (CONICET) de Argentina y docente en la Universidad Nacional de Hurlingham. Estoy escribiendo mi tesis sobre Psicología Cognitiva y Aprendizaje (FLACSO) y comencé en 2020 el doctorado en Ciencias de la Educación (UBA).
+I'm a psycholinguist by the University of Buenos Aires (Argentina). I'm currently a PhD student with a grant of the National Council of Scientific and Technological Research (CONICET), and a professor in the National University of Hurlingham (UNaHur). I'm writing my master's thesis about Cognitive Psychology and Learning (FLACSO) and in 2020 I've started my PhD in Education (UBA).
 
-Tengo como objetivo profundizar mis conocimientos estadísticos y de ciencia de datos con el software R/Rstudio.
+My goal is to deepen my knowledge of statistics and data science with R/Rstudio.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
