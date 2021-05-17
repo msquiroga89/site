@@ -30,7 +30,7 @@ feature:
   name: statistics
 - description: 70%
   icon: CLAN
-  icon_pack: custom
+  icon_pack: 
   name: CLAN
 - description: 100%
   icon: chalkboard-teacher
