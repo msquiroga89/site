@@ -2,24 +2,24 @@
 bio: I research language acquisition. I'm looking to deepen my knowledge of statistic and data science with R/Rstudio.
 education:
   courses:
-  - course: PhD in Education
-    institution: University of Buenos Aires (Argentina)
-    year: in progress
-  - course: Master in Cognitive Psychology and Learning
-    institution: Facultad Latinoamericana de Ciencias Sociales (Argentina)
-    year: in progress
-  - course: BA in Linguistics
-    institution: University of Buenos Aires (Argentina)
-    year: 2017
+  - course: Education
+#    institution: University of Buenos Aires (Argentina)
+#    year: in progress
+  - course: Cognitive Psychology and Learning
+#    institution: FLACSO (Argentina)
+#    year: in progress
+  - course: Linguistics
+#    institution: University of Buenos Aires (Argentina)
+#    year: 2017
 email: ""
 highlight_name: false
 interests:
 - Vocabulary Acquisition
 - Sociocultural Differences
 - Quantitative metholodogies
-organizations:
-- name: CIIPME-CONICET
-  url: http://www.ciipme-conicet.gov.ar/wordpress/
+# organizations:
+# - name: CIIPME-CONICET
+#  url: http://www.ciipme-conicet.gov.ar/wordpress/
 role: PhD student
 social:
 - icon: envelope
@@ -31,9 +31,9 @@ social:
   icon_pack: fab
   label: Follow me on Twitter
   link: https://twitter.com/_msquiroga
-- icon: graduation-cap
-  icon_pack: fas
-  link: https://scholar.google.com/citations?user=ndhOd0gAAAAJ&hl=es&authuser=1
+#- icon: graduation-cap
+#  icon_pack: fas
+#  link: https://scholar.google.com/citations?user=ndhOd0gAAAAJ&hl=es&authuser=1
 - icon: github
   icon_pack: fab
   link: https://github.com/msquiroga89
