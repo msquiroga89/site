@@ -5,7 +5,7 @@ education:
   - course: PhD in Education
     institution: University of Buenos Aires (Argentina)
     year: in progress
-  - course: Cognitive Psychology and Learning
+  - course: Master in Cognitive Psychology and Learning
     institution: FLACSO (Argentina)
     year: in progress
   - course: Linguistics
@@ -14,9 +14,11 @@ education:
 email: ""
 highlight_name: false
 interests:
-- Vocabulary Acquisition
+- Language Development
+- Vocabulary Production and Comprehension
 - Data Science for Education
-- Quantitative metholodogies
+- Quantitative Metholodogies
+- Corpus Linguistics
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
