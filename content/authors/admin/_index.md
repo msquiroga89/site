@@ -2,20 +2,20 @@
 bio: I research language acquisition. I'm looking to deepen my knowledge of statistic and data science with R/Rstudio.
 education:
   courses:
-  - course: Education
-#    institution: University of Buenos Aires (Argentina)
-#    year: in progress
+  - course: PhD in Education
+    institution: University of Buenos Aires (Argentina)
+    year: in progress
   - course: Cognitive Psychology and Learning
-#    institution: FLACSO (Argentina)
-#    year: in progress
+    institution: FLACSO (Argentina)
+    year: in progress
   - course: Linguistics
-#    institution: University of Buenos Aires (Argentina)
-#    year: 2017
+    institution: University of Buenos Aires (Argentina)
+    year: 2017
 email: ""
 highlight_name: false
 interests:
 - Vocabulary Acquisition
-- Sociocultural Differences
+- Data Science for Education
 - Quantitative metholodogies
 # organizations:
 # - name: CIIPME-CONICET
@@ -44,5 +44,5 @@ title: Macarena Quiroga
 
 I'm a psycholinguist by the University of Buenos Aires (Argentina). I'm currently a PhD student with a grant of the National Council of Scientific and Technological Research (CONICET), and a professor in the National University of Hurlingham (UNaHur). I'm writing my master's thesis about Cognitive Psychology and Learning (FLACSO) and in 2020 I've started my PhD in Education (UBA).
 
-My goal is to deepen my knowledge of statistics and data science with R/Rstudio.
+My goal is to deepen my knowledge of statistics and data science with R/Rstudio, with a particular focus on data science for education and for social justice.
 
