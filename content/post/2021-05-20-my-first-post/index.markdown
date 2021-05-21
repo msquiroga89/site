@@ -26,3 +26,20 @@ El pasado jueves 20/5 participé del Datatón Transfeminista sobre Datos Faltant
 
 ***
 
+Empezamos con una presentación general a cargo de [Ivana Feldfeber](https://twitter.com/ivanafeld), co-fundadora y directora general de DataGénero, donde charlamos acerca del encuadre general del proyecto. Luego, pasamos a las mesas específicas.
+
+En mi caso, yo me sumé a la mesa *Las chicas superpoderosas*. No soy especialista en política ni mucho menos en los tejes y manejes de las cámaras legislativas. Pero no puedo negar que hay algo de la dinámica que me llama la atención. Esta mesa estuvo liderada por [Carolina Glasserman Apicella](https://twitter.com/caroglassap): nos presentamos y elegimos un área. 
+
+Elegí el área de Congreso Nacional, por la sola razón de que conozco más nombres. Luego de charlar acerca de las distintas aristas del tema, dado que teníamos solo 50 minutos para trabajar, decidimos enfocarnos en la conformación de las comisiones permanentes dentro de la Cámara de Diputados. Nos hicimos las siguientes preguntas:
+* ¿Cuántas comisiones tienen presidentas o vicepresidentas mujeres?
+* ¿Qué cantidad de mujeres, de hombres y de disidencias tiene cada comisión? ¿Qué porcentaje del total conforman?
+* ¿En qué comisiones hay más cantidad de mujeres que de hombres y viceversa?
+
+A partir de la información disponible en el [sitio web oficial de la Cámara de Diputados](https://www.diputados.gov.ar/comisiones/index.html), pudimos confeccionar una base de datos.
+
+## armar la base de datos
+## estadísticos descriptivos + gráficos
+### diferencias estadísticas
+## análisis cualitativo: en qué comisiones hay más mujeres
+
+ideas conclu: diferencias de genero: las discusiones están generizadas. sesgo en la discusión legislativa. si no hay mujeres en otras comisiones, ¿cómo podemos aportar?
