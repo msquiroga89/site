@@ -37,6 +37,49 @@ Elegí el área de Congreso Nacional, por la sola razón de que conozco más nom
 
 A partir de la información disponible en el [sitio web oficial de la Cámara de Diputados](https://www.diputados.gov.ar/comisiones/index.html), pudimos confeccionar una base de datos.
 
+
+
+```r
+tibble(dipnac)
+```
+
+```
+## # A tibble: 46 x 10
+##      NUM COMISIONES         PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE MU~ VARONES
+##    <dbl> <chr>                    <dbl> <dbl>   <dbl>              <dbl>   <dbl>
+##  1     1 ASUNTOS CONSTITUC~           0    35      17               48.6      18
+##  2     2 LEGISLACION GENER~           1    31      15               48.4      16
+##  3     3 RELACIONES EXTERI~           0    43      17               39.5      26
+##  4     4 PRESUPUESTO Y HAC~           0    49      13               26.5      36
+##  5     5 EDUCACION                    1    35      24               68.6      11
+##  6     6 CIENCIA, TECNOLOG~           0    30      15               50        15
+##  7     7 CULTURA                      1    30      21               70         9
+##  8     8 JUSTICIA                     0    30      12               40        18
+##  9     9 PREVISIÓN Y SEGUR~           0    30      13               43.3      17
+## 10    10 ACCIÓN SOCIAL Y S~           0    45      25               55.6      20
+## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
+## #   DISIDENCIAS <lgl>, PORCENTAJE DE DISIDENCIAS <lgl>
+```
+
+La primera pregunta que podemos responder es: ¿qué pasa con las presidencias de las comisiones?
+
+```r
+val_lab(dipnac$PRESIDENCIA) <- make_labels("
+                                           0 Hombre
+                                           1 Mujer")
+ggplot(dipnac, aes(as.factor(PRESIDENCIA)))+
+  geom_bar(fill = c("#5F8685", "#E5E0A9", "#EDB4A2"))+
+  theme_minimal()+
+  labs(
+    title = "Cantidad de comisiones presididas por mujeres y por hombres",
+    caption = "Fuente: https://www.diputados.gov.ar",
+    x = NULL,
+    y = NULL
+  )
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+
 ## armar la base de datos
 ## estadísticos descriptivos + gráficos
 ### diferencias estadísticas

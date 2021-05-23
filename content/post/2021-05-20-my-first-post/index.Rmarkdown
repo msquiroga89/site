@@ -37,6 +37,38 @@ Elegí el área de Congreso Nacional, por la sola razón de que conozco más nom
 
 A partir de la información disponible en el [sitio web oficial de la Cámara de Diputados](https://www.diputados.gov.ar/comisiones/index.html), pudimos confeccionar una base de datos.
 
+```{r echo=FALSE, include=FALSE, results='hide'}
+library(googlesheets4)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+library(readxl)
+library(expss)
+dipnac <- read_sheet("https://docs.google.com/spreadsheets/d/1FwgJIDgD5COObM2uc0bVg2fk6YU5THD4Cj4xAjqRuNU/edit?usp=sharing")
+dipnac <-  dipnac %>% 
+  rename(NUM = ...1)
+```
+```{r}
+tibble(dipnac)
+```
+
+La primera pregunta que podemos responder es: ¿qué pasa con las presidencias de las comisiones?
+```{r}
+val_lab(dipnac$PRESIDENCIA) <- make_labels("
+                                           0 Hombre
+                                           1 Mujer")
+ggplot(dipnac, aes(as.factor(PRESIDENCIA)))+
+  geom_bar(fill = c("#5F8685", "#E5E0A9", "#EDB4A2"))+
+  theme_minimal()+
+  labs(
+    title = "Cantidad de comisiones presididas por mujeres y por hombres",
+    caption = "Fuente: https://www.diputados.gov.ar",
+    x = NULL,
+    y = NULL
+  )
+```
+
 ## armar la base de datos
 ## estadísticos descriptivos + gráficos
 ### diferencias estadísticas
