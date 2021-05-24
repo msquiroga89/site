@@ -15,7 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: true
+draft: false
 ---
 
 El pasado jueves 20/5 participé del Datatón Transfeminista sobre Datos Faltantes organizado por [DataGénero](https://www.datagenero.org/#/). El lema central fue *Sin igualdad de datos, no hay igualdad de género*. Para eso, se propusieron cuatro mesas:
@@ -61,28 +61,84 @@ tibble(dipnac)
 ## #   DISIDENCIAS <lgl>, PORCENTAJE DE DISIDENCIAS <lgl>
 ```
 
-La primera pregunta que podemos responder es: ¿qué pasa con las presidencias de las comisiones?
-
-```r
-val_lab(dipnac$PRESIDENCIA) <- make_labels("
-                                           0 Hombre
-                                           1 Mujer")
-ggplot(dipnac, aes(as.factor(PRESIDENCIA)))+
-  geom_bar(fill = c("#5F8685", "#E5E0A9", "#EDB4A2"))+
-  theme_minimal()+
-  labs(
-    title = "Cantidad de comisiones presididas por mujeres y por hombres",
-    caption = "Fuente: https://www.diputados.gov.ar",
-    x = NULL,
-    y = NULL
-  )
-```
-
+La primera pregunta que podemos responder es: **¿qué pasa con las presidencias de las comisiones?** La respuesta es que hay una mayor cantidad de comisiones presididas por hombres (26) que por mujeres (19), sin contar una comisión cuya presidencia no está especificada.
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
-## armar la base de datos
-## estadísticos descriptivos + gráficos
-### diferencias estadísticas
-## análisis cualitativo: en qué comisiones hay más mujeres
+Frente a esto, la segunda pregunta que podemos hacernos es **¿cuáles son las comisiones que tienen presidentas mujeres? ¿De qué asuntos se ocupan?**
 
-ideas conclu: diferencias de genero: las discusiones están generizadas. sesgo en la discusión legislativa. si no hay mujeres en otras comisiones, ¿cómo podemos aportar?
+
+```
+## # A tibble: 0 x 10
+## # ... with 10 variables: NUM <dbl>, COMISIONES <chr>, PRESIDENCIA <labelled>,
+## #   TOTAL <dbl>, MUJERES <dbl>, PORCENTAJE DE MUJERES <dbl>, VARONES <dbl>,
+## #   PORCENTAJE DE VARONES <dbl>, DISIDENCIAS <lgl>,
+## #   PORCENTAJE DE DISIDENCIAS <lgl>
+```
+A grandes rasgos podemos ver que las temáticas son muy variadas: comisiones de temáticas sociales (Educación, Cultura, Familia, niñez y juventud, De las personas mayores, Comisión de vivienda, Asuntos cooperativos, Discapacidad, Mujeres y diversidad), de economía y producción (Finanzas, Comercio, Economía, Minería), de asuntos jurídico-legislativos (Legislación General, Penal y del Trabajo, Juicio Político) y estatales (Asuntos Municipales, Intereses Marítimos y Seguridad Interior).
+
+La tercera pregunta que nos hacemos apunta a la composición de esas comisiones: **¿cuántos varones y cuántas mujeres componen cada una?**
+
+
+```
+## Warning: Removed 46 rows containing missing values (position_stack).
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+De las 46 comisiones, solo 11 tienen más mujeres que hombres en su composición. **¿Cómo se distribuye la presencia de mujeres en las comisiones?**
+
+
+```
+## # A tibble: 46 x 10
+##      NUM COMISIONES         PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE MU~ VARONES
+##    <dbl> <chr>              <labelled>  <dbl>   <dbl>              <dbl>   <dbl>
+##  1    11 FAMILIAS, NIÑEZ Y~ 1              31      28               90.3       3
+##  2    46 MUJERES Y DIVERSI~ 1              30      25               83.3       5
+##  3     7 CULTURA            1              30      21               70         9
+##  4     5 EDUCACION          1              35      24               68.6      11
+##  5    45 DISCAPACIDAD       1              30      20               66.7      10
+##  6    12 DE LAS PERSONAS M~ 1              31      20               64.5      11
+##  7    28 PETICIONES, PODER~ 0              31      19               61.3      12
+##  8    44 LIBERTAD DE EXPRE~ 0              31      18               58.1      13
+##  9    10 ACCIÓN SOCIAL Y S~ 0              45      25               55.6      20
+## 10    25 ASUNTOS MUNICIPAL~ 1              31      17               54.8      14
+## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
+## #   DISIDENCIAS <lgl>, PORCENTAJE DE DISIDENCIAS <lgl>
+```
+Al mirar cuáles son las comisiones que tienen más del 50% de mujeres en su composición, encontramos temáticas históricamente feminizadas: las niñeces, adolescencias y juventudes, el cuidado de las personas mayores y con discapacidades, la atención a la diversidad, cultura y educación. Si miramos el gráfico de forma invertida, la conclusión es similar:
+
+
+```
+## # A tibble: 46 x 10
+##      NUM COMISIONES          PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE M~ VARONES
+##    <dbl> <chr>               <labelled>  <dbl>   <dbl>             <dbl>   <dbl>
+##  1    15 DEFENSA NACIONAL     0             31       5              16.1      26
+##  2    23 TRANSPORTES          0             31       5              16.1      26
+##  3    16 OBRAS PUBLICAS      NA             31       7              22.6      24
+##  4    33 MINERÍA              1             30       7              23.3      23
+##  5    17 AGRICULTURA Y GANA~  0             35       9              25.7      26
+##  6    18 FINANZAS             1             31       8              25.8      23
+##  7    43 SEGURIDAD INTERIOR   1             31       8              25.8      23
+##  8     4 PRESUPUESTO Y HACI~  0             49      13              26.5      36
+##  9    20 COMERCIO             1             30       8              26.7      22
+## 10    26 INTERESES MARITIMO~  1             30       8              26.7      22
+## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
+## #   DISIDENCIAS <lgl>, PORCENTAJE DE DISIDENCIAS <lgl>
+```
+Las comisiones con menor cantidad de mujeres tratan temáticas como la organización militar y la seguridad interior, la infraestructura de transporte y de obrar públicas, y la producción minera, agropecuaria, las finanzas, el presupuesto y el comercio.
+
+La última pregunta que nos hacemos es **¿dónde están las disidencias en las comisiones?** Y la respuesta es unívoca:
+
+
+```r
+sum(dipnac$DISIDENCIAS)
+```
+
+```
+## [1] NA
+```
+La presencia de disidencias en las comisiones es **NA**. No hay registros de la presencia de disidencias dentro de las comisiones. Y como bien plantean desde DataGénero: los datos son personas y la presencia de datos oficiales dicen mucho sobre aquellas cuestiones sobre las cuales los organismos que los recopilan están interesados.
+
+
+***
+
+Este pequeño análisis descriptivo de la composición de las comisiones termina aquí. Hay mucho más por pensar, pero la clave está en ver que las discusiones siguen estando generizadas. El sesgo está presente: si no hay mujeres en las comisiones, ¿cómo podremos aportar a la discusión? ¿Qué pasa con la representatividad? ¿Qué efectos positivos o negativos tiene la apertura dada por la ley de paridad de género?
