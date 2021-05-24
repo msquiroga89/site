@@ -35,7 +35,7 @@ Elegí el área de Congreso Nacional, por la sola razón de que conozco más nom
 * ¿Qué cantidad de mujeres, de hombres y de disidencias tiene cada comisión? ¿Qué porcentaje del total conforman?
 * ¿En qué comisiones hay más cantidad de mujeres que de hombres y viceversa?
 
-A partir de la información disponible en el [sitio web oficial de la Cámara de Diputados](https://www.diputados.gov.ar/comisiones/index.html), pudimos confeccionar una base de datos.
+A partir de la información disponible en el [sitio web oficial de la Cámara de Diputados](https://www.diputados.gov.ar/comisiones/index.html), pudimos confeccionar [una base de datos](https://docs.google.com/spreadsheets/d/1FwgJIDgD5COObM2uc0bVg2fk6YU5THD4Cj4xAjqRuNU/edit?usp=sharing).
 
 ```{r echo=FALSE, include=FALSE, results='hide', error=FALSE, message=FALSE}
 library(googlesheets4)
