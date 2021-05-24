@@ -2,7 +2,7 @@
 title: Datatón - DataGénero
 author: 'Macarena Quiroga'
 date: '2021-05-20'
-slug: 2021-05-20-my-first-post
+slug: dataton
 categories: []
 tags: [datos]
 subtitle: 'Datatón Transfeminista sobre Datos Faltantes'
