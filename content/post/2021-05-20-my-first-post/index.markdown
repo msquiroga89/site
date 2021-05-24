@@ -2,9 +2,9 @@
 title: Datatón - DataGénero
 author: 'Macarena Quiroga'
 date: '2021-05-20'
-slug: dataton
+slug: 2021-05-20-my-first-post
 categories: []
-tags: []
+tags: [datos]
 subtitle: 'Datatón Transfeminista sobre Datos Faltantes'
 summary: ''
 authors: []
@@ -35,7 +35,7 @@ Elegí el área de Congreso Nacional, por la sola razón de que conozco más nom
 * ¿Qué cantidad de mujeres, de hombres y de disidencias tiene cada comisión? ¿Qué porcentaje del total conforman?
 * ¿En qué comisiones hay más cantidad de mujeres que de hombres y viceversa?
 
-A partir de la información disponible en el [sitio web oficial de la Cámara de Diputados](https://www.diputados.gov.ar/comisiones/index.html), pudimos confeccionar una base de datos.
+A partir de la información disponible en el [sitio web oficial de la Cámara de Diputados](https://www.diputados.gov.ar/comisiones/index.html), pudimos confeccionar [una base de datos](https://docs.google.com/spreadsheets/d/1FwgJIDgD5COObM2uc0bVg2fk6YU5THD4Cj4xAjqRuNU/edit?usp=sharing).
 
 
 
@@ -68,10 +68,29 @@ Frente a esto, la segunda pregunta que podemos hacernos es **¿cuáles son las c
 
 
 ```
-## # A tibble: 0 x 10
-## # ... with 10 variables: NUM <dbl>, COMISIONES <chr>, PRESIDENCIA <labelled>,
-## #   TOTAL <dbl>, MUJERES <dbl>, PORCENTAJE DE MUJERES <dbl>, VARONES <dbl>,
-## #   PORCENTAJE DE VARONES <dbl>, DISIDENCIAS <lgl>,
+## # A tibble: 19 x 10
+##      NUM COMISIONES          PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE M~ VARONES
+##    <dbl> <chr>               <labelled>  <dbl>   <dbl>             <dbl>   <dbl>
+##  1     2 LEGISLACION GENERAL 1              31      15              48.4      16
+##  2     5 EDUCACION           1              35      24              68.6      11
+##  3     7 CULTURA             1              30      21              70         9
+##  4    11 FAMILIAS, NIÑEZ Y ~ 1              31      28              90.3       3
+##  5    12 DE LAS PERSONAS MA~ 1              31      20              64.5      11
+##  6    13 LEGISLACION PENAL   1              30      13              43.3      17
+##  7    14 LEGISLACION DEL TR~ 1              31      15              48.4      16
+##  8    18 FINANZAS            1              31       8              25.8      23
+##  9    20 COMERCIO            1              30       8              26.7      22
+## 10    25 ASUNTOS MUNICIPALES 1              31      17              54.8      14
+## 11    26 INTERESES MARITIMO~ 1              30       8              26.7      22
+## 12    27 COMISIÓN DE VIVIEN~ 1              31      11              35.5      20
+## 13    29 JUICIO POLÍTICO     1              30      14              46.7      16
+## 14    32 ECONOMÍA            1              31      10              32.3      21
+## 15    33 MINERÍA             1              30       7              23.3      23
+## 16    39 ASUNTOS COOPERATIV~ 1              31      12              38.7      19
+## 17    43 SEGURIDAD INTERIOR  1              31       8              25.8      23
+## 18    45 DISCAPACIDAD        1              30      20              66.7      10
+## 19    46 MUJERES Y DIVERSID~ 1              30      25              83.3       5
+## # ... with 3 more variables: PORCENTAJE DE VARONES <dbl>, DISIDENCIAS <lgl>,
 ## #   PORCENTAJE DE DISIDENCIAS <lgl>
 ```
 A grandes rasgos podemos ver que las temáticas son muy variadas: comisiones de temáticas sociales (Educación, Cultura, Familia, niñez y juventud, De las personas mayores, Comisión de vivienda, Asuntos cooperativos, Discapacidad, Mujeres y diversidad), de economía y producción (Finanzas, Comercio, Economía, Minería), de asuntos jurídico-legislativos (Legislación General, Penal y del Trabajo, Juicio Político) y estatales (Asuntos Municipales, Intereses Marítimos y Seguridad Interior).
