@@ -15,5 +15,6 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+draft: true
 ---
 Esta es la primera publicación de mi sitio. Esperemos que haya tantas que esta quede en el olvido.
