@@ -15,7 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: false
+draft: true
 ---
 
 El pasado jueves 20/5 participé del Datatón Transfeminista sobre Datos Faltantes organizado por [DataGénero](https://www.datagenero.org/#/). El lema central fue *Sin igualdad de datos, no hay igualdad de género*. Para eso, se propusieron cuatro mesas:
