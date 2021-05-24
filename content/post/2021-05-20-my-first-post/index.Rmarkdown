@@ -74,7 +74,8 @@ sum(dipnac$PRESIDENCIA == "0", na.rm = TRUE)
 Frente a esto, la segunda pregunta que podemos hacernos es **¿cuáles son las comisiones que tienen presidentas mujeres? ¿De qué asuntos se ocupan?**
 
 ```{r, echo=FALSE}
-filter(dipnac, PRESIDENCIA == "1", error=FALSE, message=FALSE)
+dipnac$PRESIDENCIA <- as.numeric(dipnac$PRESIDENCIA)
+filter(dipnac, PRESIDENCIA == "1")
 ```
 A grandes rasgos podemos ver que las temáticas son muy variadas: comisiones de temáticas sociales (Educación, Cultura, Familia, niñez y juventud, De las personas mayores, Comisión de vivienda, Asuntos cooperativos, Discapacidad, Mujeres y diversidad), de economía y producción (Finanzas, Comercio, Economía, Minería), de asuntos jurídico-legislativos (Legislación General, Penal y del Trabajo, Juicio Político) y estatales (Asuntos Municipales, Intereses Marítimos y Seguridad Interior).
 
