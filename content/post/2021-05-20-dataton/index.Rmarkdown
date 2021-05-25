@@ -4,7 +4,11 @@ author: 'Macarena Quiroga'
 date: '2021-05-20'
 slug: dataton
 categories: []
-tags: [datos]
+tags:
+  - datos
+  - genero
+  - dataton
+  - rstats
 subtitle: 'Datatón Transfeminista sobre Datos Faltantes'
 summary: ''
 authors: []
@@ -15,7 +19,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-#draft: false
+draft: true
 ---
 
 El pasado jueves 20/5 participé del Datatón Transfeminista sobre Datos Faltantes organizado por [DataGénero](https://www.datagenero.org/#/). El lema central fue *Sin igualdad de datos, no hay igualdad de género*. Para eso, se propusieron cuatro mesas:
