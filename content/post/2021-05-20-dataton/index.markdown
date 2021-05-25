@@ -15,7 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: true
+#draft: false
 ---
 
 El pasado jueves 20/5 participé del Datatón Transfeminista sobre Datos Faltantes organizado por [DataGénero](https://www.datagenero.org/#/). El lema central fue *Sin igualdad de datos, no hay igualdad de género*. Para eso, se propusieron cuatro mesas:
@@ -161,3 +161,8 @@ La presencia de disidencias en las comisiones es **NA**. No hay registros de la 
 ***
 
 Este pequeño análisis descriptivo de la composición de las comisiones termina aquí. Hay mucho más por pensar, pero la clave está en ver que las discusiones siguen estando generizadas. El sesgo está presente: si no hay mujeres en las comisiones, ¿cómo podremos aportar a la discusión? ¿Qué pasa con la representatividad? ¿Qué efectos positivos o negativos tiene la apertura dada por la ley de paridad de género?
+
+Con estas cuestiones en mente, en las próximas publicaciones me haré las siguientes preguntas:
+1. ¿A qué partidos y bloques pertenecen las mujeres diputadas?
+2. ¿Cómo se distribuyen en las distintas comisiones? ¿Hay diputados y diputadas que circulan por las mismas comisiones?
+3. ¿Cuántas bancas se renuevan en el próximo mandato? ¿Cuántas de ellas son mujeres?
