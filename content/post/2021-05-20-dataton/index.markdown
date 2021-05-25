@@ -97,11 +97,6 @@ A grandes rasgos podemos ver que las temáticas son muy variadas: comisiones de 
 
 La tercera pregunta que nos hacemos apunta a la composición de esas comisiones: **¿cuántos varones y cuántas mujeres componen cada una?**
 
-
-```
-## Warning: Removed 46 rows containing missing values (position_stack).
-```
-
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 De las 46 comisiones, solo 11 tienen más mujeres que hombres en su composición. **¿Cómo se distribuye la presencia de mujeres en las comisiones?**
 
@@ -155,7 +150,7 @@ sum(dipnac$DISIDENCIAS)
 ```
 ## [1] NA
 ```
-La presencia de disidencias en las comisiones es **NA**. No hay registros de la presencia de disidencias dentro de las comisiones. Y como bien plantean desde DataGénero: los datos son personas y la presencia de datos oficiales dicen mucho sobre aquellas cuestiones sobre las cuales los organismos que los recopilan están interesados.
+La presencia de disidencias en las comisiones es **NA** ("Not Available": el dato no está disponible). No hay registros de la presencia de disidencias dentro de las comisiones. Y como bien plantean desde DataGénero: los datos son personas y la presencia de datos oficiales dicen mucho sobre aquellas cuestiones sobre las cuales los organismos que los recopilan están interesados.
 
 
 ***
