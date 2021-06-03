@@ -16,7 +16,7 @@ highlight_name: false
 interests:
 - Adquisición del lenguaje y desarrollo cognitivo
 - Comprensión y producción de vocabulario
-- Ciencia de datos para Educadores
+- Ciencia de datos y educación
 - Metodologías cuantitativas
 - Lingüística de corpus
 # organizations:
