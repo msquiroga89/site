@@ -1,6 +1,5 @@
 ---
 bio: Investigo la adquisición del lenguaje. Estudio estadística y ciencia de datos con R/Rstudio.
-and data science with R/Rstudio.
 education:
   courses:
   - course: Doctorado en Educación
