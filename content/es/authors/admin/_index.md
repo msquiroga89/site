@@ -1,28 +1,29 @@
 ---
-bio: I research language acquisition. I'm looking to deepen my knowledge of statistic and data science with R/Rstudio.
+bio: Investigo la adquisición del lenguaje. Estudio estadística y ciencia de datos con R/Rstudio.
+and data science with R/Rstudio.
 education:
   courses:
-  - course: PhD in Education
-    institution: University of Buenos Aires (Argentina)
-    year: in progress
-  - course: Master in Cognitive Psychology and Learning
+  - course: Doctorado en Educación
+    institution: Universidad Buenos Aires (Argentina)
+    year: en curso
+  - course: Maestría en Psicología Cognitiva y Aprendizaje
     institution: FLACSO (Argentina)
-    year: in progress
-  - course: Linguistics
-    institution: University of Buenos Aires (Argentina)
+    year: en curso
+  - course: Lingüística
+    institution: Universidad de Buenos Aires (Argentina)
     year: 2017
 email: ""
 highlight_name: false
 interests:
-- Language Development
-- Vocabulary Production and Comprehension
-- Data Science for Education
-- Quantitative Metholodogies
-- Corpus Linguistics
+- Adquisición del lenguaje y desarrollo cognitivo
+- Comprensión y producción de vocabulario
+- Ciencia de datos para Educadores
+- Metodologías cuantitativas
+- Lingüística de corpus
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
-role: PhD student
+role: Becaria doctoral
 social:
 - icon: envelope
   icon_pack: fas
@@ -44,7 +45,6 @@ superuser: true
 title: Macarena Quiroga
 ---
 
-I'm a psycholinguist from Buenos Aires, Argentina, researching language development, specifically child vocabulary related to input. I've studied cognitive psychology and education, and my current goal is to deepen my knowledge of statistics and data science with R/Rstudio, with a particular focus on data science for education and for social justice.
+Soy psicolingüista de Buenos Aires, Argentina, e investigo adquisición del lenguaje, específicamente el vocabulario infantil y su relación con el input adulto. Estudié psicología cognitiva y educación, y actualmente busco profundizar mis conocimientos de estadística y de ciencia de datos con R/Rstudio.
 
-In this site I will document my learning journey. I will mostly write in Spanish,
-but hopefully you will find some other posts in English, just to keep on learning.
+En este sitio voy a documentar mi proceso de aprendizaje. Escribiré mayormente en español, pero también habrá algunas publicaciones en inglés para no perder la práctica.
