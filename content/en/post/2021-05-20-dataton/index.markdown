@@ -9,6 +9,7 @@ tags:
   - genero
   - dataton
   - rstats
+  - español
 subtitle: 'Datatón Transfeminista sobre Datos Faltantes'
 summary: ''
 authors: []

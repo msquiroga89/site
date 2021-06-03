@@ -44,6 +44,6 @@ superuser: true
 title: Macarena Quiroga
 ---
 
-Soy psicolingüista de Buenos Aires, Argentina, e investigo adquisición del lenguaje, específicamente el vocabulario infantil y su relación con el input adulto. Estudié psicología cognitiva y educación, y actualmente busco profundizar mis conocimientos de estadística y de ciencia de datos con R/Rstudio.
+Soy psicolingüista, vivo en Buenos Aires, Argentina, e investigo adquisición del lenguaje, específicamente el vocabulario infantil y su relación con el input adulto. Estudié psicología cognitiva y educación, y actualmente busco profundizar mis conocimientos de estadística y de ciencia de datos con R/Rstudio.
 
 En este sitio voy a documentar mi proceso de aprendizaje. Escribiré mayormente en español, pero también habrá algunas publicaciones en inglés para no perder la práctica.
