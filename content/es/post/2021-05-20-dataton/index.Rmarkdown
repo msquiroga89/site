@@ -1,0 +1,139 @@
+---
+title: Datatón - DataGénero
+author: 'Macarena Quiroga'
+date: '2021-05-20'
+slug: dataton
+categories: []
+tags:
+  - datos
+  - genero
+  - dataton
+  - rstats
+subtitle: 'Datatón Transfeminista sobre Datos Faltantes'
+summary: ''
+authors: []
+lastmod: '2021-05-20T21:06:34-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+# draft: false
+---
+
+El pasado jueves 20/5 participé del Datatón Transfeminista sobre Datos Faltantes organizado por [DataGénero](https://www.datagenero.org/#/). El lema central fue *Sin igualdad de datos, no hay igualdad de género*. Para eso, se propusieron cuatro mesas:
+1. "Las chicas superpoderosas": esta mesa se focalizó en la participación de las mujeres en el poder legislativo. Se dividó el trabajo en tres áreas: Congreso Nacional, Congresos Provinciales y panorama regional de América Latina.
+2. "Faltamos nosotres, campeón": esta mesa apuntó a visibilizar la ausencia de datos oficiales sobre la población trans y no binaria. Dentro de las líneas de trabajo se plantea el impacto que esto puede tener en las vidas de las personas que pertenecen a estos grupos, la identificación de los datos faltantes y la definición de un plan de trabajo para resolver esta problemática.
+3. "En cualquier lugar": esta mesa se preguntó por el acceso a la información sobre los derechos sexuales y reproductivos. Como objetivo, se propusieron caracterizar los indicadores de la cantidad y la calidad de este acceso y su cumplimiento, el procesamiento de los datos existentes y analizar la situación regional de América Latina.
+4. "Poder, ¿Poder? Poder Judicial": esta mesa planteó el debate sobre el rol que tiene el Poder Judicial en nuestras vidas y cómo impacta su federalismo en las problemáticas específicas de mujeres y personas LGBTI+. Nuevamente, el foco central está en preguntarnos la cantidad y la calidad de los datos disponibles, y cómo apuntar a pensar los datos (y su falta) desde una perspectiva de género.
+
+***
+
+Empezamos con una presentación general a cargo de [Ivana Feldfeber](https://twitter.com/ivanafeld), co-fundadora y directora general de DataGénero, donde charlamos acerca del encuadre general del proyecto. Luego, pasamos a las mesas específicas.
+
+En mi caso, yo me sumé a la mesa *Las chicas superpoderosas*. No soy especialista en política ni mucho menos en los tejes y manejes de las cámaras legislativas. Pero no puedo negar que hay algo de la dinámica que me llama la atención. Esta mesa estuvo liderada por [Carolina Glasserman Apicella](https://twitter.com/caroglassap): nos presentamos y elegimos un área. 
+
+Elegí el área de Congreso Nacional, por la sola razón de que conozco más nombres. Luego de charlar acerca de las distintas aristas del tema, dado que teníamos solo 50 minutos para trabajar, decidimos enfocarnos en la conformación de las comisiones permanentes dentro de la Cámara de Diputados. Nos hicimos las siguientes preguntas:
+* ¿Cuántas comisiones tienen presidentas o vicepresidentas mujeres?
+* ¿Qué cantidad de mujeres, de hombres y de disidencias tiene cada comisión? ¿Qué porcentaje del total conforman?
+* ¿En qué comisiones hay más cantidad de mujeres que de hombres y viceversa?
+
+A partir de la información disponible en el [sitio web oficial de la Cámara de Diputados](https://www.diputados.gov.ar/comisiones/index.html), pudimos confeccionar [una base de datos](https://docs.google.com/spreadsheets/d/1FwgJIDgD5COObM2uc0bVg2fk6YU5THD4Cj4xAjqRuNU/edit?usp=sharing).
+
+```{r echo=FALSE, include=FALSE, results='hide', error=FALSE, message=FALSE}
+library(googlesheets4)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+library(readxl)
+library(expss)
+dipnac <- read_sheet("https://docs.google.com/spreadsheets/d/1FwgJIDgD5COObM2uc0bVg2fk6YU5THD4Cj4xAjqRuNU/edit?usp=sharing")
+dipnac <-  dipnac %>% 
+  rename(NUM = ...1)
+```
+```{r}
+tibble(dipnac)
+```
+
+La primera pregunta que podemos responder es: **¿qué pasa con las presidencias de las comisiones?** La respuesta es que hay una mayor cantidad de comisiones presididas por hombres (26) que por mujeres (19), sin contar una comisión cuya presidencia no está especificada.
+```{r, results='hide', echo=FALSE, error=FALSE, message=FALSE}
+val_lab(dipnac$PRESIDENCIA) <- make_labels("
+                                           0 Hombre
+                                           1 Mujer")
+ggplot(dipnac, aes(as.factor(PRESIDENCIA)))+
+  geom_bar(fill = c("#5F8685", "#E5E0A9", "#EDB4A2"))+
+  theme_minimal()+
+  labs(
+    title = "Cantidad de comisiones presididas por mujeres y por hombres",
+    caption = "Fuente: https://www.diputados.gov.ar",
+    x = NULL,
+    y = NULL
+  )
+sum(dipnac$PRESIDENCIA == "1", na.rm = TRUE)
+sum(dipnac$PRESIDENCIA == "0", na.rm = TRUE)
+```
+
+Frente a esto, la segunda pregunta que podemos hacernos es **¿cuáles son las comisiones que tienen presidentas mujeres? ¿De qué asuntos se ocupan?**
+
+```{r, echo=FALSE}
+dipnac$PRESIDENCIA <- as.numeric(dipnac$PRESIDENCIA)
+filter(dipnac, PRESIDENCIA == "1")
+```
+A grandes rasgos podemos ver que las temáticas son muy variadas: comisiones de temáticas sociales (Educación, Cultura, Familia, niñez y juventud, De las personas mayores, Comisión de vivienda, Asuntos cooperativos, Discapacidad, Mujeres y diversidad), de economía y producción (Finanzas, Comercio, Economía, Minería), de asuntos jurídico-legislativos (Legislación General, Penal y del Trabajo, Juicio Político) y estatales (Asuntos Municipales, Intereses Marítimos y Seguridad Interior).
+
+La tercera pregunta que nos hacemos apunta a la composición de esas comisiones: **¿cuántos varones y cuántas mujeres componen cada una?**
+
+```{r, echo=FALSE, results='hide', error=FALSE, message=FALSE, warning=FALSE}
+dipnac_long <- dipnac %>% 
+  pivot_longer(cols = c(5, 7, 9),
+               names_to = "Integrantes",
+               values_to = "Cantidad")
+ggplot(dipnac_long,
+       aes(x=COMISIONES, y=Cantidad, fill=Integrantes))+
+  geom_bar(position="fill", stat="identity")+
+  geom_hline(yintercept = 0.50, linetype="dashed")+
+  labs(
+    title = "Composición de las comisiones",
+    caption = "Fuente: https://www.diputados.gov.ar",
+    x = NULL,
+    y = NULL
+  )+
+  theme(
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank()
+  )+
+  scale_fill_manual(values = c("#E5E0A9","#5F8685"))
+  
+```
+De las 46 comisiones, solo 11 tienen más mujeres que hombres en su composición. **¿Cómo se distribuye la presencia de mujeres en las comisiones?**
+
+```{r, echo=FALSE}
+dipnac %>% 
+  arrange(desc(`PORCENTAJE DE MUJERES`))
+```
+Al mirar cuáles son las comisiones que tienen más del 50% de mujeres en su composición, encontramos temáticas históricamente feminizadas: las niñeces, adolescencias y juventudes, el cuidado de las personas mayores y con discapacidades, la atención a la diversidad, cultura y educación. Si miramos el gráfico de forma invertida, la conclusión es similar:
+
+```{r, echo=FALSE}
+dipnac %>% 
+  arrange(`PORCENTAJE DE MUJERES`)
+```
+Las comisiones con menor cantidad de mujeres tratan temáticas como la organización militar y la seguridad interior, la infraestructura de transporte y de obrar públicas, y la producción minera, agropecuaria, las finanzas, el presupuesto y el comercio.
+
+La última pregunta que nos hacemos es **¿dónde están las disidencias en las comisiones?** Y la respuesta es unívoca:
+
+```{r}
+sum(dipnac$DISIDENCIAS)
+```
+La presencia de disidencias en las comisiones es **NA** ("Not Available": el dato no está disponible). No hay registros de la presencia de disidencias dentro de las comisiones. Y como bien plantean desde DataGénero: los datos son personas y la presencia de datos oficiales dicen mucho sobre aquellas cuestiones sobre las cuales los organismos que los recopilan están interesados.
+
+
+***
+
+Este pequeño análisis descriptivo de la composición de las comisiones termina aquí. Hay mucho más por pensar, pero la clave está en ver que las discusiones siguen estando generizadas. El sesgo está presente: si no hay mujeres en las comisiones, ¿cómo podremos aportar a la discusión? ¿Qué pasa con la representatividad? ¿Qué efectos positivos o negativos tiene la apertura dada por la ley de paridad de género?
+
+Con estas cuestiones en mente, en las próximas publicaciones me haré las siguientes preguntas:
+1. ¿A qué partidos y bloques pertenecen las mujeres diputadas?
+2. ¿Cómo se distribuyen en las distintas comisiones? ¿Hay diputados y diputadas que circulan por las mismas comisiones?
+3. ¿Cuántas bancas se renuevan en el próximo mandato? ¿Cuántas de ellas son mujeres?
