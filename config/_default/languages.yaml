@@ -1,19 +1,18 @@
-# Languages
-#   Create a section for each of your site's languages.
-#   Documentation: https://wowchemy.com/docs/guide/language/
-
-defaultContentLanguage: es
-# Default language
-en:
-  languageCode: en-us
-  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  contentDir: content/en
-
-# Uncomment the lines below to configure your website in a second language.
-es:
-  languageCode: es
-  contentDir: content/es
-  title: Macarena Quiroga
+# # Languages
+# #   Create a section for each of your site's languages.
+# #   Documentation: https://wowchemy.com/docs/guide/language/
+# 
+# # Default language
+# en:
+#   languageCode: en-us
+#   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
+#   contentDir: content/en
+# 
+# # Uncomment the lines below to configure your website in a second language.
+# es:
+#   languageCode: es
+#   contentDir: content/es
+#   title: Macarena Quiroga
 #  params:
 #    description: Site description in Chinese...
 #  menu:
@@ -21,3 +20,14 @@ es:
 #      - name: 传
 #        url: '#about'
 #        weight: 1
+
+
+  [en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 1
+  
+  [es]
+    contentDir = "content/es"
+    languageName = "Español"
+    weight = 2
