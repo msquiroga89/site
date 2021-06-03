@@ -44,8 +44,7 @@ superuser: true
 title: Macarena Quiroga
 ---
 
-I'm a psycholinguist from Buenos Aires, Argentina, researching language development, specifically child vocabulary related to input. I've studied cognitive psychology and education, and
-my current goal is to deepen my knowledge of statistics and data science with R/Rstudio, with a particular focus on data science for education and for social justice.
+I'm a psycholinguist from Buenos Aires, Argentina, researching language development, specifically child vocabulary related to input. I've studied cognitive psychology and education, and my current goal is to deepen my knowledge of statistics and data science with R/Rstudio, with a particular focus on data science for education and for social justice.
 
 In this site I will document my learning journey. I will mostly write in Spanish,
 but hopefully you will find some other posts in English, just to keep on learning.
