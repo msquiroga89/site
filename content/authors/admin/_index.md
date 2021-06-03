@@ -44,7 +44,8 @@ superuser: true
 title: Macarena Quiroga
 ---
 
-I'm a psycholinguist by the University of Buenos Aires (Argentina). I'm currently a PhD student with a grant of the National Council of Scientific and Technological Research (CONICET), and a professor in the National University of Hurlingham (UNaHur). I'm writing my master's thesis about Cognitive Psychology and Learning (FLACSO) and in 2020 I've started my PhD in Education (UBA).
+I'm a psycholinguist from Buenos Aires, Argentina, researching language development, specifically child vocabulary related to input. I've studied cognitive psychology and education, and
+my current goal is to deepen my knowledge of statistics and data science with R/Rstudio, with a particular focus on data science for education and for social justice.
 
-My goal is to deepen my knowledge of statistics and data science with R/Rstudio, with a particular focus on data science for education and for social justice.
-
+In this site I will document my learning journey. I will mostly write in Spanish,
+but hopefully you will find some other posts in English, just to keep on learning.
