@@ -11,7 +11,7 @@ tags:
   - rstats
   - español
 subtitle: 'Datatón Transfeminista sobre Datos Faltantes'
-summary: ''
+summary: 'Reseña de mi participación en el evento organizado por DataGénero.'
 authors: []
 lastmod: '2021-05-20T21:06:34-03:00'
 featured: no
