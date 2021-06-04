@@ -1,0 +1,23 @@
+---
+title: Recursos útiles para aprender R/Rstudio
+author: ''
+date: '2021-06-04'
+slug: recursos-utiles-para-aprender-r-rstudio
+categories: []
+tags: 
+- rstats
+- blogs 
+- english
+subtitle: 'Actualizado al 6 de junio de 2021'
+summary: 'Esto es una colección de recursos útiles que estuve juntando desde que empecé a aprender R/Rstudio.'
+authors: []
+lastmod: '2021-06-04T07:58:35-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+draft: true
+---
+(link)
