@@ -1,0 +1,10 @@
+---
+title: Recursos
+menu:
+  resource:
+    parent: Recursos
+type: docs
+weight: -1
+---
+
+En esta sección voy a incluir distintos tipos de recursos útiles para aprender R: links que fui recolectando y mis propias anotaciones sobre los paquetes que incorporo.
