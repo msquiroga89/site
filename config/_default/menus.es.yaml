@@ -10,6 +10,9 @@ main:
   - name: Artículos
     url: '#posts'
     weight: 20
+  - name: Recursos
+    url: '#Recursos'
+    weight: 80
 #  - name: Projects
 #    url: '#projects'
 #    weight: 30
