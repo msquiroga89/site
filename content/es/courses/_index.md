@@ -2,8 +2,10 @@
 header:
   caption: ""
   image: ""
-title: Courses
-type: page
+title: Recursos útiles
+summary: En esta sección encontrarán mi recopilación personal de recursos útiles para aprender R/Rstudio, estadística y similares.
+type: book
+weight: -1
 ---
 
-I teach the following courses:
+En esta sección encontrarán mi recopilación personal de recursos útiles para aprender R/Rstudio, estadística y similares.
