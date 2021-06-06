@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Macarena Quiroga</title>
+    <link>macarenaquiroga.netlify.app/</link>
+      <atom:link href="macarenaquiroga.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <description>Macarena Quiroga</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/macarenaquiroga.netlify.app/media/icon_hu663b3345a4e19f2cbd1c27fe4eae8279_20867_512x512_fill_lanczos_center_2.png</url>
+      <title>Macarena Quiroga</title>
+      <link>macarenaquiroga.netlify.app/</link>
+    </image>
+    
+    <item>
+      <title>Python basics</title>
+      <link>macarenaquiroga.netlify.app/courses/example/python/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/courses/example/python/</guid>
+      <description>&lt;p&gt;Build a foundation in Python.&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
+&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/rfscVS0vtbw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary&gt;What is the difference between lists and tuples?&lt;/summary&gt;
+  &lt;p&gt;&lt;p&gt;Lists&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lists are mutable - they can be changed&lt;/li&gt;
+&lt;li&gt;Slower than tuples&lt;/li&gt;
+&lt;li&gt;Syntax: &lt;code&gt;a_list = [1, 2.0, &#39;Hello world&#39;]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tuples&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tuples are immutable - they can&amp;rsquo;t be changed&lt;/li&gt;
+&lt;li&gt;Tuples are faster than lists&lt;/li&gt;
+&lt;li&gt;Syntax: &lt;code&gt;a_tuple = (1, 2.0, &#39;Hello world&#39;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-3&#34;&gt;
+  &lt;summary&gt;Is Python case-sensitive?&lt;/summary&gt;
+  &lt;p&gt;Yes&lt;/p&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>Visualization</title>
+      <link>macarenaquiroga.netlify.app/courses/example/visualization/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/courses/example/visualization/</guid>
+      <description>&lt;p&gt;Learn how to visualize data with Plotly.&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
+&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/hSPmj7mK6ng&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary&gt;When is a heatmap useful?&lt;/summary&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-3&#34;&gt;
+  &lt;summary&gt;Write Plotly code to render a bar chart&lt;/summary&gt;
+  &lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import plotly.express as px
+data_canada = px.data.gapminder().query(&amp;quot;country == &#39;Canada&#39;&amp;quot;)
+fig = px.bar(data_canada, x=&#39;year&#39;, y=&#39;pop&#39;)
+fig.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/p&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>macarenaquiroga.netlify.app/courses/example/stats/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/courses/example/stats/</guid>
+      <description>&lt;p&gt;Introduction to statistics for data science.&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
+&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
+&lt;p&gt;The general form of the &lt;strong&gt;normal&lt;/strong&gt; probability density function is:&lt;/p&gt;
+&lt;p&gt;$$
+f(x) = \frac{1}{\sigma \sqrt{2\pi} } e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    The parameter $\mu$ is the mean or expectation of the distribution.
+$\sigma$ is its standard deviation.
+The variance of the distribution is $\sigma^{2}$.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary&gt;What is the parameter $\mu$?&lt;/summary&gt;
+  &lt;p&gt;The parameter $\mu$ is the mean or expectation of the distribution.&lt;/p&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>Datatón - DataGénero</title>
+      <link>macarenaquiroga.netlify.app/post/dataton/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/post/dataton/</guid>
+      <description>&lt;p&gt;El pasado jueves 20/5 participé del Datatón Transfeminista sobre Datos Faltantes organizado por &lt;a href=&#34;https://www.datagenero.org/#/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DataGénero&lt;/a&gt;. El lema central fue &lt;em&gt;Sin igualdad de datos, no hay igualdad de género&lt;/em&gt;. Para eso, se propusieron cuatro mesas:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;ldquo;Las chicas superpoderosas&amp;rdquo;: esta mesa se focalizó en la participación de las mujeres en el poder legislativo. Se dividó el trabajo en tres áreas: Congreso Nacional, Congresos Provinciales y panorama regional de América Latina.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Faltamos nosotres, campeón&amp;rdquo;: esta mesa apuntó a visibilizar la ausencia de datos oficiales sobre la población trans y no binaria. Dentro de las líneas de trabajo se plantea el impacto que esto puede tener en las vidas de las personas que pertenecen a estos grupos, la identificación de los datos faltantes y la definición de un plan de trabajo para resolver esta problemática.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;En cualquier lugar&amp;rdquo;: esta mesa se preguntó por el acceso a la información sobre los derechos sexuales y reproductivos. Como objetivo, se propusieron caracterizar los indicadores de la cantidad y la calidad de este acceso y su cumplimiento, el procesamiento de los datos existentes y analizar la situación regional de América Latina.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Poder, ¿Poder? Poder Judicial&amp;rdquo;: esta mesa planteó el debate sobre el rol que tiene el Poder Judicial en nuestras vidas y cómo impacta su federalismo en las problemáticas específicas de mujeres y personas LGBTI+. Nuevamente, el foco central está en preguntarnos la cantidad y la calidad de los datos disponibles, y cómo apuntar a pensar los datos (y su falta) desde una perspectiva de género.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;Empezamos con una presentación general a cargo de &lt;a href=&#34;https://twitter.com/ivanafeld&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ivana Feldfeber&lt;/a&gt;, co-fundadora y directora general de DataGénero, donde charlamos acerca del encuadre general del proyecto. Luego, pasamos a las mesas específicas.&lt;/p&gt;
+&lt;p&gt;En mi caso, yo me sumé a la mesa &lt;em&gt;Las chicas superpoderosas&lt;/em&gt;. No soy especialista en política ni mucho menos en los tejes y manejes de las cámaras legislativas. Pero no puedo negar que hay algo de la dinámica que me llama la atención. Esta mesa estuvo liderada por &lt;a href=&#34;https://twitter.com/caroglassap&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Carolina Glasserman Apicella&lt;/a&gt;: nos presentamos y elegimos un área.&lt;/p&gt;
+&lt;p&gt;Elegí el área de Congreso Nacional, por la sola razón de que conozco más nombres. Luego de charlar acerca de las distintas aristas del tema, dado que teníamos solo 50 minutos para trabajar, decidimos enfocarnos en la conformación de las comisiones permanentes dentro de la Cámara de Diputados. Nos hicimos las siguientes preguntas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;¿Cuántas comisiones tienen presidentas o vicepresidentas mujeres?&lt;/li&gt;
+&lt;li&gt;¿Qué cantidad de mujeres, de hombres y de disidencias tiene cada comisión? ¿Qué porcentaje del total conforman?&lt;/li&gt;
+&lt;li&gt;¿En qué comisiones hay más cantidad de mujeres que de hombres y viceversa?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A partir de la información disponible en el &lt;a href=&#34;https://www.diputados.gov.ar/comisiones/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sitio web oficial de la Cámara de Diputados&lt;/a&gt;, pudimos confeccionar &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1FwgJIDgD5COObM2uc0bVg2fk6YU5THD4Cj4xAjqRuNU/edit?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;una base de datos&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tibble(dipnac)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 46 x 10
+##      NUM COMISIONES         PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE MU~ VARONES
+##    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;                    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;              &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;
+##  1     1 ASUNTOS CONSTITUC~           0    35      17               48.6      18
+##  2     2 LEGISLACION GENER~           1    31      15               48.4      16
+##  3     3 RELACIONES EXTERI~           0    43      17               39.5      26
+##  4     4 PRESUPUESTO Y HAC~           0    49      13               26.5      36
+##  5     5 EDUCACION                    1    35      24               68.6      11
+##  6     6 CIENCIA, TECNOLOG~           0    30      15               50        15
+##  7     7 CULTURA                      1    30      21               70         9
+##  8     8 JUSTICIA                     0    30      12               40        18
+##  9     9 PREVISIÓN Y SEGUR~           0    30      13               43.3      17
+## 10    10 ACCIÓN SOCIAL Y S~           0    45      25               55.6      20
+## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES &amp;lt;dbl&amp;gt;,
+## #   DISIDENCIAS &amp;lt;lgl&amp;gt;, PORCENTAJE DE DISIDENCIAS &amp;lt;lgl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;La primera pregunta que podemos responder es: &lt;strong&gt;¿qué pasa con las presidencias de las comisiones?&lt;/strong&gt; La respuesta es que hay una mayor cantidad de comisiones presididas por hombres (26) que por mujeres (19), sin contar una comisión cuya presidencia no está especificada.
+&lt;img src=&#34;macarenaquiroga.netlify.app/post/dataton/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Frente a esto, la segunda pregunta que podemos hacernos es &lt;strong&gt;¿cuáles son las comisiones que tienen presidentas mujeres? ¿De qué asuntos se ocupan?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 19 x 10
+##      NUM COMISIONES          PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE M~ VARONES
+##    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;               &amp;lt;labelled&amp;gt;  &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;             &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;
+##  1     2 LEGISLACION GENERAL 1              31      15              48.4      16
+##  2     5 EDUCACION           1              35      24              68.6      11
+##  3     7 CULTURA             1              30      21              70         9
+##  4    11 FAMILIAS, NIÑEZ Y ~ 1              31      28              90.3       3
+##  5    12 DE LAS PERSONAS MA~ 1              31      20              64.5      11
+##  6    13 LEGISLACION PENAL   1              30      13              43.3      17
+##  7    14 LEGISLACION DEL TR~ 1              31      15              48.4      16
+##  8    18 FINANZAS            1              31       8              25.8      23
+##  9    20 COMERCIO            1              30       8              26.7      22
+## 10    25 ASUNTOS MUNICIPALES 1              31      17              54.8      14
+## 11    26 INTERESES MARITIMO~ 1              30       8              26.7      22
+## 12    27 COMISIÓN DE VIVIEN~ 1              31      11              35.5      20
+## 13    29 JUICIO POLÍTICO     1              30      14              46.7      16
+## 14    32 ECONOMÍA            1              31      10              32.3      21
+## 15    33 MINERÍA             1              30       7              23.3      23
+## 16    39 ASUNTOS COOPERATIV~ 1              31      12              38.7      19
+## 17    43 SEGURIDAD INTERIOR  1              31       8              25.8      23
+## 18    45 DISCAPACIDAD        1              30      20              66.7      10
+## 19    46 MUJERES Y DIVERSID~ 1              30      25              83.3       5
+## # ... with 3 more variables: PORCENTAJE DE VARONES &amp;lt;dbl&amp;gt;, DISIDENCIAS &amp;lt;lgl&amp;gt;,
+## #   PORCENTAJE DE DISIDENCIAS &amp;lt;lgl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A grandes rasgos podemos ver que las temáticas son muy variadas: comisiones de temáticas sociales (Educación, Cultura, Familia, niñez y juventud, De las personas mayores, Comisión de vivienda, Asuntos cooperativos, Discapacidad, Mujeres y diversidad), de economía y producción (Finanzas, Comercio, Economía, Minería), de asuntos jurídico-legislativos (Legislación General, Penal y del Trabajo, Juicio Político) y estatales (Asuntos Municipales, Intereses Marítimos y Seguridad Interior).&lt;/p&gt;
+&lt;p&gt;La tercera pregunta que nos hacemos apunta a la composición de esas comisiones: &lt;strong&gt;¿cuántos varones y cuántas mujeres componen cada una?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;macarenaquiroga.netlify.app/post/dataton/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;
+De las 46 comisiones, solo 11 tienen más mujeres que hombres en su composición. &lt;strong&gt;¿Cómo se distribuye la presencia de mujeres en las comisiones?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 46 x 10
+##      NUM COMISIONES         PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE MU~ VARONES
+##    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;labelled&amp;gt;  &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;              &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;
+##  1    11 FAMILIAS, NIÑEZ Y~ 1              31      28               90.3       3
+##  2    46 MUJERES Y DIVERSI~ 1              30      25               83.3       5
+##  3     7 CULTURA            1              30      21               70         9
+##  4     5 EDUCACION          1              35      24               68.6      11
+##  5    45 DISCAPACIDAD       1              30      20               66.7      10
+##  6    12 DE LAS PERSONAS M~ 1              31      20               64.5      11
+##  7    28 PETICIONES, PODER~ 0              31      19               61.3      12
+##  8    44 LIBERTAD DE EXPRE~ 0              31      18               58.1      13
+##  9    10 ACCIÓN SOCIAL Y S~ 0              45      25               55.6      20
+## 10    25 ASUNTOS MUNICIPAL~ 1              31      17               54.8      14
+## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES &amp;lt;dbl&amp;gt;,
+## #   DISIDENCIAS &amp;lt;lgl&amp;gt;, PORCENTAJE DE DISIDENCIAS &amp;lt;lgl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Al mirar cuáles son las comisiones que tienen más del 50% de mujeres en su composición, encontramos temáticas históricamente feminizadas: las niñeces, adolescencias y juventudes, el cuidado de las personas mayores y con discapacidades, la atención a la diversidad, cultura y educación. Si miramos el gráfico de forma invertida, la conclusión es similar:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 46 x 10
+##      NUM COMISIONES          PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE M~ VARONES
+##    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;               &amp;lt;labelled&amp;gt;  &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;             &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt;
+##  1    15 DEFENSA NACIONAL     0             31       5              16.1      26
+##  2    23 TRANSPORTES          0             31       5              16.1      26
+##  3    16 OBRAS PUBLICAS      NA             31       7              22.6      24
+##  4    33 MINERÍA              1             30       7              23.3      23
+##  5    17 AGRICULTURA Y GANA~  0             35       9              25.7      26
+##  6    18 FINANZAS             1             31       8              25.8      23
+##  7    43 SEGURIDAD INTERIOR   1             31       8              25.8      23
+##  8     4 PRESUPUESTO Y HACI~  0             49      13              26.5      36
+##  9    20 COMERCIO             1             30       8              26.7      22
+## 10    26 INTERESES MARITIMO~  1             30       8              26.7      22
+## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES &amp;lt;dbl&amp;gt;,
+## #   DISIDENCIAS &amp;lt;lgl&amp;gt;, PORCENTAJE DE DISIDENCIAS &amp;lt;lgl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Las comisiones con menor cantidad de mujeres tratan temáticas como la organización militar y la seguridad interior, la infraestructura de transporte y de obrar públicas, y la producción minera, agropecuaria, las finanzas, el presupuesto y el comercio.&lt;/p&gt;
+&lt;p&gt;La última pregunta que nos hacemos es &lt;strong&gt;¿dónde están las disidencias en las comisiones?&lt;/strong&gt; Y la respuesta es unívoca:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(dipnac$DISIDENCIAS)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;La presencia de disidencias en las comisiones es &lt;strong&gt;NA&lt;/strong&gt; (&amp;ldquo;Not Available&amp;rdquo;: el dato no está disponible). No hay registros de la presencia de disidencias dentro de las comisiones. Y como bien plantean desde DataGénero: los datos son personas y la presencia de datos oficiales dicen mucho sobre aquellas cuestiones sobre las cuales los organismos que los recopilan están interesados.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Este pequeño análisis descriptivo de la composición de las comisiones termina aquí. Hay mucho más por pensar, pero la clave está en ver que las discusiones siguen estando generizadas. El sesgo está presente: si no hay mujeres en las comisiones, ¿cómo podremos aportar a la discusión? ¿Qué pasa con la representatividad? ¿Qué efectos positivos o negativos tiene la apertura dada por la ley de paridad de género?&lt;/p&gt;
+&lt;p&gt;Con estas cuestiones en mente, en las próximas publicaciones me haré las siguientes preguntas:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;¿A qué partidos y bloques pertenecen las mujeres diputadas?&lt;/li&gt;
+&lt;li&gt;¿Cómo se distribuyen en las distintas comisiones? ¿Hay diputados y diputadas que circulan por las mismas comisiones?&lt;/li&gt;
+&lt;li&gt;¿Cuántas bancas se renuevan en el próximo mandato? ¿Cuántas de ellas son mujeres?&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An example preprint / working paper</title>
+      <link>macarenaquiroga.netlify.app/publication/preprint/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/publication/preprint/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>macarenaquiroga.netlify.app/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/slides/example/</guid>
+      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+&lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+Three
+&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/media/boards.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>External Project</title>
+      <link>macarenaquiroga.netlify.app/project/external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/project/external-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internal Project</title>
+      <link>macarenaquiroga.netlify.app/project/internal-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/project/internal-project/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>La metacognición como función ejecutiva; su rol en la comprensión de textos</title>
+      <link>macarenaquiroga.netlify.app/publication/journal-article/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/publication/journal-article/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An example conference paper</title>
+      <link>macarenaquiroga.netlify.app/publication/conference-paper/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/publication/conference-paper/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>macarenaquiroga.netlify.app/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

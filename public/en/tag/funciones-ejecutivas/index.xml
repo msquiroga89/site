@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Funciones ejecutivas | Macarena Quiroga</title>
+    <link>macarenaquiroga.netlify.app/en/tag/funciones-ejecutivas/</link>
+      <atom:link href="macarenaquiroga.netlify.app/en/tag/funciones-ejecutivas/index.xml" rel="self" type="application/rss+xml" />
+    <description>Funciones ejecutivas</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/macarenaquiroga.netlify.app/media/icon_hu663b3345a4e19f2cbd1c27fe4eae8279_20867_512x512_fill_lanczos_center_2.png</url>
+      <title>Funciones ejecutivas</title>
+      <link>macarenaquiroga.netlify.app/en/tag/funciones-ejecutivas/</link>
+    </image>
+    
+    <item>
+      <title>La metacognición como función ejecutiva; su rol en la comprensión de textos</title>
+      <link>macarenaquiroga.netlify.app/en/publication/journal-article/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>macarenaquiroga.netlify.app/en/publication/journal-article/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
