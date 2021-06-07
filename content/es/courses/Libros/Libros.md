@@ -7,9 +7,6 @@ menu:
     parent: Recursos útiles
 weight: 10
 ---
-
-# Libros
-
 ## [R for Data Science](https://r4ds.had.co.nz/)
 
 Este libro es probablemente el más importante de todos: toda persona que quiera aprender R debe tenerlo a mano. Pero, en mi experiencia, no es un buen lugar para empezar: si bien arranca desde cero, en pocas páginas se vuelve muy técnico para alguien que no tenga mucha experiencia con programación. Mi sugerencia es: empezar a leerlo, abandonarlo cuando se vuelve confuso, buscar otros recursos y retomarlo cuando ya se tiene más conocimientos.
