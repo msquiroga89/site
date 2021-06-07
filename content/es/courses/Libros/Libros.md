@@ -1,10 +1,11 @@
 ---
-title: Sobre R/Rstudio
+title: Libros
 date: 2019-06-06
 type: book
 menu:
   courses:
     parent: Recursos útiles
+weight: 10
 ---
 
 # Libros
