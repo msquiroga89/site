@@ -22,7 +22,7 @@ interests:
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
-role: Becaria doctoral
+role: Lingüista 
 social:
 - icon: envelope
   icon_pack: fas
