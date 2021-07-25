@@ -1,8 +1,8 @@
 ---
-title: Un año de R
+title: Doce meses de R
 author: 'Macarena Quiroga'
 date: '2021-07-25'
-slug: un-año-de-r
+slug: doce-meses-de-r
 categories: []
 tags: 
   - rstats
