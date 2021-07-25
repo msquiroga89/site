@@ -10,7 +10,7 @@ tags:
   - educacion
   - comunidad
 subtitle: 'Siete cosas que aprendí en el camino'
-summary: ''
+summary: 'Descargué R y Rstudio en junio de 2020. Un año después, estos son mis aprendizajes.'
 authors: []
 lastmod: '2021-07-25T13:21:03-03:00'
 featured: no
