@@ -19,6 +19,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+#draft: falses
 ---
 
 La pandemia y su extensión inaudita nos hizo pensar más de una vez *hace un año que...*, diversas cosas (hace un año que no piso mi oficina, hace un año que no veo a tal persona, hace un año que no me subo a un colectivo, etc). Sumado a que mi condición laboral además había cambiado en marzo del 2020, esta primera mitad del año estuvo plagada de esta sensación de rememoración más típica de fin de año. Pero lo que más me llamó la atención fue lo siguiente: **hace un año empecé a aprender R**. Estas son las cosas que aprendí en el camino.
