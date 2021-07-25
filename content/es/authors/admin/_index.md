@@ -22,7 +22,7 @@ interests:
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
-role: Lingüista 
+role: Becaria doctoral
 social:
 - icon: envelope
   icon_pack: fas
@@ -44,6 +44,4 @@ superuser: true
 title: Macarena Quiroga
 ---
 
-Soy psicolingüista, vivo en Buenos Aires, Argentina, e investigo adquisición del lenguaje, específicamente el vocabulario infantil y su relación con el input adulto. Estudié psicología cognitiva y educación, y actualmente busco profundizar mis conocimientos de estadística y de ciencia de datos con R/Rstudio.
-
-En este sitio voy a documentar mi proceso de aprendizaje. Los artículos se publican en español y en inglés.
+Vivo en Buenos Aires, Argentina. Me especialicé en psicolingüística; investigo la adquisición del lenguaje, específicamente el vocabulario infantil y su relación con el input adulto, desde el cruce de la psicología cognitiva y las ciencias de la educación. Además, busco profundizar mis conocimientos de estadística y de ciencia de datos con R/Rstudio.
