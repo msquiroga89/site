@@ -13,12 +13,12 @@ bio: I research language acquisition. I'm looking to deepen my knowledge of stat
 #    year: 2017
 email: ""
 highlight_name: false
-#interests:
-#- Language Development
-#- Vocabulary Production and Comprehension
-#- Data Science for Education
-#- Quantitative Metholodogies
-#- Corpus Linguistics
+interests:
+- Language Development
+- Vocabulary Production and Comprehension
+- Data Science for Education
+- Quantitative Metholodogies
+- Corpus Linguistics
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/

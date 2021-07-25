@@ -13,12 +13,12 @@ bio: Investigo la adquisición del lenguaje. Estudio estadística y ciencia de d
 #    year: 2017
 email: ""
 highlight_name: false
-#interests:
-#- Adquisición del lenguaje y desarrollo cognitivo
-#- Comprensión y producción de vocabulario
-#- Ciencia de datos y educación
-#- Metodologías cuantitativas
-#- Lingüística de corpus
+interests:
+- Adquisición del lenguaje y desarrollo cognitivo
+- Comprensión y producción de vocabulario
+- Ciencia de datos y educación
+- Metodologías cuantitativas
+- Lingüística de corpus
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
