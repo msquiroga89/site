@@ -1,24 +1,24 @@
 ---
 bio: I research language acquisition. I'm looking to deepen my knowledge of statistic and data science with R/Rstudio.
-education:
-  courses:
-  - course: PhD in Education
-    institution: University of Buenos Aires (Argentina)
-    year: in progress
-  - course: Master in Cognitive Psychology and Learning
-    institution: FLACSO (Argentina)
-    year: in progress
-  - course: Linguistics
-    institution: University of Buenos Aires (Argentina)
-    year: 2017
+#education:
+#  courses:
+#  - course: PhD in Education
+#    institution: University of Buenos Aires (Argentina)
+#    year: in progress
+#  - course: Master in Cognitive Psychology and Learning
+#    institution: FLACSO (Argentina)
+#    year: in progress
+#  - course: Linguistics
+#    institution: University of Buenos Aires (Argentina)
+#    year: 2017
 email: ""
 highlight_name: false
-interests:
-- Language Development
-- Vocabulary Production and Comprehension
-- Data Science for Education
-- Quantitative Metholodogies
-- Corpus Linguistics
+#interests:
+#- Language Development
+#- Vocabulary Production and Comprehension
+#- Data Science for Education
+#- Quantitative Metholodogies
+#- Corpus Linguistics
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
@@ -43,8 +43,4 @@ social:
 superuser: true
 title: Macarena Quiroga
 ---
-
-I'm a psycholinguist from Buenos Aires, Argentina, researching language development, specifically child vocabulary related to input. I've studied cognitive psychology and education, and my current goal is to deepen my knowledge of statistics and data science with R/Rstudio, with a particular focus on data science for education and for social justice.
-
-In this site I will document my learning journey. I will mostly write in Spanish,
-but hopefully you will find some other posts in English, just to keep on learning.
+I live in Buenos Aires, Argentina. I've studied psycholinguistics, cognitive psychology and education. Currently I research about language acquisition, specifically child vocabulary, with mixed methods. I'm interested in deepening my knowledge about R/RStudio, either for statistic analysis or for other usages, like presentations or web design.

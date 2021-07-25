@@ -1,24 +1,24 @@
 ---
 bio: Investigo la adquisición del lenguaje. Estudio estadística y ciencia de datos con R/Rstudio.
-education:
-  courses:
-  - course: Doctorado en Educación
-    institution: Universidad Buenos Aires (Argentina)
-    year: en curso
-  - course: Maestría en Psicología Cognitiva y Aprendizaje
-    institution: FLACSO (Argentina)
-    year: en curso
-  - course: Lingüística
-    institution: Universidad de Buenos Aires (Argentina)
-    year: 2017
+# education:
+#  courses:
+#  - course: Doctorado en Educación
+#    institution: Universidad Buenos Aires (Argentina)
+#    year: en curso
+#  - course: Maestría en Psicología Cognitiva y Aprendizaje
+#    institution: FLACSO (Argentina)
+#    year: en curso
+#  - course: Lingüística
+#    institution: Universidad de Buenos Aires (Argentina)
+#    year: 2017
 email: ""
 highlight_name: false
-interests:
-- Adquisición del lenguaje y desarrollo cognitivo
-- Comprensión y producción de vocabulario
-- Ciencia de datos y educación
-- Metodologías cuantitativas
-- Lingüística de corpus
+#interests:
+#- Adquisición del lenguaje y desarrollo cognitivo
+#- Comprensión y producción de vocabulario
+#- Ciencia de datos y educación
+#- Metodologías cuantitativas
+#- Lingüística de corpus
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
@@ -44,4 +44,4 @@ superuser: true
 title: Macarena Quiroga
 ---
 
-Vivo en Buenos Aires, Argentina. Me especialicé en psicolingüística; investigo la adquisición del lenguaje, específicamente el vocabulario infantil y su relación con el input adulto, desde el cruce de la psicología cognitiva y las ciencias de la educación. Además, busco profundizar mis conocimientos de estadística y de ciencia de datos con R/Rstudio.
+Vivo en Buenos Aires, Argentina. Estudié psicolingüística, psicología cognitiva y educación. Actualmente investigo sobre adquisición del lenguaje, específicamente el vocabulario infantil, con metodologías de investigación mixtas. Me interesa profundizar mi conocimiento de R/RStudio, ya sea para los procesamientos estadísticos o para otros usos, como creación de presentaciones, diseño web y productos.
