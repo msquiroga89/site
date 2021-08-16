@@ -89,3 +89,7 @@ graph
 ```
 
 El hecho de que el resultado fuera un html y no una imagen me resultó un poco problemático: no pude compartirla en twitter con su versión interactiva. Pero por suerte aquí sí (y de paso leí un poco más sobre widgets en el libro [RMarkdown: The definitive guide).](https://bookdown.org/yihui/rmarkdown/html-widgets.html)
+
+#### A mejorar:
+
+El gráfico "de corriente" se ve muy lindo, pero es poco claro (de hecho, lo que se ve en el primer gráfico, que es la inversión federal, casi no se ve en el segundo). Es decir, las cantidades desproporcionadas deberían poder verse igual, a pesar de ser desproporcionadas. Por otro lado, el recuadro selector desapareció aquí, en RMarkdown, a pesar de que lo veo bien en el widget que descargo. No tengo idea de a qué se debe.
