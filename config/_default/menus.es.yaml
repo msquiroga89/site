@@ -11,7 +11,7 @@ main:
     url: '#posts'
     weight: 20
   - name: Recursos
-    url: courses/
+    url: resources/
     weight: 60
   - name: Contacto
     url: '#contact'
