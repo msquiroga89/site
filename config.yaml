@@ -5,7 +5,7 @@ theme: "starter-academic"
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Macarena Quiroga # Website name
-baseurl: 'macarenaquiroga.netlify.app' # Website URL
+baseurl: 'https://macarenaquiroga.netlify.app' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
 
 ############################
