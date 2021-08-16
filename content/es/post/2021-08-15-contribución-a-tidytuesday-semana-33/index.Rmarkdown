@@ -1,0 +1,91 @@
+---
+title: 'Contribución a #TidyTuesday, semana 33'
+author: 'Macarena Quiroga'
+date: '2021-08-15'
+slug: contribución-a-tidytuesday-semana-33
+categories: []
+tags:
+  - rstats
+  - tidytuesday
+  - dataviz
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-08-15T21:59:46-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Hacía mucho tiempo que no participaba de \#TidyTuesday: un poco por falta de tiempo, otro poco porque los datasets que publicaban no me motivaban, y un poco porque ya me daba vergüenza subir siempre lo mismo. Pero hoy, después de haberle dedicado tres horas de mi domingo al [livestream de Kierisi sobre Machine Learning](https://www.twitch.tv/videos/1119311136), me quedé con ganas de seguir programando.
+
+(Para quienes no sepan: \#TidyTuesday es un proyecto colaborativo que consiste en trabajar cada semana con un set de datos reales para practicar visualización y otras habilidades del mundo de la ciencia de datos. Pueden encontrar más información en su [repositorio de GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-10/readme.md) y bajo el [hashtag en twitter](https://twitter.com/hashtag/TidyTuesday?src=hashtag_click).)
+
+Empecemos con la organización general:
+
+```{r warning=FALSE, message=FALSE}
+library(tidytuesdayR)
+library(tidyverse)
+library(hrbrthemes)
+library(streamgraph)
+library(htmlwidgets)
+library(webshot)
+
+tuesdata <- tidytuesdayR::tt_load('2021-08-10')
+investment <- tuesdata$investment
+chain_investment <- tuesdata$chain_investment
+ipd <- tuesdata$ipd
+
+
+# Análisis Exploratorio ----------------------------------------------------
+
+glimpse(investment)
+glimpse(chain_investment) # cuánto cambió a lo largo del tiempo, actualizado
+glimpse(ipd)
+
+investment %>% group_by(category) %>% count()
+investment %>% group_by(meta_cat) %>% count()
+```
+
+El dataset de esta semana era sobre inversiones en EEUU durante el período de tiempo que va desde 1947 hasta 2017. Tengo que confesar que tampoco me motivaba mucho la temática; además, los tres dataframes que traían eran muy parecidos y con algunas terminologías sobre economía que no entendía del todo. Pero sí tenía ganas de hacer algo, y eso fue suficiente.
+
+Decidí no procrastinar demasiado y hacer por lo menos dos gráficos sobre algún terreno conocido, así que elegí educación.
+
+#### Primera pregunta: ¿cómo cambió la inversión federal en educación a lo largo de este período de tiempo?
+
+Este fue, digamos, el gráfico conocido y fácil: elegí hace un gráfico de líneas para mostrar la evolución de la inversión y elegí un solo tópico para innovar: dejar los demás valores de la variable categórica "áreas de inversión" en gris, y resaltar solamente el área de educación.
+
+```{r}
+investment %>% 
+  filter(category=="Federal") %>% 
+  mutate(highligth = ifelse(meta_cat=="Education", "Education", "Other")) %>% 
+  group_by(meta_cat, year) %>% 
+  ggplot(aes(x = year, y = gross_inv, group = meta_cat, size = highligth))+
+  geom_line()+
+  scale_color_manual(values = c("#69b3a2", "lightgrey"))+
+  scale_size_manual(values=c(1.5,0.2))+
+  theme_ipsum()+
+  theme(legend.position = "none")+
+  labs(x="", y="",
+       title="Evolución de la inversión federal en educación",
+       caption = "Data: Bureau of Economic Analysis | Plot: @_msquiroga | #TidyTuesday")
+```
+
+Estoy bastante satisfecha con el resultado. En general, suelo preferir los gráficos coloridos y con mucha información, pero justamente la sensación es que terminan siendo confusos y con la información solapada. En cambio, este gráfico me pareció claro y con un diseño sobrio.
+
+#### Segunda pregunta: ¿cómo evolucionaron las distintas fuentes de inversión a lo largo del tiempo?
+
+Primero pensé en hacer un gráfico similar al anterior: un gráfico de áreas apiladas. Pero mirando R Graph Gallery, uno de los mejores recursos de visualización que existen, pensé que podía ser una buena idea probar con el paquete StreamGraph para hacer, bueno, gráficos "de corriente" interactivos. En general no soy muy amiga de usar otros paquetes que no sean ggplot2, no por fundamentalista, sino solamente porque es lo que más manejo. Pero bueno, hay que innovar.
+
+```{r warning=FALSE}
+graph <- investment %>% 
+  filter(meta_cat == "Education") %>% 
+  streamgraph(., key = "category", value = "gross_inv", date="year") %>% 
+  sg_legend(TRUE, "Fuente de inversión")
+graph
+```
+
+El hecho de que el resultado fuera un html y no una imagen me resultó un poco problemático: no pude compartirla en twitter con su versión interactiva. Pero por suerte aquí sí (y de paso leí un poco más sobre widgets en el libro [RMarkdown: The definitive guide).](https://bookdown.org/yihui/rmarkdown/html-widgets.html)
