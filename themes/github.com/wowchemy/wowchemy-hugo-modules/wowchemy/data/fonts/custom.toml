@@ -5,8 +5,4 @@ name = "Custom"
 google_fonts = "family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700"
 
 # Font families
-heading_font = "Montserrat"
-body_font = "Roboto"
-nav_font = "Roboto"
-mono_font = "Roboto Mono"
-font-family = "Atkinson Hyperlegible", sans-serif;
+font-family = "Atkinson Hyperlegible" sans-serif;
