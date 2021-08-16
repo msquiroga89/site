@@ -3,8 +3,8 @@ title: Videos
 date: 2021-08-16
 type: book
 menu:
-  courses:
-    parent: courses
+  resources:
+    parent: resources
 weight: 40
 ---
 

@@ -3,7 +3,7 @@ title: Libros
 date: 2019-06-06
 type: book
 menu:
-  courses:
+  resources:
     parent: Recursos útiles
 weight: 10
 ---
