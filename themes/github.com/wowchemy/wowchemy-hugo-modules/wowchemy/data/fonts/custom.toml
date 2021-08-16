@@ -1,8 +1,8 @@
 # Font style metadata
-name = "Custom"
+name = "Atkinson Hyperlegible"
 
 # Optional Google font URL
 google_fonts = "family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700"
 
 # Font families
-font-family = "Atkinson Hyperlegible" sans-serif;
+font-family = "Atkinson Hyperlegible"
