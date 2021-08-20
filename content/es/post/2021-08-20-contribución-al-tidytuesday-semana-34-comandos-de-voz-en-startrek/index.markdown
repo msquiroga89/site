@@ -42,12 +42,21 @@ Por lo tanto, para ser fiel a mi objetivo, decidí hacer un gráfico simple: con
 
 #### El código
 
-```{r, warning=FALSE, message=FALSE}
+
+```r
 library(tidyverse)
 library(tidytext)
 library(ggthemes)
 
 tuesdata <- tidytuesdayR::tt_load(2021, week = 34)
+```
+
+```
+## 
+## 	Downloading file 1 of 1: `computer.csv`
+```
+
+```r
 computer <- tuesdata$computer
 
 computer <- computer %>% 
@@ -101,5 +110,7 @@ computer %>%
        caption = "Fuente: Speech Interactions | http://www.speechinteraction.org/TNG/ | @_msquiroga"
     )
 ```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" />
 
 ¡Espero que les sirva!
