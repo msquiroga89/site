@@ -89,12 +89,14 @@ computer %>%
   theme(plot.background = element_rect(fill = "black"), # fondo de la imagen
         panel.background = element_rect(fill = "black"), # fondo del gráfico
         axis.text = element_text(color = "white", size = 12), # texto de los ejes
-        plot.title = element_text(color = "white", size = 20), # título del gráfico
+        plot.title = element_text(color = "white", 
+                                  size = 20, 
+                                  hjust = 5.5), # título del gráfico
         plot.caption = element_text(color = "white"), # fuente
         legend.position = "none", # quito el cuadro de referencias
         text = element_text(family = "Kefa"), # tipografía de todo el gráfico
         panel.grid.major.x = element_line(size = 4), # achica el espacio entre ticks
-        strip.text = element_text(size = 12) # tamaño de títlo de facet
+        strip.text = element_text(size = 12) # tamaño de título de facet
   )+
   labs(x = "", y = "",
        title = "¿Qué tipo de enunciados genera cada uno?",
