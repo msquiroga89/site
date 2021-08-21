@@ -4,7 +4,7 @@
 .Ruserdata
 \\.knit\\.md$
 \\.utf8\\.md$
-.DS_Store, 
+.DS_Store
 Thumbs.db
 /public/
 /resources/
