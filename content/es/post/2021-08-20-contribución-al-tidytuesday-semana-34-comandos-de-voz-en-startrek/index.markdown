@@ -16,8 +16,8 @@ lastmod: '2021-08-20T08:59:39-03:00'
 featured: no
 image:
   caption: ''
-  focal_point: ''
-  preview_only: no
+  focal_point: 'left'
+  preview_only: true
 projects: []
 ---
 
