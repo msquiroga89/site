@@ -46,6 +46,7 @@ On the basis of the information available at the [official website of the Chambe
 
 ```{r echo=FALSE, include=FALSE, results='hide', error=FALSE, message=FALSE}
 library(googlesheets4)
+gs4_auth()
 library(dplyr)
 library(tidyverse)
 library(ggplot2)
