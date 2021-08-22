@@ -1,12 +1,14 @@
 ---
-title: Material didáctico sobre planificación de textos
+title: Didactic materials for writing text outlines
 author: 'Macarena Quiroga'
 date: '2021-08-16'
 slug: material-didáctico-sobre-planificación-de-textos
 categories: []
 tags: 
-- educación
-- escritura
+- education
+- writing
+- language
+- english
 subtitle: ''
 summary: ''
 authors: []
@@ -19,10 +21,10 @@ image:
 projects: []
 ---
 
-Recién salida del horno: publiqué una ficha didáctica en [ReLIF](https://relif.net.ar/como-enfrentarse-a-una-hoja-en-blanco-la-organizacion-de-los-cimientos-de-la-escritura/) sobre estrategias para planificar textos.
+Hot off the press: I've published a teaching aid in [ReLIF](https://relif.net.ar/como-enfrentarse-a-una-hoja-en-blanco-la-organizacion-de-los-cimientos-de-la-escritura/) about writing outlines strategies (in Spanish only, for now).
 
-Planificar es, para mí, uno de los aspectos más complejos de la escritura de textos, particularmente porque requiere poner en juego muchas habilidades cognitivas distintas. Implica, por ejemplo, pensar en la consigna que motiva este texto: ¿qué género discursivo me está pidiendo? ¿Qué recorte temático debo utilizar? Si hay límite espacial, ¿cómo se vincula eso con el recorte? Pero también implica pensar en la situación comunicativa: ¿quién va a leer este texto? ¿Qué postura debo tener frente a esa persona? ¿Qué marcas de nuestro vínculo deben aparecer en este texto? Y, finalmente, implica organizar un elemento abstracto (el tema y los subtemas) en un espacio bien concreto (la página en blanco).
+Writing a text outline is, for me, one of the most complex aspects of writing itself, specially because it demands bringing into play different cognitive abilities. It involves, for example, the decision about the instructions that motivates the text: what discursive genre does it asks? What thematic focus do I have to use? If there is a length limit, how does the thematic focus fit there? But it also implies the questioning of the communicative situation: who is the reader of our text? What position on the issue should I have? What marks of our bond should appear in the text? And, finally, it involves the organization of an abstract element (the topic and the subtopics) in a very concrete space (the white page).
 
-En esta ficha me planteé pensar, justamente, cómo encarar una planificación desde cero. Si bien muchas de estas cuestiones dependen del estilo de escritura de cada personal, creo que les va a servir a quienes este aspecto de la escritura les resulta particularmente dificultoso. 
+In this material I tried to think abour a way to face the writing of an outline from scratch. Even though some of these matters rely on the individual writing style, I think that it can be helpful to those that find this aspect of the writing particularly difficult.
 
-Si la utilizan, por favor no duden en contarme cómo les fue. ¡Que la disfruten!
+If you use it, please don't hesitate to let me know did it went. Enjoy!
