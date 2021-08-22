@@ -8,8 +8,8 @@ menu:
 weight: 70
 ---
 
-En esta sección nos volvemos <i>meta</i>: les dejo recopilaciones de recursos interesantes. Algunos se repiten, pero me parece interesante tener en cuenta los recortes temáticos.
+In this section we turn <i>meta</i>: here you will find collections of resources that I liked. Some of them repeat themselves, but nevertheless the thematic focus is still relevant.
 
--   [R Resources for Begginers and Intermediate Users](https://martindevaux.com/2021/01/r_resources_beginners_intermediate/): me gustó esta recopilación porque elige cuatro áreas para presentar algunos pocos recursos en cada una: primeros pasos, visualización de datos, flujos de trabajo, y construcción y alojamiento de sitios con Shiny. Y, si esos recursos parecen básicos, menciona algunos otros lugares donde encontrar recursos más avanzados. Está en inglés.
+-   [R Resources for Begginers and Intermediate Users](https://martindevaux.com/2021/01/r_resources_beginners_intermediate/): I liked this collection because it chooses four areas of knowledge: first steps, data visualization, workflows and Shiny-apps building and hosting. And, if those resources fall short, they mention some other sources to find more advanced resources.
 
--   [R for Healthcare data analysis](https://healthyr.surgicalinformatics.org/resources.html#resources): aquí encontrarán el libro R for Health Data Science, videos introductorios, apuntes de clases, cheatsheets y tutoriales; todo para analizar datos en salud.
+-   [R for Healthcare data analysis](https://healthyr.surgicalinformatics.org/resources.html#resources): a whole set of resources to analyze heald data (<i>R for Health Data Science</i> book, introductory videos, teaching aids, cheatseets and tutorials.
