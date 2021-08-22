@@ -9,35 +9,35 @@ weight: 10
 ---
 ## [R for Data Science](https://r4ds.had.co.nz/)
 
-Este libro es probablemente el más importante de todos: toda persona que quiera aprender R debe tenerlo a mano. Pero, en mi experiencia, no es un buen lugar para empezar: si bien arranca desde cero, en pocas páginas se vuelve muy técnico para alguien que no tenga mucha experiencia con programación. Mi sugerencia es: empezar a leerlo, abandonarlo cuando se vuelve confuso, buscar otros recursos y retomarlo cuando ya se tiene más conocimientos.
+This is the most relevant book for learning R: anyone who wants to learn R/RStudio should have it at hand. But, in my own personal experience, it's not a very friendly place to start if you don't have a programming background. Even though it starts from scratch, the truth is that it quickly becomes very technical and can be too much information in so few pages. My advise is to read it, but don't hesitate to abandon it when it starts to feel confusing; you will go back to it when you've gained more knowledge.
 
--   Nivel: principiante-intermedio
+-   Level: beginner-intermediate
 
--   Idioma: inglés
+-   Language: English
 
 ## [R para Ciencia de Datos](https://es.r4ds.hadley.nz/)
 
-Esta es la versión en español del libro anterior.
+This is the Spanish version of the last book.
 
--   Nivel: principiante-intermedio
+-   Level: beginner-intermediate
 
--   Idioma: español
+-   Language: Spanish
 
 ## [Getting used to R, RStudio, and RMarkdown](https://rbasics.netlify.app/)
 
-Este libro es una introducción general a R, RStudio y RMarkdown. A mí me resultó bastante más ameno que R4DS y me ayudó a entender un poco más ciertas cuestiones de R y de RStudio, en qué contexto surgió, cuáles eran/son sus objetivos, y a comprender ciertos elementos básicos de programación.
+This book is a general introduction to R, RStudio and RMarkdown. I found it slightly more friendly than R4DS and it helped me understand some core concepts.
 
--   Nivel: principiante-intermedio
+-   Level: beginner-intermediate
 
--   Idioma: inglés
+-   Language: English
 
 ## [Introduction to R - Tidyverse](https://bookdown.org/ansellbr/WEHI_tidyR_course_book/)
 
-Este libro también es una introducción a R/Rstudio, pero con un foco específico en el paquete Tidyverse. Si bien hoy en día la mayoría de los contenidos educativos que se generan están centrados en ese paquete, aquí el objetivo es terminar el libro con una caja de herramientas precisa. Lo que más me gusta de este libro es que tiene un registro mucho más cotidiano y cercano que los anteriores.
+This book is also an introduction to R/RStudio, but it has a particular focus on the Tidyverse package. Even though today the majority of the educational resources are Tidyverse-centered, here the goal is to finish the reading with a concrete set of tools. What I liked most about it was the more friendly and affectionate tone.
 
--   Nivel: principiante-intermedio
+-   Level: beginner-intermediate
 
--   Idioma: inglés
+-   Language: English
 
 ## [Ciencia de datos para gente sociable](https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/)
 
