@@ -25,7 +25,7 @@ Hacía mucho tiempo que no participaba de \#TidyTuesday: un poco por falta de ti
 
 (Para quienes no sepan: \#TidyTuesday es un proyecto colaborativo que consiste en trabajar cada semana con un set de datos reales para practicar visualización y otras habilidades del mundo de la ciencia de datos. Pueden encontrar más información en su [repositorio de GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-10/readme.md) y bajo el [hashtag en twitter](https://twitter.com/hashtag/TidyTuesday?src=hashtag_click).)
 
-Empecemos con la organización general::
+Empecemos con la organización general:
 
 ```{r warning=FALSE, message=FALSE}
 library(tidytuesdayR)
