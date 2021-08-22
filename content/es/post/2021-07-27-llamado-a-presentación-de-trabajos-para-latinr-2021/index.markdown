@@ -13,9 +13,10 @@ subtitle: ''
 summary: 'Convocatoria abierta hasta el sábado 31 de julio'
 authors: []
 lastmod: '2021-07-27T08:27:57-03:00'
-featured: no
+featured: yes
 image:
-  caption: ''
+  caption: 'Photo by <a href="https://unsplash.com/@mariamsoliman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mariam Soliman</a> on <a href="https://unsplash.com/s/photos/pink?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  '
   focal_point: ''
   preview_only: no
 projects: []
