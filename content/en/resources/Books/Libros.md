@@ -1,10 +1,10 @@
 ---
-title: Libros
+title: Books
 date: 2019-06-06
 type: book
 menu:
   resources:
-    parent: Recursos útiles
+    parent: resources
 weight: 10
 ---
 ## [R for Data Science](https://r4ds.had.co.nz/)

@@ -1,5 +1,5 @@
 ---
-title: Recopilaciones de recursos
+title: Resources collections
 date: 2021-08-16
 type: book
 menu:

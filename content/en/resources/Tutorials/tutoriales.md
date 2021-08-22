@@ -1,5 +1,5 @@
 ---
-title: Tutoriales interactivos
+title: Interactive Tutorials
 date: 2019-06-06
 type: book
 menu:
