@@ -14,7 +14,7 @@ title: Galería
 subtitle:
 
 design:
-  columns: '2'
+  columns: '3'
 ---
 
 {{< gallery album="generative_art" >}}
