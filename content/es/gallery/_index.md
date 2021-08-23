@@ -2,7 +2,7 @@
 header:
   caption: ""
   image: ""
-title: Gallery
+title: Galería
 view: 2
 ---
 
