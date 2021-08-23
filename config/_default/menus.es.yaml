@@ -13,6 +13,9 @@ main:
   - name: Recursos
     url: resources/
     weight: 60
+  - name: Galería
+    url: gallery/
+    weight: 70
   - name: Contacto
     url: '#contact'
     weight: 80

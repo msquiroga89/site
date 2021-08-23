@@ -1,5 +1,4 @@
 ---
-active: false
 # An instance of the Blank widget with a Gallery page element.
 # Documentation: https://wowchemy.com/docs/getting-started/page-builder/
 widget: blank
@@ -13,10 +12,8 @@ weight: 66
 title: Gallery
 subtitle:
 
-gallery_item:
-- album: generative_art
-  image: circlemaps1.jpg
-  caption: Circle Map made with aRtsy package
+design:
+  columns: '2'
 ---
 
-{{< gallery album="generative_art">}} 
+{{< gallery album="generative_art" >}}
