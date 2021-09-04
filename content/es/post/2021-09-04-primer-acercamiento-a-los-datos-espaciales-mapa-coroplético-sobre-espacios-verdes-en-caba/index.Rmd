@@ -1,11 +1,10 @@
 ---
-title: 'Primer acercamiento a los datos espaciales: mapa coroplético sobre espacios
-  verdes en CABA'
+title: 'Primer acercamiento a los datos espaciales\: mapa coroplético sobre espacios verdes en CABA'
 author: ''
 date: '2021-09-04'
 slug: primer-acercamiento-a-los-datos-espaciales-mapa-coroplético-sobre-espacios-verdes-en-caba
 categories: []
-tags: []
+tags:
 - rstats
 - español
 - datos espaciales
