@@ -77,7 +77,7 @@ ggplot(CABA_names)+
        caption = "Fuente: https://www.estadisticaciudad.gob.ar/eyc/?p=27349",
        x = "", 
        y = "",
-       fill = expression('Espacio verdes en m' ^ 2))+
+       fill = expression('Espacio verde en m' ^ 2))+
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
         panel.background = element_blank()
