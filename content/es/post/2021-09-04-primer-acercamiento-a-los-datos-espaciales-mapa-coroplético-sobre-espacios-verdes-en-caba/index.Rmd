@@ -1,0 +1,86 @@
+---
+title: 'Primer acercamiento a los datos espaciales: mapa coroplético sobre espacios
+  verdes en CABA'
+author: ''
+date: '2021-09-04'
+slug: primer-acercamiento-a-los-datos-espaciales-mapa-coroplético-sobre-espacios-verdes-en-caba
+categories: []
+tags: []
+- rstats
+- español
+- datos espaciales
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-04T19:37:51-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+¿A quién no le gustan esos hermosos y coloridos mapas coropléticos que circulan en Twitter?
+
+En general, el 99% de mi uso de R es análisis estadístico: a veces tengo suerte y puedo dedicarle un poco más de tiempo a complementar ese análisis con algunos gráficos. Pero no trabajo con datos espaciales, entonces no tengo casi oportunidad para aprender este tipo de cosas.
+
+Hoy tuve un rato libre y primero pensé en hacer algo de \#TidyTuesday. Pero al mirar los datos ([baños de aves en Australia](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-31/readme.md)), me di cuenta de que estaba orientado o bien a trabajar con variables categóricas o bien a trabajar con datos espaciales. Ya había practicando un poco con datos categoriales con los [comandos de voz de Star Trek](https://macarenaquiroga.netlify.app/post/contribucion-al-tidytuesday-semana-34-comandos-de-voz-en-startrek/), así que eso lo descarté, pero hacer algo con datos espaciales me parecía un poco complejo.
+
+Decidí entonces que era una buena oportunidad para empezar de a poco en ese tema y recordé la existencia de [PolíticaArgentina](https://github.com/PoliticaArgentina), un universo de paquetes sobre Argentina. Por suerte, el `readme` tenía un ejemplo de cómo hacer un gráfico con etiquetas, así que no fue difícil adaptarlo a algo nuevo.
+
+Me quedé con el mapa de CABA, porque era lo que conocía, y planteé una pregunta que a cualquier porteño le importa: ¿hay suficientes espacios verdes en la Ciudad?
+
+Una vez armado el gráfico, busqué información oficial sobre los espacios verdes en CABA, datos que por suerte encontré en el [sitio oficial](https://www.estadisticaciudad.gob.ar/eyc/?p=27349). Luego, fue cuestión de revisar el argumento de `fill` y mejorar un poco el aspecto de las etiquetas. La verdad, quedé muy satisfecha: pensé que iba a ser mucho más difícil empezar, y sin embargo aquí estamos.
+
+Aquí el código:
+
+```{r}
+# Mapa coroplético de la cantidad de espacios verdes por metro cuadrado en CABA
+# Choropleth map about green spaces in CABA
+
+library(tidyverse)
+# devtools::install_github("politicaargentina/geoAr")
+library(geoAr)
+show_arg_codes()
+(CABA <- get_geo(geo = "CABA"))
+(CABA_names <- CABA %>% add_geo_codes())
+
+CABA_names$nomdepto_censo <- gsub("COMUNA ", "C. ", CABA_names$nomdepto_censo)
+
+CABA_names <- CABA_names %>% 
+  mutate(esp_verd = case_when(
+    coddepto_censo == "001" ~ 18.2,
+    coddepto_censo == "002" ~ 4.1,
+    coddepto_censo == "003" ~ 0.4,
+    coddepto_censo == "004" ~ 4.3,
+    coddepto_censo == "005" ~ 0.2,
+    coddepto_censo == "006" ~ 1.8,
+    coddepto_censo == "007" ~ 3.2,
+    coddepto_censo == "008" ~ 18.8,
+    coddepto_censo == "009" ~ 6.8,
+    coddepto_censo == "010" ~ 2.0,
+    coddepto_censo == "011" ~ 1.5,
+    coddepto_censo == "012" ~ 8.1,
+    coddepto_censo == "013" ~ 6.1,
+    coddepto_censo == "014" ~ 12.0,
+    coddepto_censo == "015" ~ 6.2
+  ))
+
+
+ggplot(CABA_names)+
+  geom_sf(aes(fill = esp_verd))+
+  geom_sf_label(aes(label = nomdepto_censo),
+                #label.size = 0.5,
+                size = 2)+
+  scale_fill_gradient(low = "khaki2", high = "darkgreen")+
+  labs(title = "Superficie de espacio verde dependiente del GCBA por habitante \npor comuna (2019)",
+       caption = "Fuente: https://www.estadisticaciudad.gob.ar/eyc/?p=27349",
+       x = "", 
+       y = "",
+       fill = expression('Espacio verdes en m' ^ 2))+
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.background = element_blank()
+        )
+```
