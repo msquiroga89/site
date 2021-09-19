@@ -14,7 +14,7 @@ lastmod: '2021-09-19T16:01:22-03:00'
 featured: yes
 image:
   caption: ''
-  focal_point: ''
+  focal_point: 'Center'
   preview_only: no
 projects: []
 ---
