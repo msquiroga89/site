@@ -16,8 +16,7 @@ image:
   caption: ''
   focal_point: 'Center'
   preview_only: no
-projects: 
-  - docencia
+projects: [docencia]
 ---
 
 Ayer se llevó a cabo la I Jornada de Estudiantes de Inglés en la Universidad Nacional de Hurlingham, evento que impulsé junto a dos de mis compañeras docentes. Me interesa resaltar, en este texto, los motivos que me llevaron a proponerla.
