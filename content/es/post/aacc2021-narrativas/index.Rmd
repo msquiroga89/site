@@ -1,5 +1,5 @@
 ---
-title: Producción narrativa en el contexto de aislamiento social por SARS-CoV-2: un estudio exploratorio de interacciones mediadas por tecnología
+title: Producción narrativa en el contexto de aislamiento social por SARS-CoV-2. un estudio exploratorio de interacciones mediadas por tecnología
 author: ''
 date: '2021-09-25'
 slug: aacc2021-narrativas
