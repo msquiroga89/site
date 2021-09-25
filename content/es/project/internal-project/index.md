@@ -2,7 +2,7 @@
 date: "2021-09-25T00:00:00Z"
 external_link: ""
 image:
-  caption: 
+  caption: 'Póster presentado en la Reunión AACC 2021'
   focal_point: Smart
 # links:
 # - icon: twitter
@@ -13,7 +13,7 @@ image:
 summary: Póster presentado en la Reunión AACC 2021
 tags:
 - investigacion
-title: "Uso infantil y adulto del vocabulario"
+title: "Uso del vocabulario adulto e infantil durante las actividades cotidianas"
 url_code: ""
 url_pdf: ""
 url_slides: ""
