@@ -18,7 +18,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: yes
-projects: []
+projects: [ciencia-de-datos]
 ---
 
 Hacía mucho tiempo que no participaba de \#TidyTuesday: un poco por falta de tiempo, otro poco porque los datasets que publicaban no me motivaban, y un poco porque ya me daba vergüenza subir siempre lo mismo. Pero hoy, después de haberle dedicado tres horas de mi domingo al [livestream de Kierisi sobre Machine Learning](https://www.twitch.tv/videos/1119311136), me quedé con ganas de seguir programando.
