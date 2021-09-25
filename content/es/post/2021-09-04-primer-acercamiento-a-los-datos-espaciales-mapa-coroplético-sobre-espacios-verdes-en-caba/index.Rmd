@@ -17,7 +17,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: [Ciencia-de-datos]
+projects: [ciencia-de-datos]
 ---
 
 ¿A quién no le gustan esos hermosos y coloridos mapas coropléticos que circulan en Twitter?
