@@ -5,7 +5,7 @@ featured: yes
 image:
   caption: 'Póster presentado en la Reunión AACC 2021'
   focal_point: Smart
-  preview_only: no
+  preview_only: false
 # links:
 # - icon: twitter
 #   icon_pack: fab
