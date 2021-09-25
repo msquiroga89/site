@@ -18,7 +18,7 @@ image:
   caption: ''
   focal_point: 'Center'
   preview_only: no
-projects: []
+projects: [investigacion]
 editor_options: 
   markdown: 
     wrap: sentence

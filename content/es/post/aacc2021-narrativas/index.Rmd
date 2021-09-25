@@ -18,7 +18,7 @@ image:
   caption: ''
   focal_point: 'Center'
   preview_only: no
-projects: []
+projects: [investigacion]
 editor_options: 
   markdown: 
     wrap: sentence
@@ -42,9 +42,9 @@ En este trabajo nos proponemos analizar las propiedades discursivas y situaciona
 
 Las narrativas fueron codificadas empleando el Método Comparativo Constante (Strauss & Corbin, 1990) según su tipo (experiencia personal, eventos futuros y relatos de ficción) y la forma en que ésta era sostenida por ellos/as (autorregulación, heterorregulación o regulación compartida), la edad del niño/a y la relación temporal entre la emisión y recepción de la narrativa (sincronía/asincronía). Se empleó el programa ELAN (Max Planck Institute for Psycholinguistics, 2018) para la segmentación, transcripción y codificación. Se utilizaron medidas descriptivas para explorar su distribución en el corpus.
 
-### Resultados El análisis preliminar permitió identificar 35 secuencias narrativas.
+### Resultados 
 
-Entre ellas, la mayoría eran narrativas de experiencia personal (53%), aunque también se encontraron narrativas de eventos futuros (22%) y de ficción (25%). Asimismo, un 43% de las narrativas fueron heterorreguladas, es decir controladas por otros participantes, mientras que un 26% fueron reguladas de manera compartida, y un 31% fueron reguladas exclusivamente por el/la niño/a (autorreguladas). La mayoría de las narrativas autorreguladas o reguladas por el/la niño/a (n = 11) se dieron en el marco de interacciones asincrónicas (73%). En cambio, durante las interacciones sincrónicas (n = 27), las narrativas más frecuentemente se co-construyen en el intercambio con los otros, tanto de forma heterorregulada (54%) como mediante una regulación compartida (36%).
+El análisis preliminar permitió identificar 35 secuencias narrativas. Entre ellas, la mayoría eran narrativas de experiencia personal (53%), aunque también se encontraron narrativas de eventos futuros (22%) y de ficción (25%). Asimismo, un 43% de las narrativas fueron heterorreguladas, es decir controladas por otros participantes, mientras que un 26% fueron reguladas de manera compartida, y un 31% fueron reguladas exclusivamente por el/la niño/a (autorreguladas). La mayoría de las narrativas autorreguladas o reguladas por el/la niño/a (n = 11) se dieron en el marco de interacciones asincrónicas (73%). En cambio, durante las interacciones sincrónicas (n = 27), las narrativas más frecuentemente se co-construyen en el intercambio con los otros, tanto de forma heterorregulada (54%) como mediante una regulación compartida (36%).
 
 ### Discusión
 
