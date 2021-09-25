@@ -1,0 +1,65 @@
+---
+date: "2021-09-25T00:00:00Z"
+external_link: ""
+featured: yes
+image:
+  caption: 'Póster presentado en la Reunión AACC 2021'
+  focal_point: Smart
+  preview_only: false
+# links:
+# - icon: twitter
+#   icon_pack: fab
+#   name: Follow
+#   url: https://twitter.com/georgecushen
+# slides: example
+summary: Póster presentado en la Reunión AACC 2021
+tags:
+- investigacion
+title: "Producción narrativa en el contexto de aislamiento social por SARS-CoV-2: un estudio exploratorio de interacciones mediadas por tecnología"
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: "https://www.youtube.com/watch?v=dJ__eMTDmbQ"
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+## Producción narrativa en el contexto del aislamiento social por SARS-CoV-2: Un estudio exploratorio de interacciones mediadas por tecnología.
+
+Quiroga, Macarena Sol (CIIPME-CONICET/UNaHur); Lewinsky, Viviana (IICE/UBA); González Lynn, Eliana (UBA); Ramírez, María Laura (CIIPME-CONICET); Audisio, Cynthia Pamela (CIIPME-CONICET); Franco Accinelli, Ailín Paula (CIIPME-CONICET); Ibañez, María Ileana (CIIPME-CONICET); Giordano, Carla (CIIPME-CONICET); Rosemberg, Celia Renata (CIIPME-CONICET/IICE/UBA).
+
+### Introducción
+
+La narración constituye un medio para reconstruir y comunicar la propia experiencia y conocer las experiencias de los otros.
+El desarrollo del discurso narrativo infantil tiene lugar a partir de los 2 años en el marco de situaciones de interacción, tanto en los hogares como en los jardines de infantes.
+En la actualidad, el confinamiento producto de las restricciones para el control de la pandemia de SARS-CoV-2 reconfiguró las interacciones cotidianas y trajo aparejados cambios en las experiencias lingüísticas de niños/as pequeños/as.
+Una de las modificaciones más extendidas fue el uso de videollamadas para mantener el contacto social y sostener la continuidad educativa.
+La incorporación de este canal de comunicación a la vida cotidiana habilita la exploración de nuevos usos lingüísticos.
+Por ejemplo, se ha observado que, durante las videollamadas con familiares, los adultos colaboraban con los/as niños/as en la producción de narraciones.
+Sin embargo, no se registran trabajos que hayan atendido a la producción de narrativas mediadas por tecnología en el contexto actual de aislamiento social.
+
+### Objetivos
+
+En este trabajo nos proponemos analizar las propiedades discursivas y situacionales de secuencias narrativas mediadas por tecnología durante el aislamiento social.
+Se conformó una muestra no probabilística por conveniencia (Hernández Sampieri, 2010), compuesta por narrativas producidas en 101 situaciones espontáneas con tecnología (videollamadas, juego con celulares, etc.) en las que participaron niños/as de 2 a 6 años de edad en sus hogares (más de 170 minutos de videofilmaciones, corpus: Rosemberg et al, 2020-en curso).
+Las filmaciones fueron realizadas y enviadas por las familias, quienes brindaron su consentimiento informado para que se utilicen los videos con fines de investigación.
+
+### Metodología
+
+Las narrativas fueron codificadas empleando el Método Comparativo Constante (Strauss & Corbin, 1990) según su tipo (experiencia personal, eventos futuros y relatos de ficción) y la forma en que ésta era sostenida por ellos/as (autorregulación, heterorregulación o regulación compartida), la edad del niño/a y la relación temporal entre la emisión y recepción de la narrativa (sincronía/asincronía).
+Se empleó el programa ELAN (Max Planck Institute for Psycholinguistics, 2018) para la segmentación, transcripción y codificación.
+Se utilizaron medidas descriptivas para explorar su distribución en el corpus.
+
+### Resultados El análisis preliminar permitió identificar 35 secuencias narrativas.
+Entre ellas, la mayoría eran narrativas de experiencia personal (53%), aunque también se encontraron narrativas de eventos futuros (22%) y de ficción (25%).
+Asimismo, un 43% de las narrativas fueron heterorreguladas, es decir controladas por otros participantes, mientras que un 26% fueron reguladas de manera compartida, y un 31% fueron reguladas exclusivamente por el/la niño/a (autorreguladas).
+La mayoría de las narrativas autorreguladas o reguladas por el/la niño/a (n = 11) se dieron en el marco de interacciones asincrónicas (73%).
+En cambio, durante las interacciones sincrónicas (n = 27), las narrativas más frecuentemente se co-construyen en el intercambio con los otros, tanto de forma heterorregulada (54%) como mediante una regulación compartida (36%).
+
+### Discusión
+
+En esta primera aproximación al estudio de interacciones con tecnología registradas durante el aislamiento, observamos que estas interacciones dan lugar a distintos tipos de narrativas reguladas de distintos modos.
+La presencia de la tecnología como mediadora de la interacción presenta nuevas posibilidades para que niños/as utilicen y desarrollen sus recursos lingüísticos.
+
+Palabras clave: narrativas; interacciones mediadas con tecnología, experiencias tempranas Keywords: narratives; technology-mediated interactions, early experiences
