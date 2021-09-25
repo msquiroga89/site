@@ -1,31 +1,38 @@
 ---
-date: "2016-04-27T00:00:00Z"
+date: "2021-09-25T00:00:00Z"
 external_link: ""
 image:
-  caption: Photo by rawpixel on Unsplash
+  caption: 
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/georgecushen
-slides: example
-summary: An example of using the in-built project page.
+# links:
+# - icon: twitter
+#   icon_pack: fab
+#   name: Follow
+#   url: https://twitter.com/georgecushen
+# slides: example
+summary: Póster presentado en la Reunión AACC 2021
 tags:
-- Deep Learning
-title: Internal Project
+- investigacion
+title: "Uso infantil y adulto del vocabulario"
 url_code: ""
 url_pdf: ""
 url_slides: ""
-url_video: ""
+url_video: "https://www.youtube.com/watch?v=clQhscxYY9I"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+USO DEL VOCABULARIO ADULTO E INFANTIL DURANTE LAS ACTIVIDADES COTIDIANAS
 
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.
+Macarena Sol Quiroga - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET). Centro Interdisciplinario de Investigaciones en Psicología Matemática y Experimental (CIIPME). Universidad Nacional de Hurlingham (UNaHur), Buenos Aires, Argentina. Mail de contacto: macarenasolquiroga@gmail.com
+Viviana Lewinsky - Universidad de Buenos Aires (UBA). Instituto de Investigaciones en Ciencias de la Educación (IICE), Buenos Aires, Argentina.
+Celia Renata Rosemberg - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET). Centro Interdisciplinario de Investigaciones en Psicología Matemática y Experimental (CIIPME) y Universidad de Buenos Aires (UBA). Instituto de Investigaciones en Ciencias de la Educación (IICE), Buenos Aires, Argentina. 
+Florencia Alam - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET). Centro Interdisciplinario de Investigaciones en Psicología Matemática y Experimental (CIIPME), Buenos Aires, Argentina.
 
-Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.
 
-Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.
+Palabras clave: vocabulario, actividades cotidianas, niños pequeños, interacciones, grupos sociales.
+Keywords: vocabulary, everyday activities, preschool children, interactions, socioeconomic groups.
 
-Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.
+
+La relación entre el input lingüístico al que el niño está expuesto y la producción infantil en distintos contextos ha sido puesta de manifiesto por diversos estudios (Hoff, 2013; Stein et al., 2021). En particular, investigaciones recientes (Rowe y Weisleder, 2020; Glas et al., 2018; Rosemberg et al., 2020) han indicado que la participación de los niños en diversas actividades en el seno del hogar contribuye a la configuración de sus experiencias lingüísticas y, consecuentemente, impactan en su uso del lenguaje. Sin embargo, son escasos y en poblaciones mayormente de habla inglesa los trabajos que han comenzado a atender a la relación entre el input lingüístico y la producción infantil (ver por ejemplo, Söderstrom y Witterbole, 2013 y Roy, 2015)
+Es por ello que este trabajo tiene como objetivo analizar tanto el vocabulario productivo infantil como el input que escuchan niños de 4 años de dos grupos socioculturales: medio (GSM, padres universitarios y residentes en barrios residenciales) y bajo (GSB, padres con escolaridad secundaria o menor y residentes en villas de emergencia), en actividades cotidianas en sus hogares. La muestra está conformada por 120 horas audiograbadas en el hogar de 10 niños (5 de GSM y 5 de GSB), transcriptas según el formato CHAT (MacWhinney, 2000), que pertenecen a un corpus mayor (Rosemberg et al., 2005-2012). Se codificaron los enunciados a partir de la actividad que se llevaba a cabo, utilizando de forma heurística las categorías de Rosemberg et al. (2020). Se construyeron cuatro macrocategorías: actividades centradas en la vida familiar o bien relacionadas con la crianza infantil (comida, higiene) o bien que responden a intereses de los adultos (conversaciones, actividades domésticas), y actividades centradas en el niño (juegos, lecturas, dibujos, alfabetización), que realizan o bien individualmente (actividades individuales) o bien con otros (actividades sociales). En el habla de los niños y sus interlocutores se midió la cantidad y longitud de los turnos de intervención, el volumen  de habla y la diversidad léxica recurriendo al CLAN (Computerized Language Analysis), y se realizó un análisis estadístico descriptivo con R (R Core Team, 2017).
+Los resultados preliminares en base a 6 niños (GSM = 3 y GSB = 3) evidenciaron diferencias entre grupos en cuanto a diversidad léxica, cantidad de palabras y  turnos de habla. Durante las actividades centradas en la vida familiar, los niños de ambos grupos escuchan una mayor cantidad de palabras, con turnos más largos y mayor diversidad léxica. En la producción de vocabulario infantil se observan diferencias entre grupos: mientras que la mayor cantidad y diversidad de palabras y de longitud de turnos de niños de GSB se produjo en actividades sociales centradas en el niño, para el caso de los niños de GSM esto ocurrió en las actividades familiares de crianza.
+Estos resultados contribuyen a la comprensión de la influencia del grupo social y el tipo de actividad en la producción de vocabulario por parte de adultos y niños, al tiempo que destacan la relevancia de atender al contexto para alcanzar una mayor comprensión de los procesos implicados en la adquisición del vocabulario.
