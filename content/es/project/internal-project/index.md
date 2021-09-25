@@ -1,9 +1,11 @@
 ---
 date: "2021-09-25T00:00:00Z"
 external_link: ""
+featured: yes
 image:
   caption: 'Póster presentado en la Reunión AACC 2021'
   focal_point: Smart
+  preview_only: no
 # links:
 # - icon: twitter
 #   icon_pack: fab
