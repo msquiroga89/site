@@ -22,7 +22,7 @@ interests:
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
-role: PhD student
+role: Linguist/PhD student
 social:
 - icon: envelope
   icon_pack: fas
@@ -43,4 +43,4 @@ social:
 superuser: true
 title: Macarena Quiroga
 ---
-I live in Buenos Aires, Argentina. I've studied psycholinguistics, cognitive psychology and education. Currently I research about language acquisition, specifically child vocabulary, with mixed methods. I'm interested in deepening my knowledge about R/RStudio, either for statistic analysis or for other usages, like presentations or web design.
+I live in Buenos Aires, Argentina. I've studied psycholinguistics, cognitive psychology and education. Currently I research about language acquisition, specifically child vocabulary, with mixed methods, in [Centro de Interdisciplinario de Investigaciones en Psicología Matemática y Experimental (CIIPME-CONICET)](http://www.ciipme-conicet.gov.ar/wordpress/) . I'm interested in deepening my knowledge about R/RStudio, either for statistic analysis or for other usages, like presentations or web design. I'm part of the Organising Committee of [LatinR: Latinoamerican Conference about R use in Research and Development](https://latin-r.com/).

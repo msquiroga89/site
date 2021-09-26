@@ -22,7 +22,7 @@ interests:
 # organizations:
 # - name: CIIPME-CONICET
 #  url: http://www.ciipme-conicet.gov.ar/wordpress/
-role: Becaria doctoral
+role: Lingüista/Becaria doctoral
 social:
 - icon: envelope
   icon_pack: fas
@@ -44,4 +44,4 @@ superuser: true
 title: Macarena Quiroga
 ---
 
-Vivo en Buenos Aires, Argentina. Estudié psicolingüística, psicología cognitiva y educación. Actualmente investigo sobre adquisición del lenguaje, específicamente el vocabulario infantil, con metodologías de investigación mixtas. Me interesa profundizar mi conocimiento de R/RStudio, ya sea para los procesamientos estadísticos o para otros usos, como creación de presentaciones, diseño web y productos.
+Vivo en Buenos Aires, Argentina. Estudié psicolingüística, psicología cognitiva y educación. Actualmente investigo sobre adquisición del lenguaje, específicamente el vocabulario infantil, con metodologías de investigación mixtas, en el [Centro de Interdisciplinario de Investigaciones en Psicología Matemática y Experimental (CIIPME-CONICET)](http://www.ciipme-conicet.gov.ar/wordpress/) . Me interesa profundizar mi conocimiento de R/RStudio, ya sea para los procesamientos estadísticos o para otros usos, como creación de presentaciones, diseño web y productos. Formo parte del comité organizador de [LatinR: Conferencia Latinoamericana sobre Uso de R en Investigación + Desarrollo](https://latin-r.com/).
