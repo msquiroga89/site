@@ -19,7 +19,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: []
+projects: [ciencia-de-datos]
 # draft: false
 ---
 
@@ -49,20 +49,20 @@ tibble(dipnac)
 ```
 
 ```
-## # A tibble: 46 x 10
-##      NUM COMISIONES         PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE MU~ VARONES
+## # A tibble: 46 × 10
+##      NUM COMISIONES         PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE MU… VARONES
 ##    <dbl> <chr>                    <dbl> <dbl>   <dbl>              <dbl>   <dbl>
-##  1     1 ASUNTOS CONSTITUC~           0    35      17               48.6      18
-##  2     2 LEGISLACION GENER~           1    31      15               48.4      16
-##  3     3 RELACIONES EXTERI~           0    43      17               39.5      26
-##  4     4 PRESUPUESTO Y HAC~           0    49      13               26.5      36
+##  1     1 ASUNTOS CONSTITUC…           0    35      17               48.6      18
+##  2     2 LEGISLACION GENER…           1    31      15               48.4      16
+##  3     3 RELACIONES EXTERI…           0    43      17               39.5      26
+##  4     4 PRESUPUESTO Y HAC…           0    49      13               26.5      36
 ##  5     5 EDUCACION                    1    35      24               68.6      11
-##  6     6 CIENCIA, TECNOLOG~           0    30      15               50        15
+##  6     6 CIENCIA, TECNOLOG…           0    30      15               50        15
 ##  7     7 CULTURA                      1    30      21               70         9
 ##  8     8 JUSTICIA                     0    30      12               40        18
-##  9     9 PREVISIÓN Y SEGUR~           0    30      13               43.3      17
-## 10    10 ACCIÓN SOCIAL Y S~           0    45      25               55.6      20
-## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
+##  9     9 PREVISIÓN Y SEGUR…           0    30      13               43.3      17
+## 10    10 ACCIÓN SOCIAL Y S…           0    45      25               55.6      20
+## # … with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
 ## #   DISIDENCIAS <lgl>, PORCENTAJE DE DISIDENCIAS <lgl>
 ```
 
@@ -73,29 +73,29 @@ Frente a esto, la segunda pregunta que podemos hacernos es **¿cuáles son las c
 
 
 ```
-## # A tibble: 19 x 10
-##      NUM COMISIONES          PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE M~ VARONES
+## # A tibble: 19 × 10
+##      NUM COMISIONES          PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE M… VARONES
 ##    <dbl> <chr>               <labelled>  <dbl>   <dbl>             <dbl>   <dbl>
 ##  1     2 LEGISLACION GENERAL 1              31      15              48.4      16
 ##  2     5 EDUCACION           1              35      24              68.6      11
 ##  3     7 CULTURA             1              30      21              70         9
-##  4    11 FAMILIAS, NIÑEZ Y ~ 1              31      28              90.3       3
-##  5    12 DE LAS PERSONAS MA~ 1              31      20              64.5      11
+##  4    11 FAMILIAS, NIÑEZ Y … 1              31      28              90.3       3
+##  5    12 DE LAS PERSONAS MA… 1              31      20              64.5      11
 ##  6    13 LEGISLACION PENAL   1              30      13              43.3      17
-##  7    14 LEGISLACION DEL TR~ 1              31      15              48.4      16
+##  7    14 LEGISLACION DEL TR… 1              31      15              48.4      16
 ##  8    18 FINANZAS            1              31       8              25.8      23
 ##  9    20 COMERCIO            1              30       8              26.7      22
 ## 10    25 ASUNTOS MUNICIPALES 1              31      17              54.8      14
-## 11    26 INTERESES MARITIMO~ 1              30       8              26.7      22
-## 12    27 COMISIÓN DE VIVIEN~ 1              31      11              35.5      20
+## 11    26 INTERESES MARITIMO… 1              30       8              26.7      22
+## 12    27 COMISIÓN DE VIVIEN… 1              31      11              35.5      20
 ## 13    29 JUICIO POLÍTICO     1              30      14              46.7      16
 ## 14    32 ECONOMÍA            1              31      10              32.3      21
 ## 15    33 MINERÍA             1              30       7              23.3      23
-## 16    39 ASUNTOS COOPERATIV~ 1              31      12              38.7      19
+## 16    39 ASUNTOS COOPERATIV… 1              31      12              38.7      19
 ## 17    43 SEGURIDAD INTERIOR  1              31       8              25.8      23
 ## 18    45 DISCAPACIDAD        1              30      20              66.7      10
-## 19    46 MUJERES Y DIVERSID~ 1              30      25              83.3       5
-## # ... with 3 more variables: PORCENTAJE DE VARONES <dbl>, DISIDENCIAS <lgl>,
+## 19    46 MUJERES Y DIVERSID… 1              30      25              83.3       5
+## # … with 3 more variables: PORCENTAJE DE VARONES <dbl>, DISIDENCIAS <lgl>,
 ## #   PORCENTAJE DE DISIDENCIAS <lgl>
 ```
 A grandes rasgos podemos ver que las temáticas son muy variadas: comisiones de temáticas sociales (Educación, Cultura, Familia, niñez y juventud, De las personas mayores, Comisión de vivienda, Asuntos cooperativos, Discapacidad, Mujeres y diversidad), de economía y producción (Finanzas, Comercio, Economía, Minería), de asuntos jurídico-legislativos (Legislación General, Penal y del Trabajo, Juicio Político) y estatales (Asuntos Municipales, Intereses Marítimos y Seguridad Interior).
@@ -107,40 +107,40 @@ De las 46 comisiones, solo 11 tienen más mujeres que hombres en su composición
 
 
 ```
-## # A tibble: 46 x 10
-##      NUM COMISIONES         PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE MU~ VARONES
+## # A tibble: 46 × 10
+##      NUM COMISIONES         PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE MU… VARONES
 ##    <dbl> <chr>              <labelled>  <dbl>   <dbl>              <dbl>   <dbl>
-##  1    11 FAMILIAS, NIÑEZ Y~ 1              31      28               90.3       3
-##  2    46 MUJERES Y DIVERSI~ 1              30      25               83.3       5
+##  1    11 FAMILIAS, NIÑEZ Y… 1              31      28               90.3       3
+##  2    46 MUJERES Y DIVERSI… 1              30      25               83.3       5
 ##  3     7 CULTURA            1              30      21               70         9
 ##  4     5 EDUCACION          1              35      24               68.6      11
 ##  5    45 DISCAPACIDAD       1              30      20               66.7      10
-##  6    12 DE LAS PERSONAS M~ 1              31      20               64.5      11
-##  7    28 PETICIONES, PODER~ 0              31      19               61.3      12
-##  8    44 LIBERTAD DE EXPRE~ 0              31      18               58.1      13
-##  9    10 ACCIÓN SOCIAL Y S~ 0              45      25               55.6      20
-## 10    25 ASUNTOS MUNICIPAL~ 1              31      17               54.8      14
-## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
+##  6    12 DE LAS PERSONAS M… 1              31      20               64.5      11
+##  7    28 PETICIONES, PODER… 0              31      19               61.3      12
+##  8    44 LIBERTAD DE EXPRE… 0              31      18               58.1      13
+##  9    10 ACCIÓN SOCIAL Y S… 0              45      25               55.6      20
+## 10    25 ASUNTOS MUNICIPAL… 1              31      17               54.8      14
+## # … with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
 ## #   DISIDENCIAS <lgl>, PORCENTAJE DE DISIDENCIAS <lgl>
 ```
 Al mirar cuáles son las comisiones que tienen más del 50% de mujeres en su composición, encontramos temáticas históricamente feminizadas: las niñeces, adolescencias y juventudes, el cuidado de las personas mayores y con discapacidades, la atención a la diversidad, cultura y educación. Si miramos el gráfico de forma invertida, la conclusión es similar:
 
 
 ```
-## # A tibble: 46 x 10
-##      NUM COMISIONES          PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE M~ VARONES
+## # A tibble: 46 × 10
+##      NUM COMISIONES          PRESIDENCIA TOTAL MUJERES `PORCENTAJE DE M… VARONES
 ##    <dbl> <chr>               <labelled>  <dbl>   <dbl>             <dbl>   <dbl>
 ##  1    15 DEFENSA NACIONAL     0             31       5              16.1      26
 ##  2    23 TRANSPORTES          0             31       5              16.1      26
 ##  3    16 OBRAS PUBLICAS      NA             31       7              22.6      24
 ##  4    33 MINERÍA              1             30       7              23.3      23
-##  5    17 AGRICULTURA Y GANA~  0             35       9              25.7      26
+##  5    17 AGRICULTURA Y GANA…  0             35       9              25.7      26
 ##  6    18 FINANZAS             1             31       8              25.8      23
 ##  7    43 SEGURIDAD INTERIOR   1             31       8              25.8      23
-##  8     4 PRESUPUESTO Y HACI~  0             49      13              26.5      36
+##  8     4 PRESUPUESTO Y HACI…  0             49      13              26.5      36
 ##  9    20 COMERCIO             1             30       8              26.7      22
-## 10    26 INTERESES MARITIMO~  1             30       8              26.7      22
-## # ... with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
+## 10    26 INTERESES MARITIMO…  1             30       8              26.7      22
+## # … with 36 more rows, and 3 more variables: PORCENTAJE DE VARONES <dbl>,
 ## #   DISIDENCIAS <lgl>, PORCENTAJE DE DISIDENCIAS <lgl>
 ```
 Las comisiones con menor cantidad de mujeres tratan temáticas como la organización militar y la seguridad interior, la infraestructura de transporte y de obrar públicas, y la producción minera, agropecuaria, las finanzas, el presupuesto y el comercio.
