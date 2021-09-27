@@ -19,9 +19,9 @@ interests:
 - Ciencia de datos y educación
 - Metodologías cuantitativas
 - Lingüística de corpus
-# organizations:
-# - name: CIIPME-CONICET
-#  url: http://www.ciipme-conicet.gov.ar/wordpress/
+organizations:
+- name: CIIPME-CONICET
+  url: http://www.ciipme-conicet.gov.ar/wordpress/
 role: Lingüista/Becaria doctoral
 social:
 - icon: envelope

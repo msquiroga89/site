@@ -19,9 +19,9 @@ interests:
 - Data Science for Education
 - Quantitative Metholodogies
 - Corpus Linguistics
-# organizations:
-# - name: CIIPME-CONICET
-#  url: http://www.ciipme-conicet.gov.ar/wordpress/
+organizations:
+- name: CIIPME-CONICET
+  url: http://www.ciipme-conicet.gov.ar/wordpress/
 role: Linguist/PhD student
 social:
 - icon: envelope
