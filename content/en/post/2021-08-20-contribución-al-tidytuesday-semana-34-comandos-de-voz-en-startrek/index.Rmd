@@ -1,0 +1,103 @@
+---
+title: 'Contribution to #TidyTuesday week 34: StarTrek voice commands'
+author: 'Macarena Quiroga'
+date: '2021-08-20'
+slug: tidytuesday-week-34-startrek-voice-commands
+categories: []
+tags: 
+  - rstats
+  - tidytuesday
+  - dataviz
+  - english
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-08-20T08:59:39-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+projects: [ciencia-de-datos]
+---
+
+Two weeks in a row! Kudos for me! I've decided that I'll try to participate every week in \#TidyTuesday, even if it's a single graph. What matters to me is to keep up practizing and to find a new topic to explore each week.
+
+(For those who haven't met them: \#TidyTuesday is a collaborative project which consists in working each week with a new real data set, to practice visualization skills and such. You can find more about it in [their GitHub repo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-10/readme.md) and under [the Twitter hashtag](https://twitter.com/hashtag/TidyTuesday?src=hashtag_click).)
+
+This week dataset has the voice commands used by StarTrek characters. I know this must have been a great opportunity to practice text analysis; I, ironically, still haven't learned how to do it. Worse, I haven't even seen StarTrek, so I didn't have background to understand how to really make the most of it.
+
+So, to be faithful to my goal, I've decided to create a modest graph: counting how many utterances were madre, organizing them by type of utterance and dividing them by character type (person or computer). Then, I thought what kind of modifications I could add. Understanding the functioning of `theme()` has always been a great challenge for me; I tend to chose a theme and then stick with the default options, because I don't have a lot of visual skills.
+
+#### So, what have I learned this week?
+
+-   I did a [lollipop chart](https://www.r-graph-gallery.com/lollipop-plot.html); even though I had already used them before, this time I took the time to read more about them. I learned that some people think that the increase of visual attractiveness that the chart provides, actually decreases their precision (because the circle in the point of the line is more imprecise than the strict line of a bar).
+
+-   I did modify a lot of the theme's component: I learned that the chart's background color and the image background color are different objects. I changed the font and it's size; I reinforced the functioning of the faceted graph labels.
+
+-   I learned about the `tidytext::reorder_within()` function, that was first mentioned in [this Tyler Rinker blogpost](https://trinkerrstuff.wordpress.com/2016/12/23/ordering-categories-within-ggplot2-facets/), and then added to the `tidytext` package (in [this Julia Silge post](https://juliasilge.com/blog/reorder-within/) you can find a more detailed explanation of the process). But, as with great power comes great responsability, this function duplicated all the factors labels (who knows why), so I had to edit them... by hand. Whatever.
+
+#### The code
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(tidytext)
+library(ggthemes)
+
+tuesdata <- tidytuesdayR::tt_load(2021, week = 34)
+computer <- tuesdata$computer
+
+computer <- computer %>% 
+  mutate_all(.funs = tolower) %>%  # to unify rows
+  mutate_if(is.character, as.factor)
+
+computer$char_type <- factor(computer$char_type, levels = c("computer", "person"), 
+                             labels = c("Computer", "Person")) # arrange
+
+computer %>% 
+  group_by(char_type, type) %>% 
+  summarise(count = n()) %>%  # command quantity
+  mutate(type = reorder_within(type, count, char_type)) %>% # arranged by size
+  ggplot(aes(x=reorder(type, count), y = count))+
+  geom_point(color = "red")+
+  geom_segment(aes(x=reorder(type, count), xend =type, y=0, yend=count, color = "red"))+
+  facet_wrap(~char_type, 
+             scales = "free", # to prevent blank spots
+             labeller = labeller( # facet title
+               Computer = computer,
+               Person = person))+
+  coord_flip()+
+  scale_y_reordered()+ # rearrange elements within the facet
+  scale_x_discrete(labels = c("response___Computer" = "Response",
+                              "alert___Computer" = "Alert",
+                              "info___Computer" = "Information",
+                              "countdown___Computer" = "Countdown",
+                              "clarification___Computer" = "Clarification",
+                              "progress___Computer" = "Progress",
+                              "conversation___Computer" = "Conversation",
+                              "command___Person" = "Command",
+                              "wake word___Person" = "Wake word",
+                              "statement___Person" = "Statement",
+                              "question___Person" = "Question",
+                              "conversation___Person" = "Conversation",
+                              "password___Person" = "Password",
+                              "comment___Person" = "Comment"))+
+  theme_few()+
+  theme(plot.background = element_rect(fill = "black"), # image background
+        panel.background = element_rect(fill = "black"), # chart background
+        axis.text = element_text(color = "white", size = 12), # axis text
+        plot.title = element_text(color = "white", 
+                                  size = 20), # chart title
+        plot.caption = element_text(color = "white"), # font
+        legend.position = "none", # remove reference 
+        text = element_text(family = "Kefa"), # chart font
+        panel.grid.major.x = element_line(size = 4), # shrink space between ticks
+        strip.text = element_text(size = 12) # facet title font size
+  )+
+  labs(x = "", y = "",
+       title = "What kind of utterances produce each one?",
+       caption = "Source: Speech Interactions | http://www.speechinteraction.org/TNG/ | @_msquiroga"
+    )
+```
+
+I hope you find this useful. Let me know!

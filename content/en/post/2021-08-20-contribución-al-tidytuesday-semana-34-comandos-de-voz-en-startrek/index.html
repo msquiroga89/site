@@ -1,0 +1,103 @@
+---
+title: 'Contribution to #TidyTuesday week 34: StarTrek voice commands'
+author: 'Macarena Quiroga'
+date: '2021-08-20'
+slug: tidytuesday-week-34-startrek-voice-commands
+categories: []
+tags: 
+  - rstats
+  - tidytuesday
+  - dataviz
+  - english
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-08-20T08:59:39-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+projects: [ciencia-de-datos]
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Two weeks in a row! Kudos for me! I’ve decided that I’ll try to participate every week in #TidyTuesday, even if it’s a single graph. What matters to me is to keep up practizing and to find a new topic to explore each week.</p>
+<p>(For those who haven’t met them: #TidyTuesday is a collaborative project which consists in working each week with a new real data set, to practice visualization skills and such. You can find more about it in <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-10/readme.md">their GitHub repo</a> and under <a href="https://twitter.com/hashtag/TidyTuesday?src=hashtag_click">the Twitter hashtag</a>.)</p>
+<p>This week dataset has the voice commands used by StarTrek characters. I know this must have been a great opportunity to practice text analysis; I, ironically, still haven’t learned how to do it. Worse, I haven’t even seen StarTrek, so I didn’t have background to understand how to really make the most of it.</p>
+<p>So, to be faithful to my goal, I’ve decided to create a modest graph: counting how many utterances were madre, organizing them by type of utterance and dividing them by character type (person or computer). Then, I thought what kind of modifications I could add. Understanding the functioning of <code>theme()</code> has always been a great challenge for me; I tend to chose a theme and then stick with the default options, because I don’t have a lot of visual skills.</p>
+<div id="so-what-have-i-learned-this-week" class="section level4">
+<h4>So, what have I learned this week?</h4>
+<ul>
+<li><p>I did a <a href="https://www.r-graph-gallery.com/lollipop-plot.html">lollipop chart</a>; even though I had already used them before, this time I took the time to read more about them. I learned that some people think that the increase of visual attractiveness that the chart provides, actually decreases their precision (because the circle in the point of the line is more imprecise than the strict line of a bar).</p></li>
+<li><p>I did modify a lot of the theme’s component: I learned that the chart’s background color and the image background color are different objects. I changed the font and it’s size; I reinforced the functioning of the faceted graph labels.</p></li>
+<li><p>I learned about the <code>tidytext::reorder_within()</code> function, that was first mentioned in <a href="https://trinkerrstuff.wordpress.com/2016/12/23/ordering-categories-within-ggplot2-facets/">this Tyler Rinker blogpost</a>, and then added to the <code>tidytext</code> package (in <a href="https://juliasilge.com/blog/reorder-within/">this Julia Silge post</a> you can find a more detailed explanation of the process). But, as with great power comes great responsability, this function duplicated all the factors labels (who knows why), so I had to edit them… by hand. Whatever.</p></li>
+</ul>
+</div>
+<div id="the-code" class="section level4">
+<h4>The code</h4>
+<pre class="r"><code>library(tidyverse)
+library(tidytext)
+library(ggthemes)
+
+tuesdata &lt;- tidytuesdayR::tt_load(2021, week = 34)</code></pre>
+<pre><code>## 
+##  Downloading file 1 of 1: `computer.csv`</code></pre>
+<pre class="r"><code>computer &lt;- tuesdata$computer
+
+computer &lt;- computer %&gt;% 
+  mutate_all(.funs = tolower) %&gt;%  # to unify rows
+  mutate_if(is.character, as.factor)
+
+computer$char_type &lt;- factor(computer$char_type, levels = c(&quot;computer&quot;, &quot;person&quot;), 
+                             labels = c(&quot;Computer&quot;, &quot;Person&quot;)) # arrange
+
+computer %&gt;% 
+  group_by(char_type, type) %&gt;% 
+  summarise(count = n()) %&gt;%  # command quantity
+  mutate(type = reorder_within(type, count, char_type)) %&gt;% # arranged by size
+  ggplot(aes(x=reorder(type, count), y = count))+
+  geom_point(color = &quot;red&quot;)+
+  geom_segment(aes(x=reorder(type, count), xend =type, y=0, yend=count, color = &quot;red&quot;))+
+  facet_wrap(~char_type, 
+             scales = &quot;free&quot;, # to prevent blank spots
+             labeller = labeller( # facet title
+               Computer = computer,
+               Person = person))+
+  coord_flip()+
+  scale_y_reordered()+ # rearrange elements within the facet
+  scale_x_discrete(labels = c(&quot;response___Computer&quot; = &quot;Response&quot;,
+                              &quot;alert___Computer&quot; = &quot;Alert&quot;,
+                              &quot;info___Computer&quot; = &quot;Information&quot;,
+                              &quot;countdown___Computer&quot; = &quot;Countdown&quot;,
+                              &quot;clarification___Computer&quot; = &quot;Clarification&quot;,
+                              &quot;progress___Computer&quot; = &quot;Progress&quot;,
+                              &quot;conversation___Computer&quot; = &quot;Conversation&quot;,
+                              &quot;command___Person&quot; = &quot;Command&quot;,
+                              &quot;wake word___Person&quot; = &quot;Wake word&quot;,
+                              &quot;statement___Person&quot; = &quot;Statement&quot;,
+                              &quot;question___Person&quot; = &quot;Question&quot;,
+                              &quot;conversation___Person&quot; = &quot;Conversation&quot;,
+                              &quot;password___Person&quot; = &quot;Password&quot;,
+                              &quot;comment___Person&quot; = &quot;Comment&quot;))+
+  theme_few()+
+  theme(plot.background = element_rect(fill = &quot;black&quot;), # image background
+        panel.background = element_rect(fill = &quot;black&quot;), # chart background
+        axis.text = element_text(color = &quot;white&quot;, size = 12), # axis text
+        plot.title = element_text(color = &quot;white&quot;, 
+                                  size = 20), # chart title
+        plot.caption = element_text(color = &quot;white&quot;), # font
+        legend.position = &quot;none&quot;, # remove reference 
+        text = element_text(family = &quot;Kefa&quot;), # chart font
+        panel.grid.major.x = element_line(size = 4), # shrink space between ticks
+        strip.text = element_text(size = 12) # facet title font size
+  )+
+  labs(x = &quot;&quot;, y = &quot;&quot;,
+       title = &quot;What kind of utterances produce each one?&quot;,
+       caption = &quot;Source: Speech Interactions | http://www.speechinteraction.org/TNG/ | @_msquiroga&quot;
+    )</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>I hope you find this useful. Let me know!</p>
+</div>
