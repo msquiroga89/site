@@ -16,7 +16,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: []
+projects: [docencia]
 ---
 
 Recién salida del horno: publiqué una ficha didáctica en [ReLIF](https://relif.net.ar/como-enfrentarse-a-una-hoja-en-blanco-la-organizacion-de-los-cimientos-de-la-escritura/) sobre estrategias para planificar textos.

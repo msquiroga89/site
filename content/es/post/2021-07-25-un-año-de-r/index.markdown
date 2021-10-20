@@ -18,7 +18,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: []
+projects: [ciencia-de-datos]
 #draft: falses
 ---
 

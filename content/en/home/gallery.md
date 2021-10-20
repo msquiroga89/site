@@ -18,3 +18,5 @@ design:
 ---
 
 {{< gallery album="generative_art" >}}
+
+

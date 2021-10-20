@@ -18,7 +18,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: yes
-projects: []
+projects: [ciencia-de-datos]
 ---
 
 ¡Dos semanas al hilo! ¡Bien por mí! Decidí que voy a intentar participar todas las semanas del \#TidyTuesday, aunque sea un solo gráfico sencillo. Lo importante es sostener la práctica y, además, intentar elegir al menos **un área** que explorar en cada caso.

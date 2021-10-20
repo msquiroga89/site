@@ -2,7 +2,7 @@
 # An instance of the Portfolio widget.
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: portfolio
-active: false
+active: true
 
 # This file represents a page section.
 headless: true
@@ -10,7 +10,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 65
 
-title: Projects
+title: Proyectos
 subtitle: ''
 
 content:
@@ -26,12 +26,14 @@ content:
   # To filter by a specific tag, set `tag` to an existing tag name.
   # To remove the toolbar, delete the entire `filter_button` block.
   filter_button:
-  - name: All
+  - name: Todos
     tag: '*'
-  - name: Deep Learning
-    tag: Deep Learning
-  - name: Other
-    tag: Demo
+  - name: Investigación
+    tag: investigacion
+  - name: Docencia
+    tag: docencia
+  - name: Ciencia de datos
+    tag: ciencia de datos
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
@@ -42,7 +44,7 @@ design:
   #   2 = Compact
   #   3 = Card
   #   5 = Showcase
-  view: 2
+  view: 3
 
   # For Showcase view, flip alternate rows?
   flip_alt_rows: false
