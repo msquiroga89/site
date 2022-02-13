@@ -1,5 +1,5 @@
 ---
-bio: Investigo la adquisición del lenguaje. Estudio estadística y ciencia de datos con R/Rstudio.
+bio: Investigo la adquisición del lenguaje. Estudio estadística y ciencia de datos con R/Rstudio. Si te gusta lo que hago, podés invitarme [un cafecito](https://cafecito.app/macarenaquiroga) desde Argentina, o [un kofi](https://ko-fi.com/macarenaquiroga) desde el exterior.
 # education:
 #  courses:
 #  - course: Doctorado en Educación

@@ -1,0 +1,100 @@
+---
+title: Contribución a TidyTuesday, semana 52
+author: 'Macarena Quiroga'
+date: '2022-01-02'
+slug: contribución-a-tidytuesday-semana-52
+categories: 
+- español
+- ciencia de datos
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-02T11:23:54-03:00'
+featured: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Este fin de año estuvo bastante movido, entre la organización del [VI Encuentro de Investigadores en Desarrollo, Aprendizaje y Educación](https://ciipmeconicet.wixsite.com/ciipme-flacso-2021) y la escritura de ¡dos! papers. Y sin tener en cuenta la pandemia.
+
+Venía con ganas de hacer algo para #TidyTuesday, pero no me motivaron mucho las últimas propuestas. No me malinterpreten, amo a las [Spice Girls](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md) y las [arañas](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-07/readme.md) me resultan simpáticas (aunque no podría decir que me interesa mucho el [cricket](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-11-30/readme.md)), pero los tipos de datos que traían no me resultaban particularmente convocantes. Si bien este proyecto apunta a trabajar herramientas de visualización, lo que más necesito en este momento es mejorar mis habilidades estadísticas.
+
+Por eso elegí esta semana: datos sobre las bebidas de Starbucks. El dataset tiene mucha información numérica que me va a permitir reproducir un análisis estadístico básico. Empecemos primero por importar y organizar un poco los datos.
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load('2021-12-21')
+starbucks <- tuesdata$starbucks
+starbucks$product_name <- as.factor(starbucks$product_name)
+starbucks$size <- as.factor(starbucks$size)
+starbucks$milk <- as.factor(starbucks$milk)
+starbucks$whip <- as.factor(starbucks$whip)
+starbucks$trans_fat_g <- as.numeric(starbucks$trans_fat_g)
+starbucks$fiber_g <- as.numeric(starbucks$fiber_g)
+```
+
+# Análisis descriptivo
+
+Para entender un poco más cómo están compuestas estas bebidas, vamos a realizar un análisis descriptivo. Tenemos dos medidas de tamaño (`size` y `serve_size_m_l`), calorías, grasas totales (grasas saturadas y grasas trans), gramos de colesterol, gramos de sodio, carbohidratos totales, gramos de fibra, gramos de azúcar y gramos de cafeína.
+
+Lo primero que vamos a hacer es ver cómo se distribuyen las bebidas según la cantidad de esos ingredientes. Sin embargo, me encontré con el problema de que los distintos elementos aparecen, incluso dentro de su distribución, con valores absolutos muy diferentes. Esto hace que no se distingan con claridad si los presento todos en un mismo gráfico. Voy a mantener entonces la separación por tamaños, pero 
+
+```{r}
+library(tidyverse)
+starbucks_longer <- starbucks %>% 
+  mutate(caffeine_g = caffeine_mg*100,
+         cholesterol_g = cholesterol_mg*100,
+         sodium_g = sodium_mg*100) %>% 
+  select(-c(caffeine_mg, cholesterol_mg, sodium_mg)) %>% 
+  pivot_longer(cols = c(5:15),
+               names_to = "character",
+               values_to = "n")
+
+starbucks_longer$size <- factor(starbucks_longer$size, levels = c("short", "tall", "grande", "venti"))
+
+starbucks_longer %>% 
+  filter(character %in% c("calories", "total_fat_g", "sodium_g", "cholesterol_g", "fiber_g", "sugar_g", "caffeine_g")) %>% 
+  filter(size %in% c("short", "tall", "venti", "grande")) %>% 
+  ggplot()+
+  geom_density(mapping = aes(n, color = size))+
+  facet_wrap(~character, scales = "free")
+
+```
+
+En principio, se puede ver que a grandes rasgos los gráficos siguen el patrón lógico: los tamaños más grandes tienen distribuciones más aplanadas, mientras que los tamaños más chicos tienen picos más pronunciados. Me llama particularmente la atención el gráfico de cafeína: tanto el tamaño "short" como el "tall" tienen un pico muy similar. Es posible, de todos modos, que no todos los tipos de bebidas tengan los cuatro tamaños, y que esto incorpore sesgos en los gráficos. Lo veremos más adelante.
+
+```{r}
+starbucks_longer %>% 
+  filter(character %in% c("calories", "total_fat_g", "sodium_g", "cholesterol_g", "fiber_g", "sugar_g", "caffeine_g")) %>% 
+  filter(size %in% c("short", "tall", "venti", "grande")) %>% 
+  ggplot()+
+  geom_boxplot(mapping = aes(x = size, y = n, fill = size))+
+  facet_wrap(~character, scales = "free")
+```
+
+El boxplot muestra con más claridad la diferencia entre los tamaños, que de todos modos sigue mostrando similitudes en los primeros dos tamaños para la cantidad de cafeína como de fibra. Una buena pregunta para más adelante es: ¿hay diferencias estadísticamente significativas entre la cantidad de cafeína en las bebidas de los primeros dos tamaños? 
+
+Ahora, ¿cuáles son las bebidas con más cantidad de cada elemento? Para poder comparar, vamos a quedarnos con las versiones más pequeñas ("short"), sin tener en cuenta otras características:
+
+```{r}
+library(gt)
+library(gtExtras)
+starbucks %>% 
+  filter(size == "short") %>% 
+  arrange(desc(caffeine_mg)) %>% 
+  select(product_name, caffeine_mg) %>% 
+  unique() %>% 
+  slice_head(n =10) %>% 
+  gt() %>% 
+  tab_options(
+    column_labels.text_transform = "Nombre del producto"
+  ) %>% 
+  tab_header(title = "Los 10 productos con más  cafeína") %>% 
+  gt_theme_nytimes() %>% 
+  tab_source_note(source_note = "Source: Starbucks Coffee Company | Made by @_msquiroga for #TidyTuesday") %>% 
+  cols_align("left")
+```
+
