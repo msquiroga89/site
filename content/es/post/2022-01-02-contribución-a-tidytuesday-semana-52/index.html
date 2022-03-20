@@ -1,0 +1,544 @@
+---
+title: Contribución a TidyTuesday, semana 52
+author: 'Macarena Quiroga'
+date: '2022-01-02'
+slug: contribución-a-tidytuesday-semana-52
+categories: 
+- español
+- ciencia de datos
+- tidytuesday
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-02T11:23:54-03:00'
+featured: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Este fin de año estuvo bastante movido, entre la organización del <a href="https://ciipmeconicet.wixsite.com/ciipme-flacso-2021">VI Encuentro de Investigadores en Desarrollo, Aprendizaje y Educación</a> y la escritura de ¡dos! papers. Y sin tener en cuenta la pandemia.</p>
+<p>Venía con ganas de hacer algo para #TidyTuesday, pero no me motivaron mucho las últimas propuestas. No me malinterpreten, amo a las <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md">Spice Girls</a> y las <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-07/readme.md">arañas</a> me resultan simpáticas (aunque no podría decir que me interesa mucho el <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-11-30/readme.md">cricket</a>), pero los tipos de datos que traían no me resultaban particularmente convocantes. Si bien este proyecto apunta a trabajar herramientas de visualización, lo que más necesito en este momento es mejorar mis habilidades estadísticas.</p>
+<p>Por eso elegí esta semana: datos sobre las bebidas de Starbucks. El dataset tiene mucha información numérica que me va a permitir reproducir un análisis estadístico básico. Empecemos primero por importar y organizar un poco los datos.</p>
+<pre class="r"><code>tuesdata &lt;- tidytuesdayR::tt_load(&#39;2021-12-21&#39;)</code></pre>
+<pre><code>## --- Compiling #TidyTuesday Information for 2021-12-21 ----</code></pre>
+<pre><code>## --- There is 1 file available ---</code></pre>
+<pre><code>## --- Starting Download ---</code></pre>
+<pre><code>## 
+##  Downloading file 1 of 1: `starbucks.csv`</code></pre>
+<pre><code>## --- Download complete ---</code></pre>
+<pre class="r"><code>starbucks &lt;- tuesdata$starbucks
+starbucks$product_name &lt;- as.factor(starbucks$product_name)
+starbucks$size &lt;- as.factor(starbucks$size)
+starbucks$milk &lt;- as.factor(starbucks$milk)
+starbucks$whip &lt;- as.factor(starbucks$whip)
+starbucks$trans_fat_g &lt;- as.numeric(starbucks$trans_fat_g)
+starbucks$fiber_g &lt;- as.numeric(starbucks$fiber_g)</code></pre>
+<div id="análisis-descriptivo" class="section level1">
+<h1>Análisis descriptivo</h1>
+<p>Para entender un poco más cómo están compuestas estas bebidas, vamos a realizar un análisis descriptivo. Tenemos dos medidas de tamaño (<code>size</code> y <code>serve_size_m_l</code>), calorías, grasas totales (grasas saturadas y grasas trans), gramos de colesterol, gramos de sodio, carbohidratos totales, gramos de fibra, gramos de azúcar y gramos de cafeína.</p>
+<p>Lo primero que vamos a hacer es ver cómo se distribuyen las bebidas según la cantidad de esos ingredientes. Sin embargo, me encontré con el problema de que los distintos elementos aparecen, incluso dentro de su distribución, con valores absolutos muy diferentes. Esto hace que no se distingan con claridad si los presento todos en un mismo gráfico. Voy a mantener entonces la separación por tamaños, pero solo voy a trabajar con los tamaños estándares (short, tall, venti, grande).</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.5          ✓ purrr   0.3.4     
+## ✓ tibble  3.1.6          ✓ dplyr   1.0.7     
+## ✓ tidyr   1.1.3          ✓ stringr 1.4.0.9000
+## ✓ readr   2.0.1          ✓ forcats 0.5.1</code></pre>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.1.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>starbucks_longer &lt;- starbucks %&gt;% 
+  mutate(caffeine_g = caffeine_mg*100,
+         cholesterol_g = cholesterol_mg*100,
+         sodium_g = sodium_mg*100) %&gt;% 
+  select(-c(caffeine_mg, cholesterol_mg, sodium_mg)) %&gt;% 
+  pivot_longer(cols = c(5:15),
+               names_to = &quot;character&quot;,
+               values_to = &quot;n&quot;)
+
+starbucks_longer$size &lt;- factor(starbucks_longer$size, levels = c(&quot;short&quot;, &quot;tall&quot;, &quot;grande&quot;, &quot;venti&quot;))
+
+starbucks_longer %&gt;% 
+  filter(character %in% c(&quot;calories&quot;, &quot;total_fat_g&quot;, &quot;sodium_g&quot;, &quot;cholesterol_g&quot;, &quot;fiber_g&quot;, &quot;sugar_g&quot;, &quot;caffeine_g&quot;)) %&gt;% 
+  filter(size %in% c(&quot;short&quot;, &quot;tall&quot;, &quot;venti&quot;, &quot;grande&quot;)) %&gt;% 
+  ggplot()+
+  geom_density(mapping = aes(n, color = size))+
+  facet_wrap(~character, scales = &quot;free&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>En principio, se puede ver que a grandes rasgos los gráficos siguen el patrón lógico: los tamaños más grandes tienen distribuciones más aplanadas, mientras que los tamaños más chicos tienen picos más pronunciados. Me llama particularmente la atención el gráfico de cafeína: tanto el tamaño “short” como el “tall” tienen un pico muy similar (¿mucha cafeína para un tamaño pequeño o poca cafeína para un tamaño más grande?). Es posible, de todos modos, que no todos los tipos de bebidas tengan los cuatro tamaños, y que esto incorpore sesgos en los gráficos. Lo veremos más adelante.</p>
+<pre class="r"><code>starbucks_longer %&gt;% 
+  filter(character %in% c(&quot;calories&quot;, &quot;total_fat_g&quot;, &quot;sodium_g&quot;, &quot;cholesterol_g&quot;, &quot;fiber_g&quot;, &quot;sugar_g&quot;, &quot;caffeine_g&quot;)) %&gt;% 
+  filter(size %in% c(&quot;short&quot;, &quot;tall&quot;, &quot;venti&quot;, &quot;grande&quot;)) %&gt;% 
+  ggplot()+
+  geom_boxplot(mapping = aes(x = size, y = n, fill = size))+
+  facet_wrap(~character, scales = &quot;free&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>El boxplot muestra con más claridad la diferencia entre los tamaños, que de todos modos sigue mostrando similitudes en los primeros dos tamaños para la cantidad de cafeína como de fibra. Una buena pregunta para más adelante es: ¿hay diferencias estadísticamente significativas entre la cantidad de cafeína en las bebidas de los primeros dos tamaños?</p>
+<p>Ahora, ¿cuáles son las bebidas con más cantidad de cada elemento? Para poder comparar, vamos a quedarnos con las versiones más pequeñas (“short”), sin tener en cuenta otras características:</p>
+<pre class="r"><code>library(gt)
+library(gtExtras)
+starbucks %&gt;% 
+  filter(size == &quot;short&quot;) %&gt;% 
+  arrange(desc(caffeine_mg)) %&gt;% 
+  select(product_name, caffeine_mg) %&gt;% 
+  unique() %&gt;% 
+  slice_head(n =10) %&gt;% 
+  gt() %&gt;% 
+  tab_options(
+    column_labels.text_transform = &quot;Nombre del producto&quot;
+  ) %&gt;% 
+  tab_header(title = &quot;Los 10 productos con más  cafeína&quot;) %&gt;% 
+  gt_theme_nytimes() %&gt;% 
+  tab_source_note(source_note = &quot;Source: Starbucks Coffee Company | Made by @_msquiroga for #TidyTuesday&quot;) %&gt;% 
+  cols_align(&quot;left&quot;)</code></pre>
+<div id="btiupzydko" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#btiupzydko .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#btiupzydko .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#btiupzydko .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#btiupzydko .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#btiupzydko .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#btiupzydko .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#btiupzydko .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: Nombre del producto;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#btiupzydko .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: Nombre del producto;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#btiupzydko .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#btiupzydko .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#btiupzydko .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#btiupzydko .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#btiupzydko .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#btiupzydko .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#btiupzydko .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#btiupzydko .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#btiupzydko .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#btiupzydko .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#btiupzydko .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#btiupzydko .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#btiupzydko .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#btiupzydko .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#btiupzydko .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#btiupzydko .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#btiupzydko .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#btiupzydko .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#btiupzydko .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#btiupzydko .gt_left {
+  text-align: left;
+}
+
+#btiupzydko .gt_center {
+  text-align: center;
+}
+
+#btiupzydko .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#btiupzydko .gt_font_normal {
+  font-weight: normal;
+}
+
+#btiupzydko .gt_font_bold {
+  font-weight: bold;
+}
+
+#btiupzydko .gt_font_italic {
+  font-style: italic;
+}
+
+#btiupzydko .gt_super {
+  font-size: 65%;
+}
+
+#btiupzydko .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="font-family: &#39;Libre Franklin&#39;; font-weight: 800;">Los 10 productos con más  cafeína</th>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: &#39;Source Sans Pro&#39;; font-size: 12px; text-transform: uppercase;">product_name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: &#39;Source Sans Pro&#39;; font-size: 12px; text-transform: uppercase;">caffeine_mg</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Clover Brewed Coffee - Dark Roast</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">190</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">brewed coffee - True North Blend Blonde roast</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">180</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Clover Brewed Coffee - Medium Roast</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">170</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">brewed coffee - medium roast</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">155</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Clover Brewed Coffee -  Light Roast</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">155</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Latte Macchiato</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">150</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">brewed coffee - dark roast</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">130</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Flat White</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">130</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Caffè Mocha</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">90</td></tr>
+    <tr><td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Caffè Misto</td>
+<td class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">75</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="2">Source: Starbucks Coffee Company | Made by @_msquiroga for #TidyTuesday</td>
+    </tr>
+  </tfoot>
+  
+</table>
+</div>
+<p>Ya saben, amigos: si necesitan una ayudita para empezar su día, pueden pasar por su Starbucks más cercano y pedir un <em>Clover Brewed Coffee - Dark Roast</em> (si es que existe en sus países, claro: en el mío me parece que no).</p>
+</div>
+<div id="regresión" class="section level1">
+<h1>Regresión</h1>
+<p>Empecé este post planteando que quería practicar mis habilidades estadísticas, pero ya no estoy tan segura de que este dataset me dé muchas oportunidades para hacer grandes operaciones. Por el momento, me voy a quedar con esta pregunta: ¿qué aspecto de la composición de las bebidas aporta significativamente más a la cantidad de grasas totales? Por supuesto que es una respuesta que se puede conseguir desde un punto de vista nutricional: la presencia de leche y de crema, junto con el tamaño de la bebida, deberían ser los tres predictores más significativos. Pero veamos si la estadística nos acompaña.</p>
+<pre class="r"><code>starbucks &lt;- starbucks %&gt;% 
+  filter(!size %in% c(&quot;1 scoop&quot;, &quot;1 shot&quot;))
+
+fat_reg &lt;- lm(total_fat_g ~ size + milk + whip + serv_size_m_l + calories + cholesterol_mg + sodium_mg + fiber_g + sugar_g + caffeine_mg, data  = starbucks)
+summary(fat_reg)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = total_fat_g ~ size + milk + whip + serv_size_m_l + 
+##     calories + cholesterol_mg + sodium_mg + fiber_g + sugar_g + 
+##     caffeine_mg, data = starbucks)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5403 -0.5246  0.0487  0.5103  7.6863 
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    -0.2538835  0.4009213  -0.633   0.5267    
+## sizegrande     -1.2414507  0.6557588  -1.893   0.0586 .  
+## sizequad       -0.7248447  0.5507526  -1.316   0.1884    
+## sizeshort      -0.2524751  0.4828904  -0.523   0.6012    
+## sizesolo        0.4126085  0.5473979   0.754   0.4511    
+## sizetall       -0.5817991  0.5569494  -1.045   0.2964    
+## sizetrenta     -1.5889205  1.0794471  -1.472   0.1413    
+## sizetriple     -0.3613976  0.5473937  -0.660   0.5093    
+## sizeventi      -1.8653208  0.8295612  -2.249   0.0247 *  
+## milk1          -2.5098877  0.1339820 -18.733  &lt; 2e-16 ***
+## milk2          -1.5945736  0.1510997 -10.553  &lt; 2e-16 ***
+## milk3          -0.9801896  0.1475690  -6.642 4.81e-11 ***
+## milk4           0.9084118  0.1445475   6.285 4.70e-10 ***
+## milk5          -0.6896911  0.1582705  -4.358 1.43e-05 ***
+## whip1           1.8390692  0.1669839  11.013  &lt; 2e-16 ***
+## serv_size_m_l   0.0021254  0.0011338   1.875   0.0611 .  
+## calories        0.0688260  0.0013809  49.842  &lt; 2e-16 ***
+## cholesterol_mg  0.0416803  0.0064425   6.470 1.46e-10 ***
+## sodium_mg       0.0047823  0.0007800   6.131 1.20e-09 ***
+## fiber_g        -0.5514295  0.0284809 -19.361  &lt; 2e-16 ***
+## sugar_g        -0.2720957  0.0062719 -43.383  &lt; 2e-16 ***
+## caffeine_mg    -0.0003979  0.0004756  -0.837   0.4029    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.022 on 1122 degrees of freedom
+## Multiple R-squared:  0.9712, Adjusted R-squared:  0.9707 
+## F-statistic:  1801 on 21 and 1122 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Lo primero que miro, siempre, es que el modelo sea significativo: eso lo podemos ver con el <em>p-value</em> que aparece al final del resumen. Efectivamente, el modelo pareciera ser significativo; en otras palabras, la descripción de la situación que planteamos se ve acompañada por los datos. Además, el <code>$R^2$</code> es muy alto.</p>
+<p>Ahora, miramos las variables. El tamaño solo resultó ser un predictor significativo en el tamaño más grande, “venti”. Esto me llama poderosamente la atención, porque había predicho que a medida que aumentara el tamaño, la cantidad de grasas totales también aumentaría, pero es posible que al controlar por las demás variables, el tamaño ya no juegue un rol importante (¿tal vez porque cambia la composición de la bebida? ¿porque todo tiene mucha grasa siempre?).</p>
+<p>La presencia de leche y de crema fue, como había predicho, un predictor significativo en todos los casos. Esto por supuesto que es lo lógico desde el punto de vista nutricional. Lo mismo ocurre con la cantidad de calorías: hasta donde tengo entendido, las calorías son una medida de energía producida por, justamente, grasas, proteínas y carbohidratos. Por lo tanto, si bien es lógico que haya resultado un predictor significativo, no debería haber aparecido en el modelo desde el punto de vista de la teoría que lo fundamenta. El colesterol también fue un predictor significativo, lo cual es lógico porque es un tipo de grasa.</p>
+<p>Lo que me llama la atención es que el sodio, la fibra y el azúcar hayan sido también predictores estadísticamente significativos. Nuevamente, mi conocimiento básico de nutrición me dice que estos elementos no deberían aportar a la cantidad de grasas totales, pero es posible que los ingredientes que aportan estos elementos también contengan altos grados de grasas. Es fundamental, entonces, conocer a fondo los elementos con los que trabajamos a la hora de plantear un modelo estadístico.</p>
+<p>Por último, podemos analizar los residuos del modelo, para tener un panorama más claro.</p>
+<pre class="r"><code>performance::check_model(fat_reg)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>El análisis de los residuos muestra varias de las cosas mencionadas anteriormente: por ejemplo, el alto grado de colinealidad entre varios de los ingredientes. La linealidad y la homogeneidad de la varianza tienen claramente formas muy extrañas, y me pregunto si tendrá que ver con los distintos tamaños, que plantean distintas composiciones de ingredientes a partir de las mismas fórmulas. Creo que una metodología más adecuada sería correr distintos modelos para cada tamaño, para poder comparar entre bebidas (es decir, entre recetas).</p>
+<p>En fin, el análisis de los residuos muestra, como ya sabíamos, que si bien a priori el resumen del modelo dio resultados aparentemente significativos, el análisis de los residuos muestra que hay algunas cuestiones que se escapan y que este modelo no sería el más apropiado para este panorama. Se podría continuar este análisis, como mencioné antes, corriendo distintos modelos por cada tamaño, planteando correlaciones entre los ingredientes para detectar colinealidades problemáticas. Pero con esto fue suficiente por hoy. ¡Gracias por leer!</p>
+</div>

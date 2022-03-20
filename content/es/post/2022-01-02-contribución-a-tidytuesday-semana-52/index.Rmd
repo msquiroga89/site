@@ -6,6 +6,7 @@ slug: contribución-a-tidytuesday-semana-52
 categories: 
 - español
 - ciencia de datos
+- tidytuesday
 tags: []
 subtitle: ''
 summary: ''
@@ -40,7 +41,7 @@ starbucks$fiber_g <- as.numeric(starbucks$fiber_g)
 
 Para entender un poco más cómo están compuestas estas bebidas, vamos a realizar un análisis descriptivo. Tenemos dos medidas de tamaño (`size` y `serve_size_m_l`), calorías, grasas totales (grasas saturadas y grasas trans), gramos de colesterol, gramos de sodio, carbohidratos totales, gramos de fibra, gramos de azúcar y gramos de cafeína.
 
-Lo primero que vamos a hacer es ver cómo se distribuyen las bebidas según la cantidad de esos ingredientes. Sin embargo, me encontré con el problema de que los distintos elementos aparecen, incluso dentro de su distribución, con valores absolutos muy diferentes. Esto hace que no se distingan con claridad si los presento todos en un mismo gráfico. Voy a mantener entonces la separación por tamaños, pero 
+Lo primero que vamos a hacer es ver cómo se distribuyen las bebidas según la cantidad de esos ingredientes. Sin embargo, me encontré con el problema de que los distintos elementos aparecen, incluso dentro de su distribución, con valores absolutos muy diferentes. Esto hace que no se distingan con claridad si los presento todos en un mismo gráfico. Voy a mantener entonces la separación por tamaños, pero solo voy a trabajar con los tamaños estándares (short, tall, venti, grande).
 
 ```{r}
 library(tidyverse)
@@ -64,7 +65,7 @@ starbucks_longer %>%
 
 ```
 
-En principio, se puede ver que a grandes rasgos los gráficos siguen el patrón lógico: los tamaños más grandes tienen distribuciones más aplanadas, mientras que los tamaños más chicos tienen picos más pronunciados. Me llama particularmente la atención el gráfico de cafeína: tanto el tamaño "short" como el "tall" tienen un pico muy similar. Es posible, de todos modos, que no todos los tipos de bebidas tengan los cuatro tamaños, y que esto incorpore sesgos en los gráficos. Lo veremos más adelante.
+En principio, se puede ver que a grandes rasgos los gráficos siguen el patrón lógico: los tamaños más grandes tienen distribuciones más aplanadas, mientras que los tamaños más chicos tienen picos más pronunciados. Me llama particularmente la atención el gráfico de cafeína: tanto el tamaño "short" como el "tall" tienen un pico muy similar (¿mucha cafeína para un tamaño pequeño o poca cafeína para un tamaño más grande?). Es posible, de todos modos, que no todos los tipos de bebidas tengan los cuatro tamaños, y que esto incorpore sesgos en los gráficos. Lo veremos más adelante.
 
 ```{r}
 starbucks_longer %>% 
@@ -98,3 +99,34 @@ starbucks %>%
   cols_align("left")
 ```
 
+Ya saben, amigos: si necesitan una ayudita para empezar su día, pueden pasar por su Starbucks más cercano y pedir un *Clover Brewed Coffee - Dark Roast* (si es que existe en sus países, claro: en el mío me parece que no).
+
+# Regresión
+
+Empecé este post planteando que quería practicar mis habilidades estadísticas, pero ya no estoy tan segura de que este dataset me dé muchas oportunidades para hacer grandes operaciones. Por el momento, me voy a quedar con esta pregunta: ¿qué aspecto de la composición de las bebidas aporta significativamente más a la cantidad de grasas totales? Por supuesto que es una respuesta que se puede conseguir desde un punto de vista nutricional: la presencia de leche y de crema, junto con el tamaño de la bebida, deberían ser los tres predictores más significativos. Pero veamos si la estadística nos acompaña.
+
+```{r}
+starbucks <- starbucks %>% 
+  filter(!size %in% c("1 scoop", "1 shot"))
+
+fat_reg <- lm(total_fat_g ~ size + milk + whip + serv_size_m_l + calories + cholesterol_mg + sodium_mg + fiber_g + sugar_g + caffeine_mg, data  = starbucks)
+summary(fat_reg)
+```
+
+Lo primero que miro, siempre, es que el modelo sea significativo: eso lo podemos ver con el *p-value* que aparece al final del resumen. Efectivamente, el modelo pareciera ser significativo; en otras palabras, la descripción de la situación que planteamos se ve acompañada por los datos. Además, el `$R^2$` es muy alto.
+
+Ahora, miramos las variables. El tamaño solo resultó ser un predictor significativo en el tamaño más grande, "venti". Esto me llama poderosamente la atención, porque había predicho que a medida que aumentara el tamaño, la cantidad de grasas totales también aumentaría, pero es posible que al controlar por las demás variables, el tamaño ya no juegue un rol importante (¿tal vez porque cambia la composición de la bebida? ¿porque todo tiene mucha grasa siempre?).
+
+La presencia de leche y de crema fue, como había predicho, un predictor significativo en todos los casos. Esto por supuesto que es lo lógico desde el punto de vista nutricional. Lo mismo ocurre con la cantidad de calorías: hasta donde tengo entendido, las calorías son una medida de energía producida por, justamente, grasas, proteínas y carbohidratos. Por lo tanto, si bien es lógico que haya resultado un predictor significativo, no debería haber aparecido en el modelo desde el punto de vista de la teoría que lo fundamenta. El colesterol también fue un predictor significativo, lo cual es lógico porque es un tipo de grasa. 
+
+Lo que me llama la atención es que el sodio, la fibra y el azúcar hayan sido también predictores estadísticamente significativos. Nuevamente, mi conocimiento básico de nutrición me dice que estos elementos no deberían aportar a la cantidad de grasas totales, pero es posible que los ingredientes que aportan estos elementos también contengan altos grados de grasas. Es fundamental, entonces, conocer a fondo los elementos con los que trabajamos a la hora de plantear un modelo estadístico.
+
+Por último, podemos analizar los residuos del modelo, para tener un panorama más claro. 
+
+```{r}
+performance::check_model(fat_reg)
+```
+
+El análisis de los residuos muestra varias de las cosas mencionadas anteriormente: por ejemplo, el alto grado de colinealidad entre varios de los ingredientes. La linealidad y la homogeneidad de la varianza tienen claramente formas muy extrañas,  y me pregunto si tendrá que ver con los distintos tamaños, que plantean distintas composiciones de ingredientes a partir de las mismas fórmulas. Creo que una metodología más adecuada sería correr distintos modelos para cada tamaño, para poder comparar entre bebidas (es decir, entre recetas).
+
+En fin, el análisis de los residuos muestra, como ya sabíamos, que si bien a priori el resumen del modelo dio resultados aparentemente significativos, el análisis de los residuos muestra que hay algunas cuestiones que se escapan y que este modelo no sería el más apropiado para este panorama. Se podría continuar este análisis, como mencioné antes, corriendo distintos modelos por cada tamaño, planteando correlaciones entre los ingredientes para detectar colinealidades problemáticas. Pero con esto fue suficiente por hoy. ¡Gracias por leer!
