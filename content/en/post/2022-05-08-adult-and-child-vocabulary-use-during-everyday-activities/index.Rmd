@@ -1,0 +1,47 @@
+---
+title: "Adult and child vocabulary use during everyday activities"
+author: ''
+date: '2021-09-25'
+slug: aacc2021-vocabulary
+categories: []
+tags:
+- investigacion
+- vocabulario
+- poster
+- español
+subtitle: ''
+summary: Poster presentation during the 2021 AACC
+authors: []
+lastmod: '2021-09-19T16:01:22-03:00'
+featured: yes
+image:
+  caption: ''
+  focal_point: Center
+  preview_only: no
+#projects: investigacion
+editor_options:
+  markdown:
+    wrap: sentence
+draft: true
+---
+
+## Adult and child vocabulary use during everyday activities
+
+Link to the presentation [HERE](https://www.youtube.com/watch?v=clQhscxYY9I).
+
+Macarena Sol Quiroga (CIIPME-CONICET/UNaHur), Viviana Lewinsky (UBA/IICE), Celia Renata Rosemberg (CIIPME-CONICET/UBA/IICE), Florencia Alam (CIIPME-CONICET).
+
+The relationship between the linguistic input the child is exposed to and the child production in different contexts has been revealed by various studies (Hoff, 2013; Stein et al., 2021). In particular, recent investigations (Rowe y Weisleder, 2020; Glas et al., 2018; Rosemberg et al., 2020) have mentioned that children participation in different activities at home contributes to the configuration of their linguistic experiences and so impacts in their language use. However, there are few studies that have started to analyze the relationship between linguistic input and child production, and almost all of them have been in english-speaking populations (see, for example, Söderstrom & Witterbole, 2013; and Roy, 2015).
+
+That's why the goal of this study is to analyze both the child vocabulary production and the input that these 4-year-old children hear in daily home activities. We worked with two groups: group 1 had parents with college degree and they lived in residential neighborhoods; group 2 had parents with less than high-school and lived in slums. The sample consisted of 120 audiorecorded hours at the home of 10 children (5 from each group), transcripted by the CHAT format (MacWhinney, 2000), that belong to a grater corpus (Rosemberg et al., 2005-2012).
+
+We encoded utterances by the activity that was taking place, heuristically following Rosemberg et al. (2020) categories. We constructed four macro-categories: activities that focused on the family life or on the child rearing (feeding, hygiene), activities that focused on adult interests (conversations, domestic activities) and activities that focused on the child (play, book-reading, drawing, literacy activities); and we specified if those activities were carried out individually or socially.
+
+We measured quantity and mean length of speech turns, speech quantity (word tokens) and lexical diversity (vocd) using CLAN (Computerized Language Analysis), and we made a descriptive analysis with (R Core Team, 2019).
+
+Preliminary results based on 6 children (3 from each group) showed intra-groups differences in the lexical diversity and the amount of words and speech turns. During the activities focused on the familiar life, children from both groups heard a greater amount of words, with longer speech turns and more lexical diversity. Regardind child vocabulary production, we observed differences between groups: while the biggest amount of words and lexical diversity and the longest speech turns in group two occured in social activities focused on the child, for group 1 this happened during activities focused on child-rearing.
+
+These results contribute to the understanding of the influence of sociocultural context and activities in the vocabulary use, both of adults and of children, and it also highlights the relevance of attending to contexts to reach a better understanding of the processes involved in the vocabulary acquisition.
+
+Palabras clave: vocabulario, actividades cotidianas, niños pequeños, interacciones, grupos sociales.
+Keywords: vocabulary, everyday activities, preschool children, interactions, socioeconomic groups.
