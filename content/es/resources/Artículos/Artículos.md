@@ -29,3 +29,5 @@ weight: 30
 -   [R Image Art](http://mfviz.com/r-image-art/): en este artículo se presenta cómo usar un muestreo aleatorio para generar arte de datos a partir de archivos de imagen con R. Para descansar la vista de tantas tablas.
 
 -   [Visualizing Distributions with Raincloud plots using ggplot2](https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-with-ggplot2/): fantástico tutorial de Cédric Scherer (si no te suena su nombre, te recomiendo que lo googlees: hace unas cosas impresionantes). Compara distintos tipos de visualizaciones y destaca sus pro y contra, y plantea los gráficos <i>raincloud</i> como una buena alternativa que permite mostrar diferencias en las distribuciones.
+
+-   [Analyze your Twitter timeline with {rtweet} and {lubridate}](https://albert-rapp.de/post/2022-05-06-track-twitter-follower/): paso a paso sobre cómo analizar tu cuenta de twitter, cambios en los seguidores, interacciones y demás.

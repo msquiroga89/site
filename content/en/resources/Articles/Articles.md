@@ -29,3 +29,5 @@ weight: 30
 -   [R Image Art](http://mfviz.com/r-image-art/): in this article we can learn to do a random sample to create art from image files with R. To rest our sight from all those tables.
 
 -   [Visualizing Distributions with Raincloud plots using ggplot2](https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-with-ggplot2/): a fantastic tutorial from Cédric Scherer (if you don't know him, I suggest you to google him). It compares different kinds of visualizations and it highlights their pros and cons. It also talks about <i>raincloud plots</i> as a good alternative to illustrate variations within distributions.
+
+-   [Analyze your Twitter timeline with {rtweet} and {lubridate}](https://albert-rapp.de/post/2022-05-06-track-twitter-follower/): step by steb about how to analyze your twitter account, your follower count, level of engangement and more.
