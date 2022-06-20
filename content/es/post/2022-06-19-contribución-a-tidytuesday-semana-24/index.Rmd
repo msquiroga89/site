@@ -17,7 +17,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: ciencia-de-datos
+projects: [ciencia-de-datos]
 ---
 
 El tema de la semana 24 de #TidyTuesday es la sequía en EEUU y al leer sobre la cantidad de precipitación por año inmediatamente pensé que era una gran oportunidad para jugar con los [raincloud plots](https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/). Sin embargo, los datos no estaban de mi lado, porque presentaban información temporoespacial. Así que decidí continuar con mi [acercamiento al manejo de datos espaciales](https://macarenaquiroga.netlify.app/post/primer-acercamiento-a-los-datos-espaciales-mapa-coropletico-sobre-espacios-verdes-en-caba/).
