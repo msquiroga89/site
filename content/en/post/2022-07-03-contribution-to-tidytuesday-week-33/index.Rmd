@@ -1,0 +1,96 @@
+---
+title: 'Contribution to #TidyTuesday, week 33'
+author: "R package build"
+date: '2021-08-15'
+slug: contribution-to-tidytuesday-week-33
+categories: []
+tags:
+- rstats
+- tidytuesday
+- dataviz
+- english
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-08-15T21:59:46-03:00'
+featured: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: [data-science]
+---
+
+It's been a long time since I've participated in #TidyTuesday: a bit due to lack of time, a bit because the datasets they published didn't motivate me, and a bit because I was embarrassed to always upload the same thing. But today, after having dedicated three hours of my Sunday to [Kierisi's livestream on Machine Learning]((https://www.twitch.tv/videos/1119311136)), I wanted to continue programming.
+
+(For those who don't know: #TidyTuesday is a collaborative project that consists of working every week with a set of real data to practice visualization and other skills in the world of data science. You can find more information in its [GitHub repository]((https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-10/readme.md)) and under the [hashtag on twitter]((https://twitter.com/hashtag/TidyTuesday?src=hashtag_click).).)
+
+Let's start with the general organization:
+
+```{r warning=FALSE, message=FALSE}
+library(tidytuesdayR)
+library(tidyverse)
+library(hrbrthemes)
+library(streamgraph)
+library(htmlwidgets)
+library(webshot)
+
+tuesdata <- tidytuesdayR::tt_load('2021-08-10')
+investment <- tuesdata$investment
+chain_investment <- tuesdata$chain_investment
+ipd <- tuesdata$ipd
+
+
+# Exploratory Analysis ----------------------------------------------------
+
+glimpse(investment)
+glimpse(chain_investment) # how much did it change with time
+glimpse(ipd)
+
+investment %>% group_by(category) %>% count()
+investment %>% group_by(meta_cat) %>% count()
+```
+
+This week's dataset was about investments in the US during the period of time that goes from 1947 to 2017. I have to confess that I wasn't very motivated by the topic either; in addition, the three dataframes that they brought were very similar and with some terminology about economics that I did not fully understand. But it did feel like doing something, and that was enough.
+
+I decided not to procrastinate too much and make at least two charts on some familiar field, so I chose education.
+
+#### First question: How has federal investment in education changed over this time period?
+
+This was, let's say, the well-known and easy graph: I chose a line graph to show the evolution of the investment and I chose a single topic to innovate: leave the other values of the categorical variable "investment areas" in gray, and highlight only the area of education.
+
+```{r}
+investment %>% 
+  filter(category=="Federal") %>% 
+  mutate(highligth = ifelse(meta_cat=="Education", "Education", "Other")) %>% 
+  group_by(meta_cat, year) %>% 
+  ggplot(aes(x = year, y = gross_inv, group = meta_cat, size = highligth))+
+  geom_line()+
+  scale_color_manual(values = c("#69b3a2", "lightgrey"))+
+  scale_size_manual(values=c(1.5,0.2))+
+  theme_ipsum()+
+  theme(legend.position = "none")+
+  labs(x="", y="",
+       title="Evolution of Federal Investment in Education",
+       caption = "Data: Bureau of Economic Analysis | Plot: @_msquiroga | #TidyTuesday")
+```
+
+I am quite satisfied with the result. In general, I tend to prefer colorful graphics with a lot of information, but that's why they end up being confusing and with overlapping information. Instead, this graph seemed clear and with a sober design.
+
+#### Second question: how have the different sources of investment evolved over time?
+
+I first thought of making a chart similar to the one above: a stacked area chart. But looking at R Graph Gallery, one of the best visualization resources out there, I thought it might be a good idea to try the StreamGraph package to make, well, interactive "stream" graphs. In general, I am not very fond of using other packages than ggplot2, not because I am a fundamentalist, but only because it is what I use the most. But hey, you have to innovate.
+
+```{r warning=FALSE}
+graph <- investment %>% 
+  filter(meta_cat == "Education") %>% 
+  streamgraph(., key = "category", value = "gross_inv", date="year") %>% 
+  sg_legend(TRUE, "Fuente de inversión")
+graph
+```
+
+The fact that the result was an html and not an image was a bit problematic for me: I couldn't share it on twitter with its interactive version. But luckily here it is (and by the way I read a little more about widgets in the book [RMarkdown: The definitive guide](https://bookdown.org/yihui/rmarkdown/html-widgets.html)).
+
+#### To improve:
+
+The steamgraph looks very nice, but it's a bit unclear (in fact, what you see in the first graph, which is federal spending, is barely visible in the second). That is, disproportionate amounts should be able to look the same, despite being disproportionate. On the other hand, the selector box disappeared here, in RMarkdown, even though I see it fine in the widget I download. I have no idea what it is due to.
