@@ -1,0 +1,84 @@
+---
+title: 'First approach to choropleth map: green spaces in Buenos Aires'
+author: R package build
+date: '2021-09-04'
+slug: first-approach-to-choropleth-map-green-spaces-in-buenos-aires
+categories: []
+tags:
+  - rstats
+  - english
+  - dataviz
+  - spatial data
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-04T19:37:51-03:00'
+featured: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: [data-science]
+---
+Who doesn't love those beautiful and colorful choropleth maps that circulate on Twitter?
+
+In general, 99% of my use of R is statistical analysis: sometimes I get lucky and can spend a little more time supplementing that analysis with some graphics. But my daily work doesn't involve with spatial data, so I don't have much opportunity to learn this kind of stuff.
+
+I had some free time today and first thought I'd do some #TidyTuesday. But looking at the data ([bird baths in Australia]((https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-31/readme.md))), I realized that I was geared towards either working with categorical variables or working with spatial data. I had already done some practice with categorical data with [Star Trek voice commands]((https://macarenaquiroga.netlify.app/post/contribucion-al-tidytuesday-semana-34-comandos-de-voz-en-startrek/)), so I ruled that out, but doing something with spatial data seemed a bit complex to me.
+
+I decided then that it was a good opportunity to start step-by-step on that subject and I remembered the existence of [PoliticaArgentina]((https://github.com/PoliticaArgentina)), a universe of packages about Argentina. Luckily, the readme had an example of how to make a graph with labels, so it wasn't hard to adapt it to something new.
+
+I kept the map of CABA (City of Buenos Aires = Ciudad Autónoma de Buenos Aires), because it was what I knew, and I raised a question that matters to any *porteño*: are there enough green spaces in the City?
+
+Once the graph was assembled, I looked for official information on green spaces in CABA, data that luckily I found on the [official site]((https://www.estadisticaciudad.gob.ar/eyc/?p=27349). Then it was a matter of revising the `fill` argument and improving the look of the labels a bit. The truth is, I was very satisfied: I thought it would be much more difficult to start, and yet here we are.
+
+Here is the code:
+
+```{r}
+# Choropleth map about green spaces in Buenos Aires
+
+library(tidyverse)
+#devtools::install_github("politicaargentina/geoAr")
+library(geoAr)
+show_arg_codes()
+(CABA <- get_geo(geo = "CABA"))
+(CABA_names <- CABA %>% add_geo_codes())
+
+CABA_names$nomdepto_censo <- gsub("COMUNA ", "C. ", CABA_names$nomdepto_censo)
+
+CABA_names <- CABA_names %>% 
+  mutate(esp_verd = case_when(
+    coddepto_censo == "001" ~ 18.2,
+    coddepto_censo == "002" ~ 4.1,
+    coddepto_censo == "003" ~ 0.4,
+    coddepto_censo == "004" ~ 4.3,
+    coddepto_censo == "005" ~ 0.2,
+    coddepto_censo == "006" ~ 1.8,
+    coddepto_censo == "007" ~ 3.2,
+    coddepto_censo == "008" ~ 18.8,
+    coddepto_censo == "009" ~ 6.8,
+    coddepto_censo == "010" ~ 2.0,
+    coddepto_censo == "011" ~ 1.5,
+    coddepto_censo == "012" ~ 8.1,
+    coddepto_censo == "013" ~ 6.1,
+    coddepto_censo == "014" ~ 12.0,
+    coddepto_censo == "015" ~ 6.2
+  ))
+
+
+ggplot(CABA_names)+
+  geom_sf(aes(fill = esp_verd))+
+  geom_sf_label(aes(label = nomdepto_censo),
+                #label.size = 0.5,
+                size = 2)+
+  scale_fill_gradient(low = "khaki2", high = "darkgreen")+
+  labs(title = "Green space area managed by City Government, per inhabitant per commune (2019)",
+       caption = "Source: https://www.estadisticaciudad.gob.ar/eyc/?p=27349",
+       x = "", 
+       y = "",
+       fill = expression('Green space in m' ^ 2))+
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.background = element_blank()
+        )
+```
