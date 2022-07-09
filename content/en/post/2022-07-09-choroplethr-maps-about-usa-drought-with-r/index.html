@@ -1,13 +1,13 @@
 ---
-title: 'Mapas coropléticos sobre la sequía en EEUU con R'
-author: ''
+title: Choroplethr maps about USA drought with R
+author: R package build
 date: '2022-06-19'
-slug: contribución-a-tidytuesday-semana-24
+slug: choroplethr-maps-about-usa-drought-with-r
 categories: []
-tags:
+tags: 
 - rstats
-- español
-- datos espaciales
+- english
+- spatial data
 subtitle: ''
 summary: 'Contribución a #TidyTuesday semana 24'
 authors: []
@@ -17,15 +17,15 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: [ciencia-de-datos]
+projects: [data-science]
 ---
 
 
 
-<p>El tema de la semana 24 de #TidyTuesday es la sequía en EEUU y al leer sobre la cantidad de precipitación por año inmediatamente pensé que era una gran oportunidad para jugar con los <a href="https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/">raincloud plots</a>. Sin embargo, los datos no estaban de mi lado, porque presentaban información temporoespacial. Así que decidí continuar con mi <a href="https://macarenaquiroga.netlify.app/post/primer-acercamiento-a-los-datos-espaciales-mapa-coropletico-sobre-espacios-verdes-en-caba/">acercamiento al manejo de datos espaciales</a>.</p>
-<p>Por suerte unos meses atrás me había registrado en el <a href="https://ari-lamsteins-courses.thinkific.com/courses/take/mapmaking-in-r-with-choroplethr/">curso de mapas coropléticos de Ari Lamstein</a>, así que tenía material desde donde empezar.</p>
-<p>Uno de los datasets del TidyTuesday tiene el Drought Severity and Coverage Index (DSCI) (algo así como el índice de gravedad y alcance de la sequía) junto con el código FIPS que indica el condado y el estado. Este código FIPS es el mismo que aparece con el nombre <code>region</code> en el mapa del paquete <code>choroplethrMaps</code>.</p>
-<p>Entonces, cargo los paquetes necesarios y el mapa de los condados:</p>
+<p>The theme for week 24 of #TidyTuesday is drought in the US and when I read about the amount of precipitation per year I immediately thought it was a great opportunity to play with <a href="https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/">raincloud plots</a>. However, the data was not on my side, because it presented temporal-spatial information. So I decided to continue with my <a href="https://macarenaquiroga.netlify.app/en/post/first-approach-to-choropleth-map-green-spaces-in-buenos-aires/">approach to spatial data management</a>.</p>
+<p>Luckily a few months ago I had signed up for <a href="https://ari-lamsteins-courses.thinkific.com/courses/take/mapmaking-in-r-with-choroplethr/">Ari Lamstein’s Choropleth Maps course</a>, so I had material from where to start.</p>
+<p>One of the TidyTuesday datasets has the Drought Severity and Coverage Index (DSCI) along with the FIPS code indicating the county and state. This FIPS code is the same one that appears with the region name in the map from the <code>choroplethrMaps</code> package.</p>
+<p>So, I load the necessary packages and the map of the counties:</p>
 <pre class="r"><code>tuesdata &lt;- tidytuesdayR::tt_load(&#39;2022-06-14&#39;)</code></pre>
 <pre><code>## 
 ##  Downloading file 1 of 2: `drought.csv`
@@ -37,7 +37,7 @@ library(choroplethr)
 library(choroplethrMaps)
 library(tidyverse)
 data(&quot;county.map&quot;)</code></pre>
-<p>Ahora puedo renombrar en el dataframe de la sequía los valores correspondientes para poder usarlo como base para el mapa coroplético. También necesito especificar que el valor de DSCI (ahora llamado “value”) sea numérico, y no caracter. Con esto, ya puedo combinar el df de los datos geográficos de los condados (<code>county.map</code>) con mi df de los datos de sequía (<code>drought.fips</code>):</p>
+<p>Now I can rename the corresponding values in the drought dataframe so that I can use it as the basis for the choropleth map. I also need to specify that the DSCI value (now called “value”) be numeric, not character. With this, I am now able to merge the counties geodata df (<code>county.map</code>) with my drought data df (<code>drought.fips</code>):</p>
 <pre class="r"><code>drought_fips &lt;- drought_fips %&gt;% 
   rename(region = FIPS,
          value = DSCI)
@@ -47,7 +47,7 @@ drought_fips$region &lt;- as.numeric(drought_fips$region)
 county.map.drought &lt;- county.map %&gt;% 
   left_join(drought_fips, by = &quot;region&quot;) %&gt;% 
   select(long, lat, region, value, date, STATE, group)</code></pre>
-<p>Solo resta generar uno por uno los gráficos para cada año: selecciono la fecha de la primera medición del año y elimino los estados de Alaska y las islas Hawaii (solo porque me dificulta el mapeo, no es nada personal):</p>
+<p>It only remains to generate the graphs for each year one by one: I select the date of the first measurement of the year and eliminate the states of Alaska and the Hawaiian Islands (only because it makes mapping difficult, it is nothing personal):</p>
 <pre class="r"><code># 2000
 a2000 &lt;- county.map.drought %&gt;% 
   filter(date == &quot;2000-01-04&quot; &amp; !STATE %in% c(&quot;02&quot;, &quot;15&quot;)) %&gt;% 
@@ -369,7 +369,7 @@ a2022 &lt;- county.map.drought %&gt;%
   theme(legend.position = &quot;none&quot;,
         plot.title = element_text(size = 12, hjust = 0.5,
                                   family=&quot;Times&quot;))</code></pre>
-<p>Finalmente, los combino en un solo gráfico:</p>
+<p>Finally, I combine them into a single graph:</p>
 <pre class="r"><code>library(grid)
 library(gridExtra)</code></pre>
 <pre><code>## 
@@ -387,5 +387,5 @@ library(gridExtra)</code></pre>
                             gp = gpar(fontsize = 14, fontfamily = &quot;Times&quot;)),
              nrow = 4)</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>No estoy muy convencida de la relación de tamaños entre el título general y los títulos específicos de cada gráfico, pero por el momento estoy conforme con cómo se ve.</p>
-<p>Ahora, todo muy lindo, pero ¿es informativo este gráfico? Decidí quedarme con la primera semana de enero por motivos arbitrarios, porque me interesaba enfocarme en lo espacial. Sin embargo, hubiera sido interesante por ejemplo hacer un promedio por mes a lo largo de los años (es decir, tener un mapa por mes que promediara los 22 años de la muestra), porque es evidente que la mayoría de las diferencias en los niveles de sequía se van a ver a lo largo del año (entre estaciones, digamos) que a lo largo de los años. Pero eso implicaba un manejo de los datos de fechas que todavía no tengo muy claro.</p>
+<p>I’m not so sure about the size ratio between the general title and the specific titles for each chart, but for now I’m happy with how it looks.</p>
+<p>Now, it’s been great, but is this graph informative? I decided to keep the first week of January for arbitrary reasons, because I was interested in focusing on space. However, it would have been interesting, for example, to make an average per month over the years (that is, to have a map per month that averaged the 22 years of the sample), because it is evident that most of the differences in the levels of drought are going to be seen throughout the year (between seasons, let’s say) than throughout the years. But that implied a handling of the data of dates that I still do not have very clear.</p>

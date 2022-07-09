@@ -1,13 +1,13 @@
 ---
-title: 'Mapas coropléticos sobre la sequía en EEUU con R'
-author: ''
+title: Choroplethr maps about USA drought with R
+author: R package build
 date: '2022-06-19'
-slug: contribución-a-tidytuesday-semana-24
+slug: choroplethr-maps-about-usa-drought-with-r
 categories: []
-tags:
+tags: 
 - rstats
-- español
-- datos espaciales
+- english
+- spatial data
 subtitle: ''
 summary: 'Contribución a #TidyTuesday semana 24'
 authors: []
@@ -17,16 +17,16 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-projects: [ciencia-de-datos]
+projects: [data-science]
 ---
+The theme for week 24 of #TidyTuesday is drought in the US and when I read about the amount of precipitation per year I immediately thought it was a great opportunity to play with [raincloud plots](https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/). However, the data was not on my side, because it presented temporal-spatial information. So I decided to continue with my [approach to spatial data management](https://macarenaquiroga.netlify.app/en/post/first-approach-to-choropleth-map-green-spaces-in-buenos-aires/).
 
-El tema de la semana 24 de #TidyTuesday es la sequía en EEUU y al leer sobre la cantidad de precipitación por año inmediatamente pensé que era una gran oportunidad para jugar con los [raincloud plots](https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/). Sin embargo, los datos no estaban de mi lado, porque presentaban información temporoespacial. Así que decidí continuar con mi [acercamiento al manejo de datos espaciales](https://macarenaquiroga.netlify.app/post/primer-acercamiento-a-los-datos-espaciales-mapa-coropletico-sobre-espacios-verdes-en-caba/).
+Luckily a few months ago I had signed up for [Ari Lamstein's Choropleth Maps course](https://ari-lamsteins-courses.thinkific.com/courses/take/mapmaking-in-r-with-choroplethr/), so I had material from where to start.
 
-Por suerte unos meses atrás me había registrado en el [curso de mapas coropléticos de Ari Lamstein](https://ari-lamsteins-courses.thinkific.com/courses/take/mapmaking-in-r-with-choroplethr/), así que tenía material desde donde empezar.
+One of the TidyTuesday datasets has the Drought Severity and Coverage Index (DSCI) along with the FIPS code indicating the county and state. This FIPS code is the same one that appears with the region name in the map from the `choroplethrMaps` package.
 
-Uno de los datasets del TidyTuesday tiene el Drought Severity and Coverage Index (DSCI) (algo así como el índice de gravedad y alcance de la sequía) junto con el código FIPS que indica el condado y el estado. Este código FIPS es el mismo que aparece con el nombre `region` en el mapa del paquete `choroplethrMaps`. 
+So, I load the necessary packages and the map of the counties:
 
-Entonces, cargo los paquetes necesarios y el mapa de los condados:
 ```{r, warning=FALSE, message=FALSE}
 tuesdata <- tidytuesdayR::tt_load('2022-06-14')
 drought <- tuesdata$drought
@@ -38,7 +38,7 @@ library(tidyverse)
 data("county.map")
 ```
 
-Ahora puedo renombrar en el dataframe de la sequía los valores correspondientes para poder usarlo como base para el mapa coroplético. También necesito especificar que el valor de DSCI (ahora llamado "value") sea numérico, y no caracter. Con esto, ya puedo combinar el df de los datos geográficos de los condados (`county.map`) con mi df de los datos de sequía (`drought.fips`):
+Now I can rename the corresponding values in the drought dataframe so that I can use it as the basis for the choropleth map. I also need to specify that the DSCI value (now called "value") be numeric, not character. With this, I am now able to merge the counties geodata df (`county.map`) with my drought data df (`drought.fips`):
 
 ```{r}
 drought_fips <- drought_fips %>% 
@@ -52,7 +52,7 @@ county.map.drought <- county.map %>%
   select(long, lat, region, value, date, STATE, group)
 ```
 
-Solo resta generar uno por uno los gráficos para cada año: selecciono la fecha de la primera medición del año y elimino los estados de Alaska y las islas Hawaii (solo porque me dificulta el mapeo, no es nada personal):
+It only remains to generate the graphs for each year one by one: I select the date of the first measurement of the year and eliminate the states of Alaska and the Hawaiian Islands (only because it makes mapping difficult, it is nothing personal):
 
 ```{r}
 # 2000
@@ -378,7 +378,7 @@ a2022 <- county.map.drought %>%
                                   family="Times"))
 ```
 
-Finalmente, los combino en un solo gráfico:
+Finally, I combine them into a single graph:
 ```{r}
 library(grid)
 library(gridExtra)
@@ -390,6 +390,7 @@ grid.arrange(grobs = list(a2000, a2001, a2002, a2003, a2004, a2005, a2006, a2007
              nrow = 4)
 ```
 
-No estoy muy convencida de la relación de tamaños entre el título general y los títulos específicos de cada gráfico, pero por el momento estoy conforme con cómo se ve.
+I'm not so sure about the size ratio between the general title and the specific titles for each chart, but for now I'm happy with how it looks.
 
-Ahora, todo muy lindo, pero ¿es informativo este gráfico? Decidí quedarme con la primera semana de enero por motivos arbitrarios, porque me interesaba enfocarme en lo espacial. Sin embargo, hubiera sido interesante por ejemplo hacer un promedio por mes a lo largo de los años (es decir, tener un mapa por mes que promediara los 22 años de la muestra), porque es evidente que la mayoría de las diferencias en los niveles de sequía se van a ver a lo largo del año (entre estaciones, digamos) que a lo largo de los años. Pero eso implicaba un manejo de los datos de fechas que todavía no tengo muy claro.
+Now, it's been great, but is this graph informative? I decided to keep the first week of January for arbitrary reasons, because I was interested in focusing on space. However, it would have been interesting, for example, to make an average per month over the years (that is, to have a map per month that averaged the 22 years of the sample), because it is evident that most of the differences in the levels of drought are going to be seen throughout the year (between seasons, let's say) than throughout the years. But that implied a handling of the data of dates that I still do not have very clear.
+
