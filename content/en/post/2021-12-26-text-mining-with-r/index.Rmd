@@ -1,0 +1,22 @@
+---
+title: 'New proyect: Text Mining with R'
+author: ''
+date: '2021-12-26'
+slug: text-mining-with-r
+categories: []
+tags: 
+- data science
+- rstats
+- english
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-12-26T16:17:36-03:00'
+featured: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: [ciencia-de-datos]
+---
+One of my pending debts was always the analysis of texts with R, largely because in my PhD I do corpus analysis. So I decided to start reading the book [Text Mining with R](https://www.tidytextmining.com/tidytext.html) by Julia Silge and David Robinson. I'm going to leave my notes (in spanish) and my practice with this material on my [github](https://github.com/msquiroga89/TextMiningWithR).
